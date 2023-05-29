@@ -1,0 +1,63 @@
+@import './nav-home';
+@import './home';
+
+@mixin flex($direction, $justify, $align){
+    display:flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@font-face{
+    font-family: LexendDeca-Bold;
+    src:url('./fonts/static/LexendDeca-Bold.ttf')
+}
+@font-face{
+    font-family: LexendDeca-thin;
+    src:url('./fonts/static/LexendDeca-Thin.ttf')
+}
+@font-face{
+    font-family: LexendDeca;
+    src:url('./fonts/static/LexendDeca-Regular.ttf')
+}
+
+body{
+    // overflow: hidden;
+    font-family: LexendDeca;
+    min-width:100%;
+    min-height:100%;
+    height:auto;
+    width: auto;
+    left:0;
+    top:0;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(0, 0, 0);
+    background-repeat: repeat;
+    background-image: url('https://t4.ftcdn.net/jpg/03/87/80/95/360_F_387809573_pS6khKJZQaI8ES8y1Wfpl6R773Tq9DBo.jpg');
+    color:white;
+
+    .loader{
+        @include flex(column, center,center);
+        gap:10px;
+        width:100%;
+        height:100%;
+        // background: rgba(0, 0, 0,0.6);
+        position: absolute;
+        top:0;
+        left:0;
+        font-size: 2em;
+
+        progress{
+            background-color: transparent;
+            border: none;
+            height:10px;
+        }
+
+        progress::-moz-progress-bar{
+            background: rgb(13, 211, 168);
+            border-radius: 500px;
+            width:100%;
+        }
+    }
+}
