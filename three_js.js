@@ -60,6 +60,7 @@ loader.load('./assets/earth.glb', function(gltf){
 
 
 window.addEventListener('resize', () => {
+  if(window.innerHeight<600) return
     sizes.width = window.innerWidth/2
     sizes.height = window.innerHeight-80
     camera.updateProjectionMatrix()

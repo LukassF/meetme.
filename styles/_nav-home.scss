@@ -32,9 +32,12 @@ nav#nav-home{
         list-style: none;
         width:35%;
         @include flex(row,space-around,center);
+        @media screen and (max-width: 1400px) {
+            width:50%;
+        }
 
         @media screen and (max-width: 1200px) {
-            width:60%;
+            width:70%;
         }
         @media screen and (max-width: 700px) {
             position: absolute;
@@ -42,6 +45,12 @@ nav#nav-home{
             top:60px;
             right:0;
             width:100%;
+            a{
+                width:100%;
+                li{
+                    width: 100%;
+                }
+            }
             transition: all 0.3s;
             transform: translateX(100%);
 
@@ -51,67 +60,72 @@ nav#nav-home{
 
         }
 
-        li{
-            font-size:1.4em;
-            cursor: pointer;
-            transition: all 0.2s;
-            height:120px;
-            position: relative;
-            @include flex(column,center,center);
-
-            &.active{
-                &::after{
-                    opacity: 1;
-                }
-                color: rgb(13, 211, 168);
-            }
-
-            &:hover{
-                color:rgb(13, 211, 168);
-                text-shadow: 
-                    0 0 7px rgb(13, 211, 168),
-                    0 0 10px rgb(13, 211, 168),
-                    0 0 21px rgb(13, 211, 168);  
-                transform: translateY(20px);
-            }
-
-            &::after{
-                content:'';
-                position: absolute;
-                bottom:40px;
-                left:0;
-                width:100%;
-                height:4px;
-                border-radius: 500px;
-                opacity: 0;
-                background-color: rgb(13, 211, 168);
-            }
-
-            @media screen and (max-width: 700px) {
-                color:rgb(214, 208, 208);
-                width:calc(100% - 60px);
-                @include flex(column,center,flex-end);
-                padding: 12px 0px;
-                padding-right: 60px;
-                background-color: rgba(0, 0, 0,0.8);
-                height:auto;
-
-                &:hover{
-                    background-color: rgb(5, 61, 49);
-                    animation: none;
-                    text-shadow: none;
-                    color:white;
-                    transition: none;
-                    transform: none;
-                }
+        a{
+            color:white;
+            text-decoration: none;
+            li{
+                font-size:1.4em;
+                cursor: pointer;
+                transition: all 0.2s;
+                height:120px;
+                position: relative;
+                @include flex(column,center,center);
+    
                 &.active{
-                    background-color:rgba(5, 61, 49,0.7) ;
                     &::after{
-                        visibility: hidden;
+                        opacity: 1;
+                    }
+                    color: rgb(13, 211, 168);
+                }
+    
+                &:hover{
+                    color:rgb(13, 211, 168);
+                    text-shadow: 
+                        0 0 7px rgb(13, 211, 168),
+                        0 0 10px rgb(13, 211, 168),
+                        0 0 21px rgb(13, 211, 168);  
+                    transform: translateY(20px);
+                }
+    
+                &::after{
+                    content:'';
+                    position: absolute;
+                    bottom:40px;
+                    left:0;
+                    width:100%;
+                    height:4px;
+                    border-radius: 500px;
+                    opacity: 0;
+                    background-color: rgb(13, 211, 168);
+                }
+    
+                @media screen and (max-width: 700px) {
+                    color:rgb(214, 208, 208);
+                    width:calc(100% - 60px);
+                    @include flex(column,center,flex-end);
+                    padding: 12px 0px;
+                    padding-right: 60px;
+                    background-color: rgba(0, 0, 0,0.8);
+                    height:auto;
+    
+                    &:hover{
+                        background-color: rgb(5, 61, 49);
+                        animation: none;
+                        text-shadow: none;
+                        color:white;
+                        transition: none;
+                        transform: none;
+                    }
+                    &.active{
+                        background-color:rgba(5, 61, 49,0.7) ;
+                        &::after{
+                            visibility: hidden;
+                        }
                     }
                 }
             }
         }
+       
     }
     .hamburger-menu{
         @include flex(column,center,center);

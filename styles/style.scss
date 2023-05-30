@@ -1,5 +1,6 @@
 @import './nav-home';
 @import './home';
+@import './skills';
 
 @mixin flex($direction, $justify, $align){
     display:flex;
@@ -21,9 +22,14 @@
     src:url('./fonts/static/LexendDeca-Regular.ttf')
 }
 
+:root{
+    --mouse-x:0;
+    --mouse-y:0;
+}
+
 body{
-    // overflow: hidden;
     font-family: LexendDeca;
+    overflow-x: hidden;
     min-width:100%;
     min-height:100%;
     height:auto;
@@ -42,7 +48,6 @@ body{
         gap:10px;
         width:100%;
         height:100%;
-        // background: rgba(0, 0, 0,0.6);
         position: absolute;
         top:0;
         left:0;

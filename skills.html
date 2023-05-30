@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css"/>
+    <script src="global.js"></script>
+    <script src="https://kit.fontawesome.com/f83777b1f5.js" crossorigin="anonymous"></script>
+    <title>My skills</title>
+</head>
+<body>
+    <nav id="nav-home">
+        <div>meetme.</div>
+        
+        <span class="hamburger-menu" onclick="showMenu()">
+            <span class="hamburger-icon"></span>
+        </span>
+
+        <ul id="nav-list">
+            <a href="index.html"><li onclick="activePage(event)">Home</li></a>
+            <a href="about.html"><li onclick="activePage(event)">About</li></a>
+            <a href="skills.html"><li class="active" onclick="activePage(event)">Skills</li></a>
+            <a href="projects.html"><li  onclick="activePage(event)">Projects</li></a>
+            <a href="contact.html"><li  onclick="activePage(event)">Contact</li></a>
+        </ul>
+    </nav>
+    <main id="skills-main">
+        <h1>I <span>know</span> how to use...</h1>
+        <section id="skills-container" onmousemove="hoverEffect(event)">
+            <div class="skill-card">
+                <div class="skill-card-content">
+                    <img src="./assets/icons/icons8-html-480.png" alt="html-logo" width="60%"/>
+                    HTML 5
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-content">
+                    <img src="./assets/icons/icons8-css-480.png" alt="css-logo" width="60%"/>
+                    CSS 3
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-content">
+                    <img src="./assets/icons/icons8-javascript-480.png" alt="js-logo" width="60%"/>
+                    JavaScript
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-content">
+                    <img src="./assets/icons/icons8-typescript-480.png" alt="ts-logo" width="60%"/>
+                    TypeScript
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-content">
+                    <img src="./assets/icons/icons8-react-native-480.png" alt="react-logo" width="60%"/>
+                    React JS
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-content">
+                    <img src="./assets/icons/icons8-redux-480.png" alt="redux-logo" width="60%"/>
+                    Redux
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-content">
+                    <img src="./assets/icons/icons8-bootstrap-480.png" alt="bootstrap-logo" width="60%"/>
+                    Bootstrap
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-content">
+                    <img src="./assets/icons/icons8-sass-480.png" alt="sass-logo" width="60%"/>
+                    SCSS/ SASS
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-content">
+                    <img src="./assets/icons/icons8-github-480.png" alt="github-logo" width="60%"/>
+                    Git/ GitHub
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-content">
+                    <img src="./assets/icons/icons8-npm-480.png" alt="npm-logo" width="60%"/>
+                    NPM/ YARN
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

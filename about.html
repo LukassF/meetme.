@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css"/>
+    <script src="global.js"></script>
+    <script src="https://kit.fontawesome.com/f83777b1f5.js" crossorigin="anonymous"></script>
+    <title>About Me!</title>
+</head>
+<body>
+    <nav id="nav-home">
+        <div>meetme.</div>
+        
+        <span class="hamburger-menu" onclick="showMenu()">
+            <span class="hamburger-icon"></span>
+        </span>
+
+        <ul id="nav-list">
+            <a href="index.html"><li onclick="activePage(event)">Home</li></a>
+            <a href="about.html"><li class="active" onclick="activePage(event)">About</li></a>
+            <a href="skills.html"><li  onclick="activePage(event)">Skills</li></a>
+            <a href="projects.html"><li  onclick="activePage(event)">Projects</li></a>
+            <a href="contact.html"><li  onclick="activePage(event)">Contact</li></a>
+        </ul>
+    </nav>
+</body>
+</html>

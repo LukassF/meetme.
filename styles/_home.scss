@@ -1,12 +1,10 @@
 main{
-    // background-color: red;
     width:100vw;
     min-height:calc(100vh - 120px);
     position: relative;
     top:0px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    // overflow: hidden;
 
     @media screen and (max-width:1120px) {
         grid-template-columns: 1fr 0fr;
@@ -16,17 +14,13 @@ main{
         height:90%;
         position: relative;
         margin-top: 50px;
-        // background-color: blue;
-        // overflow: hidden;
     }
     #text-home{
         font-family: LexendDeca-Bold;
         @include flex(column,center,flex-end);
-        // background-color: red;
         max-width: 100vw;
 
         #text-box{
-            // background-color: blue;
             width:80%;
             height:90%;
             @include flex(column,center, flex-start);
@@ -61,10 +55,18 @@ main{
                 }
     
             }
+            p{
+                a{
+                    color: rgba(13, 211, 168,0.6);
+
+                    &:hover{
+                        color:rgb(13, 211, 168);
+                    }
+                }
+            }
 
             #social-links{
                 margin-top: 50px;
-                // background-color: blue;
                 width:100%;
                 ul{
                     list-style: none;
@@ -98,7 +100,6 @@ main{
     }
     #images-home{
         overflow: hidden;
-        // top:-45px;
 
         canvas{
             @media screen and (max-width:1120px) {
@@ -106,21 +107,21 @@ main{
             }
         }
        
-        img{
-            position: absolute;
-            top:50%;
-            left:10%;
-            transform: translateY(-50%);
+        // img{
+        //     position: absolute;
+        //     top:50%;
+        //     left:10%;
+        //     transform: translateY(-50%);
 
-            @media screen and (max-width:1120px) {
-                display: none;
-            }
+        //     @media screen and (max-width:1120px) {
+        //         display: none;
+        //     }
 
-            &:nth-child(1){
-                z-index: 2;
-                left: 6%;
-            }
-        }
+        //     &:nth-child(1){
+        //         z-index: 2;
+        //         left: 6%;
+        //     }
+        // }
         
     }
 

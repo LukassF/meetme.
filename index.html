@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css"/>
-    <script type="module" src="main.js"></script>
-    <script src="index.js"></script>
+    <script type="module" src="three_js.js"></script>
+    <script src="global.js"></script>
     <script src="https://kit.fontawesome.com/f83777b1f5.js" crossorigin="anonymous"></script>
     <title>Meet me!</title>
 </head>
@@ -22,11 +22,11 @@
           </span>
 
           <ul id="nav-list">
-              <li class="active"  onclick="activePage(event)">Home</li>
-              <li  onclick="activePage(event)">About</li>
-              <li  onclick="activePage(event)">Skills</li>
-              <li  onclick="activePage(event)">Projects</li>
-              <li  onclick="activePage(event)">Contact</li>
+              <a href="index.html"><li class="active" onclick="activePage(event)">Home</li></a>
+              <a href="about.html"><li  onclick="activePage(event)">About</li></a>
+              <a href="skills.html"><li  onclick="activePage(event)">Skills</li></a>
+              <a href="projects.html"><li  onclick="activePage(event)">Projects</li></a>
+              <a href="contact.html"><li  onclick="activePage(event)">Contact</li></a>
           </ul>
       </nav>
 
@@ -36,7 +36,10 @@
                   <h1>Hello to you!</h1>
                   <h2>I'm Łukasz, a <span class="type-auto"></span></h2>
 
-                  <p>Want to get to know me better? Check out my <em><b>About page</b></em> for more details. And after you do so, hit me up! I will be more than delighted to talk!</p>
+                  <p>Want to get to know me better? Check out my <em><b><a href="about.html">About page</a></b></em> 
+                    for more details. And after you do so (or before), text me! I will be delighted to talk!
+                    Also, if that's easier, you can send me a direct email via the <em><b><a href="contact.html">Contact page</a></b></em>.
+                  </p>
 
                   <div id="social-links">
                       <ul>
@@ -47,6 +50,7 @@
                           <li><i class="fa fa-instagram"></i></li>
                       </ul>
                   </div>
+
               </div>
           </article>
           
@@ -62,7 +66,7 @@
       <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
       <script>
           var typed = new Typed('.type-auto', {
-              strings: ['Frontend Developer.', 'Technology Student.', 'Hard Worker.','Sports Maniac!'],
+              strings: ['Frontend Developer.', 'Technology Student.', 'Hard Worker.','Sports Enthusiast!'],
               typeSpeed: 100,
               backSpeed: 70,
               loop:true
