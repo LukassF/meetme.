@@ -1,4 +1,5 @@
 #skills-main{
+    cursor: default;
     width: 100vw;
     // height:calc(100vh - 80px);
     // overflow-x: hidden;
@@ -50,12 +51,19 @@
 
             &:hover{
                 transform: scale(1.05);
+
+                .skill-card-content img{
+                    filter: grayscale(0%);
+                }
             }
+  
+            
             @media screen and (max-width: 700px) {
                 width:180px;
+                padding: 2px;
             }
             @media screen and (max-width: 450px) {
-                width:120px;
+                width:130px;
              }
 
             .skill-card-content{
@@ -71,12 +79,21 @@
                 @media screen and (max-width: 450px) {
                     font-size: 0.9em;
                  }
+
+                 img{
+                    transition: all 0.5s;
+                    filter: grayscale(30%);
+
+                    @media all and (hover:none){
+                        filter: grayscale(0%);
+                    }
+                 }
             }
 
             &::before{
                 background: radial-gradient(
-                    800px circle at var(--mouse-x) var(--mouse-y),
-                    rgba(255,255,255,0.06),
+                    500px circle at var(--mouse-x) var(--mouse-y),
+                    rgba(255,255,255,0.08),
                     transparent 40%
                 );
                 border-radius: 15px;
@@ -92,8 +109,8 @@
             }
             &::after{
                 background: radial-gradient(
-                    400px circle at var(--mouse-x) var(--mouse-y),
-                    rgba(255,255,255,0.4),
+                    300px circle at var(--mouse-x) var(--mouse-y),
+                    rgba(255,255,255,0.9),
                     transparent 40%
                 );
                 border-radius: 15px;

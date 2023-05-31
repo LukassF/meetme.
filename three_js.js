@@ -61,12 +61,19 @@ loader.load('./assets/earth.glb', function(gltf){
 
 window.addEventListener('resize', () => {
   if(window.innerHeight<600) return
-    sizes.width = window.innerWidth/2
-    sizes.height = window.innerHeight-80
+    sizes.width = window.innerWidth > 1120 ? window.innerWidth/2 : window.innerWidth
+    sizes.height = window.innerWidth > 1120 ? window.innerHeight-80 : window.innerHeight-270
     camera.updateProjectionMatrix()
     camera.aspect = sizes.width/sizes.height
     renderer.setSize(sizes.width, sizes.height)
 })
+setInterval(() => {
+  sizes.width = window.innerWidth > 1120 ? window.innerWidth/2 : window.innerWidth
+    sizes.height = window.innerWidth > 1120 ? window.innerHeight-80 : window.innerHeight-270
+    camera.updateProjectionMatrix()
+    camera.aspect = sizes.width/sizes.height
+    renderer.setSize(sizes.width, sizes.height)
+},10)
 
 const loop = () => {
     controls.update()

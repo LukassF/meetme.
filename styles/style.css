@@ -191,7 +191,8 @@ main {
 }
 @media screen and (max-width: 1120px) {
   main {
-    grid-template-columns: 1fr 0fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
   }
 }
 main article {
@@ -208,6 +209,11 @@ main #text-home {
   align-items: flex-end;
   max-width: 100vw;
 }
+@media screen and (max-width: 1120px) {
+  main #text-home {
+    margin-top: 100px;
+  }
+}
 main #text-home #text-box {
   width: 80%;
   height: 90%;
@@ -215,6 +221,7 @@ main #text-home #text-box {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  cursor: default;
 }
 @media screen and (max-width: 1320px) {
   main #text-home #text-box {
@@ -282,7 +289,7 @@ main #text-home #text-box #social-links ul li {
   place-content: center;
   border-radius: 50%;
   cursor: pointer;
-  transition: color 0.3s, border-color 0.3s, box-shadow 0s;
+  transition: color 0.5s, border-color 0.5s, box-shadow 0.5s;
 }
 @media screen and (max-width: 650px) {
   main #text-home #text-box #social-links ul li {
@@ -292,18 +299,22 @@ main #text-home #text-box #social-links ul li {
 main #text-home #text-box #social-links ul li:hover {
   border-color: rgb(13, 211, 168);
   color: rgb(13, 211, 168);
-  box-shadow: 0px 0px 5px rgb(13, 211, 168);
+  box-shadow: 0px 0px 10px rgb(13, 211, 168);
 }
 main #images-home {
   overflow: hidden;
 }
+main #images-home canvas {
+  cursor: grab;
+}
 @media screen and (max-width: 1120px) {
   main #images-home canvas {
-    display: none;
+    margin-top: -50px;
   }
 }
 
 #skills-main {
+  cursor: default;
   width: 100vw;
   position: relative;
   padding: 20px 0px;
@@ -357,14 +368,18 @@ main #images-home {
 #skills-main section#skills-container .skill-card:hover {
   transform: scale(1.05);
 }
+#skills-main section#skills-container .skill-card:hover .skill-card-content img {
+  filter: grayscale(0%);
+}
 @media screen and (max-width: 700px) {
   #skills-main section#skills-container .skill-card {
     width: 180px;
+    padding: 2px;
   }
 }
 @media screen and (max-width: 450px) {
   #skills-main section#skills-container .skill-card {
-    width: 120px;
+    width: 130px;
   }
 }
 #skills-main section#skills-container .skill-card .skill-card-content {
@@ -386,8 +401,17 @@ main #images-home {
     font-size: 0.9em;
   }
 }
+#skills-main section#skills-container .skill-card .skill-card-content img {
+  transition: all 0.5s;
+  filter: grayscale(30%);
+}
+@media all and (hover: none) {
+  #skills-main section#skills-container .skill-card .skill-card-content img {
+    filter: grayscale(0%);
+  }
+}
 #skills-main section#skills-container .skill-card::before {
-  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.06), transparent 40%);
+  background: radial-gradient(500px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.08), transparent 40%);
   border-radius: 15px;
   content: "";
   position: absolute;
@@ -400,7 +424,7 @@ main #images-home {
   transition: opacity 500ms;
 }
 #skills-main section#skills-container .skill-card::after {
-  background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.4), transparent 40%);
+  background: radial-gradient(300px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.9), transparent 40%);
   border-radius: 15px;
   content: "";
   position: absolute;
