@@ -655,6 +655,44 @@ main#about-main #about-content div span progress::-moz-progress-bar {
   width: 100%;
 }
 
+main#contact-main {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  top: 0px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+main#contact-main section {
+  height: 90%;
+  position: relative;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+main#contact-main #contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+main#contact-main #contact-form form {
+  width: 80%;
+  height: 85%;
+  background-color: rgba(13, 211, 168, 0.4);
+  border-radius: 10px;
+}
+main#contact-main #contact-model {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 @font-face {
   font-family: LexendDeca-Bold;
   src: url("./fonts/static/LexendDeca-Bold.ttf");

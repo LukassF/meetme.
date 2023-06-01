@@ -1,0 +1,33 @@
+main#contact-main{
+    width:100vw;
+    min-height:100vh;
+    position: relative;
+    top:0px;
+    margin:0;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    section{
+        height:90%;
+        position: relative;
+        // background-color: yellow;
+        margin-top: 70px;
+        @include flex(column,center,flex-end);
+    }
+
+    #contact-form{
+        @include flex(column,center,flex-end);
+        form{
+            width:80%;
+            height:85%;
+            background-color: rgba(13, 211, 168,0.4);
+            border-radius: 10px;
+        }
+    }
+
+    #contact-model{
+        overflow: hidden;
+        @include flex(row, flex-start,center);
+
+    }
+}
