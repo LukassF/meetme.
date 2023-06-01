@@ -20,3 +20,13 @@ const hoverEffect = e =>{
       card.style.setProperty("--mouse-y",`${y}px`);
   }
 }
+
+window.onload = () => {
+  const containerSkills = document.getElementById('skills-container') ? document.getElementById('skills-container') : ''
+  const containerAbout = document.getElementById('about-main') ? document.getElementById('about-main') : ''
+  if(containerSkills !== '')
+    containerSkills.classList.add('animate')
+  if(containerAbout !== '')
+    containerAbout.classList.add('animate')
+}
+

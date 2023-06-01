@@ -11,6 +11,7 @@
     h1{
         font-family: LexendDeca-Bold;
         font-size: 3em;
+        z-index: 2;
 
         @media screen and (max-width: 600px) {
            font-size: 2em;
@@ -31,6 +32,22 @@
         @include flex(row,center,center);
         gap:20px;
         flex-wrap: wrap;
+        transform: translateY(-50%);
+        opacity:0;
+        transition: transform 0.5s, opacity 0.8s;
+        z-index: 0;
+        @media screen and (max-width:1135px) {
+            transform: translateX(-50%);
+        }
+
+        &.animate{
+            transform: translateY(-0%);
+            opacity:1;
+            @media screen and (max-width:1135px) {
+                transform: translateX(0%);
+            }
+
+        }
 
         &:not(:hover) *.skill-card::after, .skill-card::before{
             opacity: 0;
@@ -41,7 +58,11 @@
             flex-shrink: 0;
             width:230px;
             aspect-ratio: 1/1;
-            background-color: rgba(255, 255, 255,0.15);
+            background-color: rgba(255, 255, 255,0);
+
+            @media all and (hover:none) {
+                background-color: rgba(255, 255, 255,0.15);
+            }
             border-radius: 20px;
             padding: 5px;
             transition: transform 0.5s;
@@ -90,7 +111,7 @@
             &::before{
                 background: radial-gradient(
                     500px circle at var(--mouse-x) var(--mouse-y),
-                    rgba(255,255,255,0.08),
+                    rgba(255,255,255,0.1),
                     transparent 40%
                 );
                 border-radius: 15px;
@@ -106,8 +127,8 @@
             }
             &::after{
                 background: radial-gradient(
-                    300px circle at var(--mouse-x) var(--mouse-y),
-                    rgba(255,255,255,0.9),
+                    500px circle at var(--mouse-x) var(--mouse-y),
+                    rgba(255,255,255,0.4),
                     transparent 40%
                 );
                 border-radius: 15px;

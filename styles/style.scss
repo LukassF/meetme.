@@ -1,6 +1,7 @@
 @import './nav-home';
 @import './home';
 @import './skills';
+@import './about';
 
 @mixin flex($direction, $justify, $align){
     display:flex;

@@ -1,0 +1,172 @@
+$aboutColor : #ED008E;
+
+main#about-main{
+    width:100vw;
+    height:calc(100vh - 80px);
+    position: relative;
+    top:80px;
+    // background-color: red;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+
+    @media screen and (max-width:1120px){
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'top'
+        'bottom'
+        ;
+    }
+
+    &.animate{
+        #about-image{
+            transform: translateX(0%);
+            opacity: 1;
+        }
+        #about-content{
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    }
+
+    #about-image{
+        // background-color: blue;
+        @include flex(column,flex-start,center);
+        padding: 30px;
+        height:calc(100% - 60px);
+        width:calc(100% - 100px);
+        opacity:0;
+        transform: translateX(-100%);
+        transition: transform 0.5s, opacity 0.8s;
+        transition-delay: 0.2s;
+        @media screen and (max-width:1120px) {
+            width:calc(100% - 60px);
+        }
+        // position: relative;
+        div{
+            position: relative;
+            width:100%;
+            min-height:500px;
+            @media screen and (max-width:1120px) {
+                display: none;
+            }
+            img{
+                position: absolute;
+                top:50%;
+                left:55%;
+                transform: translate(-50%,-50%);
+
+                &:nth-child(1){
+                    z-index: 2;
+                    left: 50%;
+                }
+            }
+        }
+        
+        a{
+           width:70%;
+           background-color: $aboutColor;
+           border-radius: 15px;
+           height: 40px;
+           line-height: 40px;
+           text-align: center;
+           font-size: 1.2em;
+           text-decoration: none;
+           color:white;
+           transition: all 0.3s;
+
+           &:hover{
+                box-shadow: 0px 0px 15px $aboutColor;
+                background-color: white;
+                color:$aboutColor;
+           }
+
+           @media screen and (max-width: 650px) {
+            width: 90%;
+        }
+        }
+    }
+
+    #about-content{
+        width:calc(100% - 100px);
+        height:calc(100% - 100px);
+        padding: 50px;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: transform 0.5s, opacity 0.8s;
+
+        @media screen and (max-width:1120px) {
+            grid-area: top;
+        }
+        @media screen and (max-width: 700px) {
+            padding: 50px 30px;
+            width:calc(100% - 60px);
+         }
+        h1{
+            // margin-top: 100px;
+            font-size: 3em;
+            font-family: LexendDeca-Bold;
+
+            @media screen and (max-width: 800px) {
+                font-size: 2.5em;
+            }
+
+            span{
+                color:$aboutColor;
+            }
+        }
+
+        p{
+            font-size: 1.1em;
+            word-break: break-all;
+
+            @media screen and (max-width: 800px) {
+                font-size: 0.9em;
+            }
+            @media screen and (max-width: 600px) {
+                font-size: 0.8em;
+            }
+        }
+
+        div{
+            margin-top: 70px;
+            @media screen and (max-width: 1500px) {
+               margin-top: 40px;
+            }
+            width:calc(100% - 60px);
+
+            border-radius: 15px;
+            background-color: rgba(255,255,255,0.1);
+            @include flex(column,center,center);
+            gap:25px;
+            padding: 30px;
+
+            span{
+                width: 100%;
+                @include flex(row, space-between, center);
+                font-size: 1.3em;
+                @media screen and (max-width: 500px) {
+                    font-size: 1em;
+                 }
+
+                progress{
+                    background-color: grey;
+                    border-radius: 500px;
+                    width:70%;
+                    border: none;
+                    height:10px;
+
+                    @media screen and (max-width: 650px) {
+                        width: 50%;
+                    }
+                }
+        
+                progress::-moz-progress-bar{
+                    background: $aboutColor;
+                    border-radius: 500px;
+                    width:100%;
+                }
+            }
+        }
+    }
+
+}

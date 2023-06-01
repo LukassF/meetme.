@@ -24,6 +24,7 @@ scene.add(camera)
 const canvas = document.querySelector('.webgl')
 const renderer = new THREE.WebGLRenderer({canvas, alpha:true})
 renderer.setSize(sizes.width,sizes.height)
+renderer.setPixelRatio(2)
 renderer.render(scene,camera)
 
 const controls = new OrbitControls(camera, canvas)
@@ -51,10 +52,11 @@ loadingManager.onLoad = () => {
   loaderDiv.style.display = 'none'
   navbar.style.visibility = "visible"
   mainHome.style.visibility = "visible"
+  mainHome.classList.add('animate')
 }
 
 let loader = new GLTFLoader(loadingManager)
-loader.load('./assets/earth.glb', function(gltf){
+loader.load('./assets/earth.glb', gltf => {
     scene.add(gltf.scene)
 })
 
@@ -68,6 +70,7 @@ window.addEventListener('resize', () => {
     renderer.setSize(sizes.width, sizes.height)
 })
 setInterval(() => {
+  if(window.innerHeight<600) return
   sizes.width = window.innerWidth > 1120 ? window.innerWidth/2 : window.innerWidth
     sizes.height = window.innerWidth > 1120 ? window.innerHeight-80 : window.innerHeight-270
     camera.updateProjectionMatrix()
