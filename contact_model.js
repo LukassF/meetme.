@@ -11,6 +11,26 @@ const sizes = {
     width: 190,
     height:window.innerHeight-80
 }
+const loadingManager = new THREE.LoadingManager()
+const progressBar = document.querySelector('#progress-bar')
+const loaderDiv = document.querySelector('.loader')
+const navbar = document.querySelector('#nav-home')
+const mainContact = document.querySelector('#contact-main')
+
+loadingManager.onProgress = (url,loaded,total) => {
+    progressBar.value = (loaded/total)*250
+  }
+loadingManager.onLoad = () => {
+    loaderDiv.style.display = 'none'
+    navbar.style.visibility = "visible"
+    mainContact.style.visibility = "visible"
+    mainContact.classList.add('animate')
+}
+window.onload = () => {
+    navbar.style.visibility = "hidden"
+    mainContact.style.visibility = "hidden"
+}
+
 
 const hemiLight = new THREE.HemisphereLight( 0xffffff, 0x444444, 1.5 );
 hemiLight.position.set( 0, 200, 0 );
@@ -38,7 +58,7 @@ renderer.setSize(sizes.width,sizes.height)
 renderer.setPixelRatio(2)
 renderer.render(scene,camera)
 
-const loader = new FBXLoader()
+const loader = new FBXLoader(loadingManager)
 loader.load('./assets/Leaning On A Wall.fbx', fbx => {
     fbx.scale.setScalar(0.06)
     fbx.position.y = 0.2

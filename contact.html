@@ -11,6 +11,10 @@
     <title>Let's talk!</title>
 </head>
 <body>
+    <div class="loader">
+        <label for="progress-bar">Loading assets..</label>
+        <progress id="progress-bar" value="0" max="100"></progress>
+    </div>
     <nav id="nav-home">
         <div>meetme.</div>
         
@@ -28,7 +32,27 @@
     </nav>
     <main id="contact-main">
         <section id="contact-form">
-            <form></form>
+            <form>
+                <h1>Send me a&nbsp;<span>message!</span></h1>
+                <div>
+                    <input type="text" placeholder="Your Name" />
+                    <input type="text" placeholder="Your Surname" />
+                    <input type="email" placeholder="Your Email" />
+                    <button>Send!</button>
+
+                    <span>
+                        In case something malfunctions.
+                        <a><i class="fa fa-phone"></i>+48 798 767 199 (Poland)</a>
+                        <a><i class="fa fa-envelope"></i>szkulkerolf@gmail.com</a>
+                    </span>
+
+                    
+                </div>
+                <div>
+                    <input type="text" placeholder="Topic" />
+                    <textarea placeholder="Your Message"></textarea>
+                </div>
+            </form>
         </section>
         <section id="contact-model">
             <canvas id="contact-canvas"></canvas>

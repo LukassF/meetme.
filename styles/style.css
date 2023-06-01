@@ -595,7 +595,6 @@ main#about-main #about-content h1 span {
 }
 main#about-main #about-content p {
   font-size: 1.1em;
-  word-break: break-all;
 }
 @media screen and (max-width: 800px) {
   main#about-main #about-content p {
@@ -657,12 +656,17 @@ main#about-main #about-content div span progress::-moz-progress-bar {
 
 main#contact-main {
   width: 100vw;
-  min-height: 100vh;
+  height: auto;
   position: relative;
   top: 0px;
   margin: 0;
   display: grid;
   grid-template-columns: 2fr 1fr;
+}
+@media screen and (max-width: 1120px) {
+  main#contact-main {
+    grid-template-columns: 1fr;
+  }
 }
 main#contact-main section {
   height: 90%;
@@ -679,11 +683,125 @@ main#contact-main #contact-form {
   justify-content: center;
   align-items: flex-end;
 }
+@media screen and (max-width: 1120px) {
+  main#contact-main #contact-form {
+    align-items: center;
+  }
+}
 main#contact-main #contact-form form {
   width: 80%;
   height: 85%;
-  background-color: rgba(13, 211, 168, 0.4);
+  background-color: rgb(19, 19, 19);
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 10% 90%;
+  grid-template-areas: "header header" "content1 content2";
+}
+main#contact-main #contact-form form h1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  grid-area: header;
+  min-width: 100%;
+  font-size: 2.5em;
+  font-family: LexendDeca-Bold;
+  margin-top: 35px;
+}
+main#contact-main #contact-form form h1 span {
+  color: rgb(13, 211, 168);
+}
+main#contact-main #contact-form form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: calc(100% - 60px);
+  min-width: calc(100% - 60px);
+  gap: 20px;
+  padding: 30px;
+}
+main#contact-main #contact-form form div input, main#contact-main #contact-form form div textarea {
+  width: 100%;
+  height: 50px;
   border-radius: 10px;
+  border: solid rgb(187, 184, 184) 2px;
+  padding-left: 10px;
+  font-size: 1.2em;
+  color: rgb(255, 255, 255);
+  outline: none;
+  background-color: rgb(0, 0, 0);
+}
+main#contact-main #contact-form form div textarea {
+  resize: none;
+  padding-top: 10px;
+  min-height: calc(100% - 90px);
+}
+main#contact-main #contact-form form div button {
+  width: 103%;
+  margin-top: 55px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(13, 211, 168);
+  font-size: 1.2em;
+  color: white;
+  transition: all 0.3s;
+}
+@media screen and (max-width: 1500px) {
+  main#contact-main #contact-form form div button {
+    margin-top: 30px;
+  }
+}
+main#contact-main #contact-form form div button:hover {
+  background-color: white;
+  color: rgb(13, 211, 168);
+}
+main#contact-main #contact-form form div span {
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  min-width: calc(100% - 40px);
+  padding: 20px;
+  border-radius: 10px;
+  border: solid white 2px;
+}
+@media screen and (max-width: 1500px) {
+  main#contact-main #contact-form form div span {
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 1300px) {
+  main#contact-main #contact-form form div span {
+    font-size: 0.75em;
+  }
+}
+@media screen and (max-width: 1120px) {
+  main#contact-main #contact-form form div span {
+    font-size: 0.9em;
+  }
+}
+main#contact-main #contact-form form div span a {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(151, 148, 148);
+}
+@media screen and (max-width: 1370px) {
+  main#contact-main #contact-form form div span a {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1120px) {
+  main#contact-main #contact-form form div span a {
+    width: 80%;
+  }
 }
 main#contact-main #contact-model {
   overflow: hidden;
@@ -691,6 +809,11 @@ main#contact-main #contact-model {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+}
+@media screen and (max-width: 1120px) {
+  main#contact-main #contact-model {
+    display: none;
+  }
 }
 
 @font-face {
