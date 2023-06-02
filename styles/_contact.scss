@@ -1,6 +1,7 @@
 
 
 main#contact-main{
+    visibility: hidden;
     // background-color: red;
     width:100vw;
     height:auto;
@@ -107,6 +108,13 @@ main#contact-main{
                     padding: 20px;
                     border-radius: 10px;
                     border: solid white 2px;
+
+                    .reverse{
+                        padding: 0;
+                        margin: 0;
+                        unicode-bidi: bidi-override;
+	                    direction: rtl;
+                    }
                     
                     @media screen and (max-width:1500px) {
                         font-size: 0.9em;

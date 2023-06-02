@@ -16,7 +16,10 @@ const progressBar = document.querySelector('#progress-bar')
 const loaderDiv = document.querySelector('.loader')
 const navbar = document.querySelector('#nav-home')
 const mainContact = document.querySelector('#contact-main')
-
+window.onload = () => {
+    navbar.style.visibility = "hidden"
+    // mainContact.style.visibility = "hidden"
+}
 loadingManager.onProgress = (url,loaded,total) => {
     progressBar.value = (loaded/total)*250
   }
@@ -25,10 +28,6 @@ loadingManager.onLoad = () => {
     navbar.style.visibility = "visible"
     mainContact.style.visibility = "visible"
     mainContact.classList.add('animate')
-}
-window.onload = () => {
-    navbar.style.visibility = "hidden"
-    mainContact.style.visibility = "hidden"
 }
 
 

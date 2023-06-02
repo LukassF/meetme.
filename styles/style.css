@@ -655,6 +655,7 @@ main#about-main #about-content div span progress::-moz-progress-bar {
 }
 
 main#contact-main {
+  visibility: hidden;
   width: 100vw;
   height: auto;
   position: relative;
@@ -769,6 +770,12 @@ main#contact-main #contact-form form div span {
   padding: 20px;
   border-radius: 10px;
   border: solid white 2px;
+}
+main#contact-main #contact-form form div span .reverse {
+  padding: 0;
+  margin: 0;
+  unicode-bidi: bidi-override;
+  direction: rtl;
 }
 @media screen and (max-width: 1500px) {
   main#contact-main #contact-form form div span {
