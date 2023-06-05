@@ -2,7 +2,6 @@
 
 main#contact-main{
     visibility: hidden;
-    // background-color: red;
     width:100vw;
     height:auto;
     position: relative;
@@ -10,9 +9,16 @@ main#contact-main{
     margin:0;
     display: grid;
     grid-template-columns: 2fr 1fr;
+    opacity:0;
+    transition: opacity 0.5s;
+    transition-delay: 0.5s;
     @media screen and (max-width:1120px) {
         grid-template-columns: 1fr;
      }
+    &.animate{
+        opacity:1;
+    }
+    
 
     section{
         height:90%;
@@ -31,6 +37,7 @@ main#contact-main{
             width:80%;
             height:85%;
             background-color: rgb(19, 19, 19);
+            transition: box-shadow 0.8s;
             // border: solid rgb(13, 211, 168) 4px;
             // box-shadow: 0px 0px 10px rgb(13, 211, 168);
             border-radius: 15px;
@@ -41,6 +48,20 @@ main#contact-main{
             'header header'
             'content1 content2'
             ;
+            @media screen and (max-width:830px) {
+                grid-template-columns: 1fr;
+                grid-template-rows: 10% 40% 50%;
+                grid-template-areas: 
+                'header'
+                'content1'
+                'content2'
+                ;
+                background-color: transparent;
+                // padding-bottom: 200px;
+             }
+             @media screen and (max-width:730px) {
+               width: 95%;
+             }
 
             h1{
                 @include flex(row,center,center);
@@ -52,6 +73,12 @@ main#contact-main{
 
                 span{
                     color:rgb(13, 211, 168);
+                }
+                @media screen and (max-width:830px) {
+                    font-size: 2em;
+                }
+                @media screen and (max-width:500px) {
+                    font-size: 1.7em;
                 }
             }
 
@@ -65,7 +92,7 @@ main#contact-main{
 
                 input{
                     width:100%;
-                    height:50px;
+                    min-height:50px;
                     border-radius: 10px;
                     border: solid rgb(187, 184, 184) 2px;
                     padding-left: 10px;
@@ -73,6 +100,12 @@ main#contact-main{
                     color:rgb(255, 255, 255);
                     outline: none;
                     background-color: rgb(0, 0, 0);
+
+                    &:focus{
+                        border-color: white;
+                        box-shadow: 0px 0px 5px white;
+                    }
+
                 }
                 textarea{
                     resize: none;
@@ -82,7 +115,7 @@ main#contact-main{
                 }
                 button{
                     width:103%;
-                    margin-top: 55px;
+                    margin-top: 50px;
                     height:50px;
                     border-radius: 10px;
                     border: none;
@@ -91,9 +124,7 @@ main#contact-main{
                     color:white;
                     transition: all 0.3s;
 
-                    @media screen and (max-width:1500px) {
-                        margin-top: 30px;
-                    }
+                   
 
                     &:hover{
                         background-color: white;
@@ -108,14 +139,6 @@ main#contact-main{
                     padding: 20px;
                     border-radius: 10px;
                     border: solid white 2px;
-
-                    .reverse{
-                        padding: 0;
-                        margin: 0;
-                        unicode-bidi: bidi-override;
-	                    direction: rtl;
-                    }
-                    
                     @media screen and (max-width:1500px) {
                         font-size: 0.9em;
                     }
@@ -125,6 +148,9 @@ main#contact-main{
                     @media screen and (max-width:1120px) {
                         font-size: 0.9em;
                      }
+                     @media screen and (max-width:830px) {
+                        font-size: 1em;
+                    }
 
                     a{
                         width:70%;
@@ -137,6 +163,55 @@ main#contact-main{
                         @media screen and (max-width:1120px) {
                             width:80%;
                          }
+                         @media screen and (max-width:830px) {
+                            justify-content: center;
+                            gap:50px;
+                        }
+
+                         .reverse{
+                            padding: 0;
+                            margin: 0;
+                            unicode-bidi: bidi-override;
+                            direction: rtl;
+                            @media screen and (max-width:850px){
+                                font-size: 0.8em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #first{
+                padding-bottom: 60px;
+                button{
+                    @media screen and (max-width:830px) {
+                        display: none;
+                    }
+                    @media screen and (max-width:1120px) {
+                        margin-top: 0px;
+                    }
+                }
+                span{
+                    @media screen and (max-width:830px) {
+                        display: none;
+                    }
+                }
+            }
+            
+            #second{
+                button{
+                    @media screen and (min-width:830px) {
+                        display: none;
+                    }
+                }
+                span{
+                    @media screen and (min-width:830px) {
+                        display: none;
+                    }
+                }
+                input{
+                    @media screen and (max-width:830px) {
+                        margin-top: -35px;
                     }
                 }
             }

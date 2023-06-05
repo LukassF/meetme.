@@ -480,6 +480,22 @@ main #images-home canvas {
   opacity: 1;
 }
 
+@keyframes bop {
+  0% {
+    transform: rotateZ(-5deg);
+  }
+  100% {
+    transform: rotateZ(10deg);
+  }
+}
+@keyframes type {
+  0% {
+    transform: rotateZ(-5deg);
+  }
+  100% {
+    transform: rotateZ(5deg);
+  }
+}
 main#about-main {
   width: 100vw;
   height: calc(100vh - 80px);
@@ -530,15 +546,26 @@ main#about-main #about-image div {
     display: none;
   }
 }
-main#about-main #about-image div img {
+main#about-main #about-image div svg {
   position: absolute;
   top: 50%;
   left: 55%;
   transform: translate(-50%, -50%);
 }
-main#about-main #about-image div img:nth-child(1) {
-  z-index: 2;
-  left: 50%;
+main#about-main #about-image div svg #head {
+  animation: bop 1.5s infinite linear alternate;
+  transform-box: fill-box;
+  transform-origin: bottom;
+}
+main#about-main #about-image div svg #right-arm {
+  animation: type 1s infinite linear alternate;
+  transform-box: fill-box;
+  transform-origin: top;
+}
+main#about-main #about-image div svg #left-arm {
+  animation: type 1s infinite ease-in alternate-reverse;
+  transform-box: fill-box;
+  transform-origin: top;
 }
 main#about-main #about-image a {
   width: 70%;
@@ -663,11 +690,17 @@ main#contact-main {
   margin: 0;
   display: grid;
   grid-template-columns: 2fr 1fr;
+  opacity: 0;
+  transition: opacity 0.5s;
+  transition-delay: 0.5s;
 }
 @media screen and (max-width: 1120px) {
   main#contact-main {
     grid-template-columns: 1fr;
   }
+}
+main#contact-main.animate {
+  opacity: 1;
 }
 main#contact-main section {
   height: 90%;
@@ -693,11 +726,25 @@ main#contact-main #contact-form form {
   width: 80%;
   height: 85%;
   background-color: rgb(19, 19, 19);
+  transition: box-shadow 0.8s;
   border-radius: 15px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 10% 90%;
   grid-template-areas: "header header" "content1 content2";
+}
+@media screen and (max-width: 830px) {
+  main#contact-main #contact-form form {
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 40% 50%;
+    grid-template-areas: "header" "content1" "content2";
+    background-color: transparent;
+  }
+}
+@media screen and (max-width: 730px) {
+  main#contact-main #contact-form form {
+    width: 95%;
+  }
 }
 main#contact-main #contact-form form h1 {
   display: flex;
@@ -713,6 +760,16 @@ main#contact-main #contact-form form h1 {
 main#contact-main #contact-form form h1 span {
   color: rgb(13, 211, 168);
 }
+@media screen and (max-width: 830px) {
+  main#contact-main #contact-form form h1 {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 500px) {
+  main#contact-main #contact-form form h1 {
+    font-size: 1.7em;
+  }
+}
 main#contact-main #contact-form form div {
   display: flex;
   flex-direction: column;
@@ -725,7 +782,7 @@ main#contact-main #contact-form form div {
 }
 main#contact-main #contact-form form div input, main#contact-main #contact-form form div textarea {
   width: 100%;
-  height: 50px;
+  min-height: 50px;
   border-radius: 10px;
   border: solid rgb(187, 184, 184) 2px;
   padding-left: 10px;
@@ -734,6 +791,10 @@ main#contact-main #contact-form form div input, main#contact-main #contact-form 
   outline: none;
   background-color: rgb(0, 0, 0);
 }
+main#contact-main #contact-form form div input:focus, main#contact-main #contact-form form div textarea:focus {
+  border-color: white;
+  box-shadow: 0px 0px 5px white;
+}
 main#contact-main #contact-form form div textarea {
   resize: none;
   padding-top: 10px;
@@ -741,7 +802,7 @@ main#contact-main #contact-form form div textarea {
 }
 main#contact-main #contact-form form div button {
   width: 103%;
-  margin-top: 55px;
+  margin-top: 50px;
   height: 50px;
   border-radius: 10px;
   border: none;
@@ -749,11 +810,6 @@ main#contact-main #contact-form form div button {
   font-size: 1.2em;
   color: white;
   transition: all 0.3s;
-}
-@media screen and (max-width: 1500px) {
-  main#contact-main #contact-form form div button {
-    margin-top: 30px;
-  }
 }
 main#contact-main #contact-form form div button:hover {
   background-color: white;
@@ -771,12 +827,6 @@ main#contact-main #contact-form form div span {
   border-radius: 10px;
   border: solid white 2px;
 }
-main#contact-main #contact-form form div span .reverse {
-  padding: 0;
-  margin: 0;
-  unicode-bidi: bidi-override;
-  direction: rtl;
-}
 @media screen and (max-width: 1500px) {
   main#contact-main #contact-form form div span {
     font-size: 0.9em;
@@ -790,6 +840,11 @@ main#contact-main #contact-form form div span .reverse {
 @media screen and (max-width: 1120px) {
   main#contact-main #contact-form form div span {
     font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 830px) {
+  main#contact-main #contact-form form div span {
+    font-size: 1em;
   }
 }
 main#contact-main #contact-form form div span a {
@@ -808,6 +863,56 @@ main#contact-main #contact-form form div span a {
 @media screen and (max-width: 1120px) {
   main#contact-main #contact-form form div span a {
     width: 80%;
+  }
+}
+@media screen and (max-width: 830px) {
+  main#contact-main #contact-form form div span a {
+    justify-content: center;
+    gap: 50px;
+  }
+}
+main#contact-main #contact-form form div span a .reverse {
+  padding: 0;
+  margin: 0;
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+@media screen and (max-width: 850px) {
+  main#contact-main #contact-form form div span a .reverse {
+    font-size: 0.8em;
+  }
+}
+main#contact-main #contact-form form #first {
+  padding-bottom: 60px;
+}
+@media screen and (max-width: 830px) {
+  main#contact-main #contact-form form #first button {
+    display: none;
+  }
+}
+@media screen and (max-width: 1120px) {
+  main#contact-main #contact-form form #first button {
+    margin-top: 0px;
+  }
+}
+@media screen and (max-width: 830px) {
+  main#contact-main #contact-form form #first span {
+    display: none;
+  }
+}
+@media screen and (min-width: 830px) {
+  main#contact-main #contact-form form #second button {
+    display: none;
+  }
+}
+@media screen and (min-width: 830px) {
+  main#contact-main #contact-form form #second span {
+    display: none;
+  }
+}
+@media screen and (max-width: 830px) {
+  main#contact-main #contact-form form #second input, main#contact-main #contact-form form #second div textarea, main#contact-main #contact-form form div #second textarea {
+    margin-top: -35px;
   }
 }
 main#contact-main #contact-model {

@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Eo_circle_green_white_letter-m.svg/2048px-Eo_circle_green_white_letter-m.svg.png"/>
     <link rel="stylesheet" href="./styles/style.css"/>
-    <script src="global.js"></script>
+   
     <script type="module" src="./contact_model.js"></script>
     <script src="https://kit.fontawesome.com/f83777b1f5.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>      
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("qWcpIJq0ZIk5s3goi");
+        })();
+    </script>
+     <script src="global.js"></script>
+
     <title>Let's talk!</title>
 </head>
 <body>
@@ -32,12 +43,12 @@
     </nav>
     <main id="contact-main">
         <section id="contact-form">
-            <form>
+            <form onsubmit="sendEmail(event)" id="form">
                 <h1>Send me a&nbsp;<span>message!</span></h1>
-                <div>
-                    <input type="text" placeholder="Your Name" />
-                    <input type="text" placeholder="Your Surname" />
-                    <input type="email" placeholder="Your Email" />
+                <div id="first">
+                    <input type="text" placeholder="Your Name" onblur="fillEmail('name', event)"/>
+                    <input type="text" placeholder="Your Surname" onblur="fillEmail('surname',event)"/>
+                    <input type="email" placeholder="Your Email" onblur="fillEmail('email', event)"/>
                     <button>Send!</button>
 
                     <span>
@@ -48,9 +59,17 @@
 
                     
                 </div>
-                <div>
-                    <input type="text" placeholder="Topic" />
-                    <textarea placeholder="Your Message"></textarea>
+                <div id="second">
+                    <input type="text" placeholder="Subject" onblur="fillEmail('subject', event)"/>
+                    <textarea placeholder="Your Message" onblur="fillEmail('message', event)" id="message-area"></textarea>
+
+                    <button>Send!</button>
+
+                    <span>
+                        In case something malfunctions.
+                        <a><i class="fa fa-phone"></i><p class="reverse">(dnaloP) 991 767 897 84+</p></a>
+                        <a><i class="fa fa-envelope"></i><p class="reverse">moc.liamg@floreklukzs</p></a>
+                    </span>
                 </div>
             </form>
         </section>
@@ -58,5 +77,71 @@
             <canvas id="contact-canvas"></canvas>
         </section>
     </main>
+
+    <script>
+        let fname='', lname='', email='', subject ='', message = ''
+        const inputs = document.getElementsByTagName('input')
+        const textarea = document.querySelector('#message-area')
+
+        const fillEmail = (arg, e) => {
+            switch(arg){
+                case 'name':
+                    fname = e.target.value
+                    break
+                case 'surname':
+                    lname = e.target.value
+                    break
+                case 'email':
+                    email = e.target.value
+                    break
+                case 'subject':
+                    subject = e.target.value
+                    break
+                case 'message':
+                    message = e.target.value
+                    break
+                default:
+                    return
+            }
+        }
+     
+        const sendEmail = (e) => {
+            e.preventDefault()
+            console.log('sent')
+            var params = {
+                name: fname,
+                surname: lname,
+                email: email,
+                subject: subject,
+                message: message
+            }
+            const serviceID = "service_jcox09c"
+            const templateID = 'template_ja7vq5m'
+
+            emailjs.send(serviceID, templateID, params)
+                .then(res => {
+                
+                    document.getElementById('form').style.boxShadow = '0px 0px 35px rgb(0, 255, 131)'
+                    setTimeout(() => {
+                        
+                        document.getElementById('form').style.boxShadow = 'none'
+                        for(let i = 0; i< inputs.length; i++){
+                            inputs[i].value = ''
+                        }
+                        textarea.value = ''
+
+                    },1500)
+
+                })
+                .catch(err => {
+                    document.getElementById('form').style.boxShadow = '0px 0px 35px red'
+
+                    setTimeout(() => {
+                        document.getElementById('form').style.boxShadow = 'none'
+                    },1500)
+                    console.log(err)
+                })
+        }
+    </script>
 </body>
 </html>

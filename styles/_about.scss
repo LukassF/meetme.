@@ -1,5 +1,20 @@
 $aboutColor : #ED008E;
-
+@keyframes bop{
+    0%{
+        transform: rotateZ(-5deg);
+    }
+    100%{
+        transform: rotateZ(10deg);
+    }
+}
+@keyframes type{
+    0%{
+        transform: rotateZ(-5deg);
+    }
+    100%{
+        transform: rotateZ(5deg);
+    }
+}
 main#about-main{
     width:100vw;
     height:calc(100vh - 80px);
@@ -49,15 +64,26 @@ main#about-main{
             @media screen and (max-width:1120px) {
                 display: none;
             }
-            img{
+            svg{
                 position: absolute;
                 top:50%;
                 left:55%;
                 transform: translate(-50%,-50%);
 
-                &:nth-child(1){
-                    z-index: 2;
-                    left: 50%;
+                #head{
+                    animation: bop 1.5s infinite linear alternate;
+                    transform-box: fill-box;
+                    transform-origin: bottom;
+                }
+                #right-arm{
+                    animation: type 1s infinite linear alternate;
+                    transform-box: fill-box;
+                    transform-origin: top;
+                }
+                #left-arm{
+                    animation: type 1s infinite ease-in alternate-reverse;
+                    transform-box: fill-box;
+                    transform-origin: top;
                 }
             }
         }

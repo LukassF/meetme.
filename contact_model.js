@@ -18,7 +18,6 @@ const navbar = document.querySelector('#nav-home')
 const mainContact = document.querySelector('#contact-main')
 window.onload = () => {
     navbar.style.visibility = "hidden"
-    // mainContact.style.visibility = "hidden"
 }
 loadingManager.onProgress = (url,loaded,total) => {
     progressBar.value = (loaded/total)*250
