@@ -181,7 +181,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   transition: all 0.2s;
 }
 
-main {
+#main-home {
   width: 100vw;
   min-height: calc(100vh - 120px);
   position: relative;
@@ -190,26 +190,26 @@ main {
   grid-template-columns: 1fr 1fr;
 }
 @media screen and (max-width: 1120px) {
-  main {
+  #main-home {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
 }
-main.animate #text-home {
+#main-home.animate #text-home {
   opacity: 1;
   transform: translateX(0%);
 }
-main.animate #images-home {
+#main-home.animate #images-home {
   opacity: 1;
   transform: translateX(0%);
 }
-main article {
+#main-home article {
   width: 100%;
   height: 90%;
   position: relative;
   margin-top: 50px;
 }
-main #text-home {
+#main-home #text-home {
   transform: translateX(-100%);
   transition: transform 0.5s, opacity 0.8s;
   font-family: LexendDeca-Bold;
@@ -220,11 +220,11 @@ main #text-home {
   max-width: 100vw;
 }
 @media screen and (max-width: 1120px) {
-  main #text-home {
+  #main-home #text-home {
     margin-top: 100px;
   }
 }
-main #text-home #text-box {
+#main-home #text-home #text-box {
   width: 80%;
   height: 90%;
   display: flex;
@@ -234,56 +234,56 @@ main #text-home #text-box {
   cursor: default;
 }
 @media screen and (max-width: 1320px) {
-  main #text-home #text-box {
+  #main-home #text-home #text-box {
     align-self: center;
   }
 }
-main #text-home #text-box h1 {
+#main-home #text-home #text-box h1 {
   font-size: 3em;
   font-family: LexendDeca-Bold;
 }
 @media screen and (max-width: 410px) {
-  main #text-home #text-box h1 {
+  #main-home #text-home #text-box h1 {
     font-size: 2.2em;
   }
 }
-main #text-home #text-box h2 {
+#main-home #text-home #text-box h2 {
   font-size: 2em;
 }
-main #text-home #text-box h2 span {
+#main-home #text-home #text-box h2 span {
   color: rgb(13, 211, 168);
 }
 @media screen and (max-width: 1520px) {
-  main #text-home #text-box h2 {
+  #main-home #text-home #text-box h2 {
     font-size: 1.6em;
   }
 }
 @media screen and (max-width: 1230px) {
-  main #text-home #text-box h2 {
+  #main-home #text-home #text-box h2 {
     font-size: 1.4em;
   }
 }
 @media screen and (max-width: 600px) {
-  main #text-home #text-box h2 {
+  #main-home #text-home #text-box h2 {
     font-size: 1.2em;
   }
 }
 @media screen and (max-width: 450px) {
-  main #text-home #text-box h2 {
+  #main-home #text-home #text-box h2 {
     font-size: 0.9em;
   }
 }
-main #text-home #text-box p a {
+#main-home #text-home #text-box p a {
   color: rgba(13, 211, 168, 0.6);
 }
-main #text-home #text-box p a:hover {
+#main-home #text-home #text-box p a:hover {
   color: rgb(13, 211, 168);
 }
-main #text-home #text-box #social-links {
+#main-home #text-home #text-box #social-links {
   margin-top: 50px;
   width: 100%;
 }
-main #text-home #text-box #social-links ul {
+#main-home #text-home #text-box #social-links ul {
   list-style: none;
   padding-left: 0;
   display: flex;
@@ -291,7 +291,7 @@ main #text-home #text-box #social-links ul {
   justify-content: space-between;
   align-items: center;
 }
-main #text-home #text-box #social-links ul li {
+#main-home #text-home #text-box #social-links ul li {
   font-size: 1.6em;
   width: 60px;
   border: solid grey 2px;
@@ -303,26 +303,26 @@ main #text-home #text-box #social-links ul li {
   transition: color 0.5s, border-color 0.5s, box-shadow 0.5s;
 }
 @media screen and (max-width: 650px) {
-  main #text-home #text-box #social-links ul li {
+  #main-home #text-home #text-box #social-links ul li {
     transform: scale(0.8);
   }
 }
-main #text-home #text-box #social-links ul li:hover {
+#main-home #text-home #text-box #social-links ul li:hover {
   border-color: rgb(13, 211, 168);
   color: rgb(13, 211, 168);
   box-shadow: 0px 0px 10px rgb(13, 211, 168);
 }
-main #images-home {
+#main-home #images-home {
   overflow: hidden;
   transform: translateX(100%);
   transition: transform 0.5s, opacity 0.8s;
   transition-delay: 0.1s;
 }
-main #images-home canvas {
+#main-home #images-home canvas {
   cursor: grab;
 }
 @media screen and (max-width: 1120px) {
-  main #images-home canvas {
+  #main-home #images-home canvas {
     margin-top: -50px;
   }
 }
@@ -496,7 +496,7 @@ main #images-home canvas {
     transform: rotateZ(5deg);
   }
 }
-main#about-main {
+#about-main {
   width: 100vw;
   height: calc(100vh - 80px);
   position: relative;
@@ -505,20 +505,20 @@ main#about-main {
   grid-template-columns: 2fr 3fr;
 }
 @media screen and (max-width: 1120px) {
-  main#about-main {
+  #about-main {
     grid-template-columns: 1fr;
     grid-template-areas: "top" "bottom";
   }
 }
-main#about-main.animate #about-image {
+#about-main.animate #about-image {
   transform: translateX(0%);
   opacity: 1;
 }
-main#about-main.animate #about-content {
+#about-main.animate #about-content {
   transform: translateX(0%);
   opacity: 1;
 }
-main#about-main #about-image {
+#about-main #about-image {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -532,44 +532,44 @@ main#about-main #about-image {
   transition-delay: 0.2s;
 }
 @media screen and (max-width: 1120px) {
-  main#about-main #about-image {
+  #about-main #about-image {
     width: calc(100% - 60px);
   }
 }
-main#about-main #about-image div {
+#about-main #about-image div {
   position: relative;
   width: 100%;
   min-height: 500px;
 }
 @media screen and (max-width: 1120px) {
-  main#about-main #about-image div {
+  #about-main #about-image div {
     display: none;
   }
 }
-main#about-main #about-image div svg {
+#about-main #about-image div svg {
   position: absolute;
   top: 50%;
   left: 55%;
   transform: translate(-50%, -50%);
 }
-main#about-main #about-image div svg #head {
+#about-main #about-image div svg #head {
   animation: bop 1.5s infinite linear alternate;
   transform-box: fill-box;
   transform-origin: bottom;
 }
-main#about-main #about-image div svg #right-arm {
+#about-main #about-image div svg #right-arm {
   animation: type 1s infinite linear alternate;
   transform-box: fill-box;
   transform-origin: top;
 }
-main#about-main #about-image div svg #left-arm {
+#about-main #about-image div svg #left-arm {
   animation: type 1s infinite ease-in alternate-reverse;
   transform-box: fill-box;
   transform-origin: top;
 }
-main#about-main #about-image a {
+#about-main #about-image a {
   width: 70%;
-  background-color: #ED008E;
+  background-color: rgb(13, 211, 168);
   border-radius: 15px;
   height: 40px;
   line-height: 40px;
@@ -579,17 +579,17 @@ main#about-main #about-image a {
   color: white;
   transition: all 0.3s;
 }
-main#about-main #about-image a:hover {
-  box-shadow: 0px 0px 15px #ED008E;
+#about-main #about-image a:hover {
+  box-shadow: 0px 0px 15px rgb(13, 211, 168);
   background-color: white;
-  color: #ED008E;
+  color: rgb(13, 211, 168);
 }
 @media screen and (max-width: 650px) {
-  main#about-main #about-image a {
+  #about-main #about-image a {
     width: 90%;
   }
 }
-main#about-main #about-content {
+#about-main #about-content {
   width: calc(100% - 100px);
   height: calc(100% - 100px);
   padding: 50px;
@@ -598,42 +598,42 @@ main#about-main #about-content {
   transition: transform 0.5s, opacity 0.8s;
 }
 @media screen and (max-width: 1120px) {
-  main#about-main #about-content {
+  #about-main #about-content {
     grid-area: top;
   }
 }
 @media screen and (max-width: 700px) {
-  main#about-main #about-content {
+  #about-main #about-content {
     padding: 50px 30px;
     width: calc(100% - 60px);
   }
 }
-main#about-main #about-content h1 {
+#about-main #about-content h1 {
   font-size: 3em;
   font-family: LexendDeca-Bold;
 }
 @media screen and (max-width: 800px) {
-  main#about-main #about-content h1 {
+  #about-main #about-content h1 {
     font-size: 2.5em;
   }
 }
-main#about-main #about-content h1 span {
-  color: #ED008E;
+#about-main #about-content h1 span {
+  color: rgb(13, 211, 168);
 }
-main#about-main #about-content p {
+#about-main #about-content p {
   font-size: 1.1em;
 }
 @media screen and (max-width: 800px) {
-  main#about-main #about-content p {
+  #about-main #about-content p {
     font-size: 0.9em;
   }
 }
 @media screen and (max-width: 600px) {
-  main#about-main #about-content p {
+  #about-main #about-content p {
     font-size: 0.8em;
   }
 }
-main#about-main #about-content div {
+#about-main #about-content div {
   margin-top: 70px;
   width: calc(100% - 60px);
   border-radius: 15px;
@@ -646,11 +646,11 @@ main#about-main #about-content div {
   padding: 30px;
 }
 @media screen and (max-width: 1500px) {
-  main#about-main #about-content div {
+  #about-main #about-content div {
     margin-top: 40px;
   }
 }
-main#about-main #about-content div span {
+#about-main #about-content div span {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -659,11 +659,11 @@ main#about-main #about-content div span {
   font-size: 1.3em;
 }
 @media screen and (max-width: 500px) {
-  main#about-main #about-content div span {
+  #about-main #about-content div span {
     font-size: 1em;
   }
 }
-main#about-main #about-content div span progress {
+#about-main #about-content div span progress {
   background-color: grey;
   border-radius: 500px;
   width: 70%;
@@ -671,12 +671,12 @@ main#about-main #about-content div span progress {
   height: 10px;
 }
 @media screen and (max-width: 650px) {
-  main#about-main #about-content div span progress {
+  #about-main #about-content div span progress {
     width: 50%;
   }
 }
-main#about-main #about-content div span progress::-moz-progress-bar {
-  background: #ED008E;
+#about-main #about-content div span progress::-moz-progress-bar {
+  background: rgb(13, 211, 168);
   border-radius: 500px;
   width: 100%;
 }
@@ -928,6 +928,205 @@ main#contact-main #contact-model {
   }
 }
 
+#projects-main {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: calc(100vh - 120px);
+  padding: 20px 0px;
+  padding-top: 100px;
+}
+#projects-main #dots {
+  width: 100vw;
+  position: absolute;
+  bottom: 20px;
+  height: 60px;
+}
+#projects-main #gallery {
+  height: 630px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+#projects-main #gallery .project-container {
+  width: 100vw;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#projects-main #gallery .project-container #slide-left {
+  position: absolute;
+  top: 0%;
+  right: 45px;
+  background-color: transparent;
+  height: 100%;
+  width: 40px;
+  font-size: 2em;
+  color: rgb(187, 187, 187);
+  border: none;
+  z-index: 5;
+  cursor: pointer;
+}
+#projects-main #gallery .project-container #slide-left:hover {
+  color: white;
+}
+#projects-main #gallery .project-container #slide-right {
+  position: absolute;
+  top: 0%;
+  left: 45px;
+  background-color: transparent;
+  height: 100%;
+  width: 40px;
+  font-size: 2em;
+  color: rgb(187, 187, 187);
+  border: none;
+  z-index: 5;
+  cursor: pointer;
+}
+#projects-main #gallery .project-container #slide-right:hover {
+  color: white;
+}
+#projects-main #gallery .project-container .project-content {
+  width: calc(95% - 100px);
+  height: calc(100% - 80px);
+  background-color: rgba(112, 110, 110, 0.3);
+  border-radius: 20px;
+  padding: 20px 50px;
+  padding-bottom: 60px;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 2fr 5fr 2fr;
+  grid-template-areas: "photos desc" "photos tech" "photos buttons";
+}
+#projects-main #gallery .project-container .project-content .photos {
+  grid-area: photos;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 1fr 5fr;
+  grid-template-areas: "title title" "pc mobile";
+}
+#projects-main #gallery .project-container .project-content .photos h2 {
+  grid-area: title;
+  font-size: 3em;
+  font-family: LexendDeca-Bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 40px;
+  cursor: default;
+}
+#projects-main #gallery .project-container .project-content .photos h2 span {
+  font-size: 1.4rem;
+  color: rgb(160, 155, 155);
+  font-family: LexendDeca;
+}
+#projects-main #gallery .project-container .project-content .technologies {
+  grid-area: tech;
+}
+#projects-main #gallery .project-container .project-content .technologies ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  cursor: default;
+}
+#projects-main #gallery .project-container .project-content .technologies ul li {
+  font-size: 1.2em;
+  filter: grayscale(20%);
+  padding: 10px 15px;
+  width: calc(100% - 30px);
+  border-radius: 6px;
+}
+#projects-main #gallery .project-container .project-content .technologies ul li:first-child {
+  background: linear-gradient(to right, #FF7B19, transparent);
+}
+#projects-main #gallery .project-container .project-content .technologies ul li:nth-child(2) {
+  background: linear-gradient(to right, #F06494, transparent);
+}
+#projects-main #gallery .project-container .project-content .technologies ul li:nth-child(3) {
+  background: linear-gradient(to right, #FFDA19, transparent);
+}
+#projects-main #gallery .project-container .project-content .technologies ul li:nth-child(4) {
+  background: linear-gradient(to right, #8BE0EB, transparent);
+}
+#projects-main #gallery .project-container .project-content .technologies ul li:last-child {
+  background: linear-gradient(to right, #576A73, transparent);
+}
+#projects-main #gallery .project-container .project-content .description {
+  grid-area: desc;
+  margin-top: 40px;
+}
+#projects-main #gallery .project-container .project-content .description p {
+  font-size: 1.1em;
+  color: rgb(212, 208, 208);
+  cursor: default;
+}
+#projects-main #gallery .project-container .project-content .buttons {
+  grid-area: buttons;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+#projects-main #gallery .project-container .project-content .buttons a {
+  text-decoration: none;
+  flex: 1;
+  position: relative;
+  height: 50px;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2em;
+  border: solid rgb(13, 211, 168) 4px;
+  color: rgb(13, 211, 168);
+  transition: all 0.3s;
+}
+#projects-main #gallery .project-container .project-content .buttons a:hover {
+  background-color: rgb(13, 211, 168);
+  color: white;
+}
+#projects-main #project-pc, #projects-main #project_mobile {
+  position: relative;
+}
+#projects-main #project-pc img, #projects-main #project_mobile img {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+#projects-main #project-pc img:first-child, #projects-main #project_mobile img:first-child {
+  z-index: 2;
+  filter: brightness(50%);
+}
+#projects-main #project-pc img:last-child, #projects-main #project_mobile img:last-child {
+  border-radius: 15px;
+  margin-top: -35px;
+  box-shadow: 0px 0px 40px white;
+}
+#projects-main #project_mobile img {
+  left: 40%;
+}
+#projects-main #project_mobile img:last-child {
+  margin-top: -5px;
+}
+
 @font-face {
   font-family: LexendDeca-Bold;
   src: url("./fonts/static/LexendDeca-Bold.ttf");
@@ -943,6 +1142,10 @@ main#contact-main #contact-model {
 :root {
   --mouse-x:0;
   --mouse-y:0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

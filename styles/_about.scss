@@ -1,4 +1,4 @@
-$aboutColor : #ED008E;
+$aboutColor : rgb(13, 211, 168);
 @keyframes bop{
     0%{
         transform: rotateZ(-5deg);
@@ -15,7 +15,7 @@ $aboutColor : #ED008E;
         transform: rotateZ(5deg);
     }
 }
-main#about-main{
+#about-main{
     width:100vw;
     height:calc(100vh - 80px);
     position: relative;

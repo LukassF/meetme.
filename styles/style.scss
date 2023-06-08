@@ -3,6 +3,7 @@
 @import './skills';
 @import './about';
 @import './contact';
+@import './projects';
 
 @mixin flex($direction, $justify, $align){
     display:flex;
@@ -27,6 +28,9 @@
 :root{
     --mouse-x:0;
     --mouse-y:0;
+}
+html{
+    scroll-behavior:smooth;
 }
 
 body{
