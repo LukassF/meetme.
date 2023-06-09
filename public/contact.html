@@ -25,15 +25,7 @@
       })();
     </script>
     <script src="global.js"></script>
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "./build/three.module.js",
-          "three/examples/jsm/loaders/FBXLoader": "./jsm/loaders/FBXLoader"
-        }
-      }
-    </script>
-    <script type="module" src="contact_model.js"></script>
+
     <title>Let's talk!</title>
   </head>
   <body>
@@ -125,7 +117,7 @@
       </section>
     </main>
 
-    <script>
+    <script type="application/javascript">
       let fname = "",
         lname = "",
         email = "",
@@ -217,5 +209,7 @@
           });
       };
     </script>
+
+    <script type="module" src="contact_model.js"></script>
   </body>
 </html>

@@ -125,14 +125,14 @@ main#contact-main{
                 button{
                     width:103%;
                     margin-top: 50px;
-                    height:50px;
+                    min-height:50px;
                     border-radius: 10px;
                     border: none;
                     background-color:rgb(13, 211, 168); 
                     font-size: 1.2em;
                     color:white;
                     transition: all 0.3s;
-                    
+
                     &:hover{
                         background-color: white;
                         color:rgb(13, 211, 168);

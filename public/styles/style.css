@@ -836,7 +836,7 @@ main#contact-main #contact-form form div textarea {
 main#contact-main #contact-form form div button {
   width: 103%;
   margin-top: 50px;
-  height: 50px;
+  min-height: 50px;
   border-radius: 10px;
   border: none;
   background-color: rgb(13, 211, 168);
@@ -1072,7 +1072,7 @@ main#contact-main #contact-model {
 #projects-main #gallery .project-container #slide-left {
   position: absolute;
   top: 0%;
-  right: 45px;
+  right: 25px;
   background-color: transparent;
   height: 100%;
   width: 40px;
@@ -1099,7 +1099,7 @@ main#contact-main #contact-model {
 #projects-main #gallery .project-container #slide-right {
   position: absolute;
   top: 0%;
-  left: 45px;
+  left: 25px;
   background-color: transparent;
   height: 100%;
   width: 40px;
@@ -1124,11 +1124,11 @@ main#contact-main #contact-model {
   }
 }
 #projects-main #gallery .project-container .project-content {
-  width: calc(95% - 100px);
+  width: calc(98% - 140px);
   height: calc(100% - 80px);
   background: linear-gradient(transparent, rgba(112, 110, 110, 0.3));
   border-radius: 20px;
-  padding: 20px 50px;
+  padding: 20px 70px;
   padding-bottom: 60px;
   display: grid;
   grid-template-columns: 3fr 2fr;

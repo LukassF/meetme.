@@ -79,7 +79,7 @@
             #slide-left{
                 position: absolute;
                 top:0%;
-                right:45px;
+                right:25px;
                 background-color: transparent;
                 height:100%;
                 width:40px;
@@ -104,7 +104,7 @@
             #slide-right{
                 position: absolute;
                 top:0%;
-                left:45px;
+                left:25px;
                 background-color: transparent;
                 height:100%;
                 width:40px;
@@ -129,11 +129,11 @@
             
 
             .project-content{
-                width:calc(95% - 100px);
+                width:calc(98% - 140px);
                 height:calc(100% - 80px);
                 background: linear-gradient(transparent,rgba(112, 110, 110, 0.3));
                 border-radius: 20px;
-                padding: 20px 50px;
+                padding: 20px 70px;
                 padding-bottom: 60px;
                 display:grid;
                 grid-template-columns: 3fr 2fr;
