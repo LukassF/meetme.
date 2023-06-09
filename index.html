@@ -14,15 +14,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "./build/three.module.js",
-          "three/examples/jsm/controls/OrbitControls": "./jsm/controls/OrbitControls.js",
-          "three/examples/jsm/loaders/GLTFLoader": "./jsm/loaders/GLTFLoader"
-        }
-      }
-    </script>
+    <script type="module" src="three_js.js"></script>
     <title>Meet me!</title>
   </head>
   <body>
@@ -122,7 +114,5 @@
         loop: true,
       });
     </script>
-
-    <script type="module" src="three_js.js"></script>
   </body>
 </html>
