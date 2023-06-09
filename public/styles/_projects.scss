@@ -19,7 +19,7 @@
    
     #dots{
         width:100vw;
-        position: fixed;
+        position: absolute;
         bottom:0px;
         height:60px;
         @include flex(row,center,center);
@@ -84,12 +84,12 @@
                 height:100%;
                 width:40px;
                 font-size: 2em;
-                color:rgb(187, 187, 187);
+                color:rgba(187, 187, 187,0.3);
                 border: none;
                 z-index: 5;
                 cursor: pointer;
                 &:hover{
-                    color:white;
+                    color:rgb(121, 119, 119);
                 }
 
                 @media screen and (max-width:1100px) {
@@ -109,13 +109,13 @@
                 height:100%;
                 width:40px;
                 font-size: 2em;
-                color:rgb(187, 187, 187);
+                color:rgba(187, 187, 187,0.3);
                 border: none;
                 z-index: 5;
                 cursor: pointer;
 
                 &:hover{
-                    color:white;
+                    color:rgb(121, 119, 119);
                 }
 
                 @media screen and (max-width:1100px) {
@@ -131,7 +131,7 @@
             .project-content{
                 width:calc(95% - 100px);
                 height:calc(100% - 80px);
-                background-color: rgba(112, 110, 110, 0.3);
+                background: linear-gradient(transparent,rgba(112, 110, 110, 0.3));
                 border-radius: 20px;
                 padding: 20px 50px;
                 padding-bottom: 60px;

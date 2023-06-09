@@ -132,9 +132,7 @@ main#contact-main{
                     font-size: 1.2em;
                     color:white;
                     transition: all 0.3s;
-
-                   
-
+                    
                     &:hover{
                         background-color: white;
                         color:rgb(13, 211, 168);
@@ -148,6 +146,9 @@ main#contact-main{
                         &:hover{
                             color:rgb(158, 154, 154);
                         }
+                    }
+                    &:not(:disabled){
+                        cursor: pointer;
                     }
                 }
                 span{

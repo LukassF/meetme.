@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script type="module" src="../contact_model.js"></script>
     <script
       src="https://kit.fontawesome.com/f83777b1f5.js"
       crossorigin="anonymous"
@@ -26,7 +25,15 @@
       })();
     </script>
     <script src="global.js"></script>
-
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./build/three.module.js",
+          "three/examples/jsm/loaders/FBXLoader": "./jsm/loaders/FBXLoader"
+        }
+      }
+    </script>
+    <script type="module" src="contact_model.js"></script>
     <title>Let's talk!</title>
   </head>
   <body>

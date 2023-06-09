@@ -1,5 +1,4 @@
 import * as THREE from "three";
-// import "./styles/style.css";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 
 const scene = new THREE.Scene();
@@ -11,6 +10,7 @@ const sizes = {
   width: 190,
   height: window.innerHeight - 80,
 };
+
 const loadingManager = new THREE.LoadingManager();
 const progressBar = document.querySelector("#progress-bar");
 const loaderDiv = document.querySelector(".loader");

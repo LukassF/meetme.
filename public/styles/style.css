@@ -856,6 +856,9 @@ main#contact-main #contact-form form div button:disabled {
 main#contact-main #contact-form form div button:disabled:hover {
   color: rgb(158, 154, 154);
 }
+main#contact-main #contact-form form div button:not(:disabled) {
+  cursor: pointer;
+}
 main#contact-main #contact-form form div span {
   background-color: rgba(0, 0, 0, 0.2);
   display: flex;
@@ -995,7 +998,7 @@ main#contact-main #contact-model {
 }
 #projects-main #dots {
   width: 100vw;
-  position: fixed;
+  position: absolute;
   bottom: 0px;
   height: 60px;
   display: flex;
@@ -1074,13 +1077,13 @@ main#contact-main #contact-model {
   height: 100%;
   width: 40px;
   font-size: 2em;
-  color: rgb(187, 187, 187);
+  color: rgba(187, 187, 187, 0.3);
   border: none;
   z-index: 5;
   cursor: pointer;
 }
 #projects-main #gallery .project-container #slide-left:hover {
-  color: white;
+  color: rgb(121, 119, 119);
 }
 @media screen and (max-width: 1100px) {
   #projects-main #gallery .project-container #slide-left {
@@ -1101,13 +1104,13 @@ main#contact-main #contact-model {
   height: 100%;
   width: 40px;
   font-size: 2em;
-  color: rgb(187, 187, 187);
+  color: rgba(187, 187, 187, 0.3);
   border: none;
   z-index: 5;
   cursor: pointer;
 }
 #projects-main #gallery .project-container #slide-right:hover {
-  color: white;
+  color: rgb(121, 119, 119);
 }
 @media screen and (max-width: 1100px) {
   #projects-main #gallery .project-container #slide-right {
@@ -1123,7 +1126,7 @@ main#contact-main #contact-model {
 #projects-main #gallery .project-container .project-content {
   width: calc(95% - 100px);
   height: calc(100% - 80px);
-  background-color: rgba(112, 110, 110, 0.3);
+  background: linear-gradient(transparent, rgba(112, 110, 110, 0.3));
   border-radius: 20px;
   padding: 20px 50px;
   padding-bottom: 60px;
