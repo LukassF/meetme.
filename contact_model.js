@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import "./styles/style.css";
+// import "./styles/style.css";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 
 const scene = new THREE.Scene();
