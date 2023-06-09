@@ -1,6 +1,6 @@
-import * as THREE from "./build/three.module.js";
+import * as THREE from "three";
 // import "./styles/style.css";
-import { FBXLoader } from "./jsm/loaders/FBXLoader";
+import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 
 const scene = new THREE.Scene();
 scene.background = null;
