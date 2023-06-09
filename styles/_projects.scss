@@ -3,38 +3,79 @@
     flex-direction: row;
     width:100vw;
     height:calc(100vh - 120px);
-    // background-color: blue;
     padding: 20px 0px;
     padding-top: 100px;
+    opacity:0;
+    transition: opacity 0.8s;
 
-    // button:first-child{
-    //     position: absolute;
-    //     top:50%;
-    //     z-index: 5;
-    // }
+    @media screen and (max-width:700px) {
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+
+    &.animate{
+        opacity:1;
+    }
    
     #dots{
         width:100vw;
-        position: absolute;
-        bottom:20px;
+        position: fixed;
+        bottom:0px;
         height:60px;
-        // background-color: silver;
+        @include flex(row,center,center);
+        gap:15px;
+        @media screen and (max-width:700px) {
+            display:none;
+        }
+
+        div{
+            width:10px;
+            aspect-ratio: 1/1;
+            border: solid rgb(80, 80, 80) 2px;
+            border-radius: 50%;
+            transition: all 0.3s;
+            transition-delay: 0.4s;
+
+            &:first-child{
+                background-color: var(--dot-0);
+            }
+            &:nth-child(2){
+                background-color: var(--dot-1);
+            }
+            &:nth-child(3){
+                background-color: var(--dot-2);
+            }
+            &:last-child{
+                background-color: var(--dot-3);
+            }
+        }
     }
 
     #gallery{
-        height:630px;
-        // width:50%;
-        // background-color: green;
+        min-height:630px;
         @include flex(row,center,center);
         gap:0px;
-        // transition: transform 0.3s;
+
+        @media screen and (max-width:1100px) {
+            min-height: 1050px;
+        }
+        @media screen and (max-width:700px) {
+            transform: translateX(0%);
+        }
 
         .project-container{
             width:100vw;
             height:100%;
-            // background-color: grey;
             position: relative;
             @include flex(row,center,center);
+            @media screen and (max-width:700px) {
+                scroll-snap-align: center;
+            }
+            &:last-child{
+                @media screen and (max-width:700px) {
+                    display: none;
+                }
+            }
             #slide-left{
                 position: absolute;
                 top:0%;
@@ -50,6 +91,15 @@
                 &:hover{
                     color:white;
                 }
+
+                @media screen and (max-width:1100px) {
+                    right:20px;
+                    font-size: 1.7rem;
+                }
+
+                @media screen and (max-width:700px) {
+                    display:none;
+                }
             }
             #slide-right{
                 position: absolute;
@@ -63,11 +113,20 @@
                 border: none;
                 z-index: 5;
                 cursor: pointer;
-                
+
                 &:hover{
                     color:white;
                 }
+
+                @media screen and (max-width:1100px) {
+                    left:20px;
+                    font-size: 1.7rem;
+                }
+                @media screen and (max-width:700px) {
+                    display:none;
+                }
             }
+            
 
             .project-content{
                 width:calc(95% - 100px);
@@ -87,10 +146,22 @@
                 'photos buttons'
                 ;
 
-
+                @media screen and (max-width:1100px) {
+                   grid-template-columns: 1fr;
+                   grid-template-rows: 1fr 1fr 1fr 1fr;
+                   grid-template-areas: 
+                   'photos'
+                   'desc'
+                   'tech'
+                   'buttons'
+                   ;
+                }
+                @media screen and (max-width:700px) {
+                    padding: 20px 20px;
+                    width:calc(92% - 40px);
+                }
                 .photos{
                     grid-area: photos;
-                    // background-color: red;
                     display:grid;
                     grid-template-columns: 3fr 2fr;
                     grid-template-rows: 1fr 5fr;
@@ -98,6 +169,16 @@
                     'title title'
                     'pc mobile'
                     ;
+                    max-height: 580px;
+
+                    @media screen and (max-width:1100px) {
+                        max-height: 430px;
+                    }
+                    @media screen and (max-width:500px) {
+                        max-height: 330px;
+                    }
+                    
+
 
                     h2{
                         grid-area: title;
@@ -106,6 +187,13 @@
                         @include flex(column,center,flex-start);
                         padding-left: 40px;
                         cursor: default;
+
+                        @media screen and (max-width:600px) {
+                            padding-left: 10px;
+                        }
+                        @media screen and (max-width:500px) {
+                            font-size: 2rem;
+                        }
 
                         span{
                             font-size: 1.4rem;
@@ -116,7 +204,7 @@
                 }
                 .technologies{
                     grid-area: tech;
-                    // background-color: blue;
+                    min-height: 260px;
 
                     ul{
                         list-style: none;
@@ -124,7 +212,6 @@
                         padding: 0;
                         height:100%;
                         width:100%;
-                        // background-color: black;
                         @include flex(column,space-evenly,flex-start);
                         cursor: default;
 
@@ -149,10 +236,6 @@
                             &:last-child{
                                 background:linear-gradient(to right,#576A73,transparent);
                             }
-
-                            // span{
-                            //     font-size: 0.9em;
-                            // }
                         }
                     }
                 }
@@ -163,13 +246,25 @@
                         font-size: 1.1em;
                         color:rgb(212, 208, 208);
                         cursor: default;
+
+                        @media screen and (max-width:1400px) {
+                            font-size: 1rem;
+                        }
+                        @media screen and (max-width:800px) {
+                            font-size: 0.8rem;
+                        }
                     }
-                    // background-color: yellowgreen;
                 }
                 .buttons{
                     grid-area: buttons;
                     @include flex(row,center,center);
                     gap:30px;
+
+                    @media screen and (max-width:500px) {
+                        gap:10px;
+                    }
+
+                   
 
                     a{
                         text-decoration: none;
@@ -186,6 +281,13 @@
                         color:$aboutColor;
                         transition: all 0.3s;
 
+                        @media screen and (max-width:1400px) {
+                            font-size: 1rem;
+                        }
+                        @media screen and (max-width:500px) {
+                            font-size: 0.8rem;
+                        }
+
                         &:hover{
                             background-color: $aboutColor;
                             color:white;
@@ -196,14 +298,38 @@
         }
     }
     #project-pc{
-        // background-color: rgb(165, 141, 141);
-        // width:50%;
         position: relative;
+
+        @media screen and (max-width:1400px) {
+            transform: scale(0.8);
+        }
+        @media screen and (max-width:1200px) {
+            transform: scale(0.7);
+        }
+        @media screen and (max-width:800px) {
+            transform: scale(0.6);
+        }
+        @media screen and (max-width:600px) {
+            transform: scale(0.5);
+        }
+        @media screen and (max-width:500px) {
+            transform: scale(0.4);
+        }
+        @media screen and (max-width:400px) {
+            transform: scale(0.35);
+        }
         img{
             position: absolute;
             top:50%;
             left:55%;
             transform: translate(-50%,-50%);
+
+            @media screen and (max-width:800px) {
+                left:50%;
+            }
+            @media screen and (max-width:400px) {
+                left:40%;
+            }
             &:first-child{
                 z-index: 2;
                 filter: brightness(50%);
@@ -220,11 +346,14 @@
         @extend #project-pc;
         img{
             left:40%;
+
+            @media screen and (max-width:800px) {
+                left:60%;
+            }
         }
         img:last-child{
             margin-top: -5px;
         }
-        // background-color: yellow;
         
     }
 }

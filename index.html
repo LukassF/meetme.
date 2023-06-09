@@ -1,75 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css"/>
-    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Eo_circle_green_white_letter-m.svg/2048px-Eo_circle_green_white_letter-m.svg.png"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      rel="icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Eo_circle_green_white_letter-m.svg/2048px-Eo_circle_green_white_letter-m.svg.png"
+    />
     <script type="module" src="three_js.js"></script>
     <script src="global.js"></script>
-    <script src="https://kit.fontawesome.com/f83777b1f5.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/f83777b1f5.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Meet me!</title>
-</head>
+  </head>
   <body>
-      <div class="loader">
-        <label for="progress-bar">Loading assets..</label>
-        <progress id="progress-bar" value="0" max="100"></progress>
-      </div>
-      <nav id="nav-home">
-          <div>meetme.</div>
-          
-          <span class="hamburger-menu" onclick="showMenu()">
-              <span class="hamburger-icon"></span>
-          </span>
+    <div class="loader">
+      <label for="progress-bar">Loading assets..</label>
+      <progress id="progress-bar" value="0" max="100"></progress>
+    </div>
+    <nav id="nav-home">
+      <div>meetme.</div>
 
-          <ul id="nav-list">
-              <a><li class="active" onclick="activePage(event)">Home</li></a>
-              <a href="about.html"><li  onclick="activePage(event)">About</li></a>
-              <a href="skills.html"><li  onclick="activePage(event)">Skills</li></a>
-              <a href="projects.html"><li  onclick="activePage(event)">Projects</li></a>
-              <a href="contact.html"><li  onclick="activePage(event)">Contact</li></a>
-          </ul>
-      </nav>
+      <span class="hamburger-menu" onclick="showMenu()">
+        <span class="hamburger-icon"></span>
+      </span>
 
-      <main id="main-home">
-          <article id="text-home">
-              <div id="text-box">
-                  <h1>Hello to you!</h1>
-                  <h2>I'm Łukasz, a <span class="type-auto"></span></h2>
+      <ul id="nav-list">
+        <a><li class="active" onclick="activePage(event)">Home</li></a>
+        <a href="about.html"><li onclick="activePage(event)">About</li></a>
+        <a href="skills.html"><li onclick="activePage(event)">Skills</li></a>
+        <a href="projects.html"
+          ><li onclick="activePage(event)">Projects</li></a
+        >
+        <a href="contact.html"><li onclick="activePage(event)">Contact</li></a>
+      </ul>
+    </nav>
 
-                  <p>Want to get to know me better? Check out my <em><b><a href="about.html">About page</a></b></em> 
-                    for more details. And after you do so (or before), text me! I will be delighted to talk!
-                    Also, if that's easier, you can send me a direct email via the <em><b><a href="contact.html">Contact page</a></b></em>.
-                  </p>
+    <main id="main-home">
+      <article id="text-home">
+        <div id="text-box">
+          <h1>Hello to you!</h1>
+          <h2>I'm Łukasz, a <span class="type-auto"></span></h2>
 
-                  <div id="social-links">
-                      <ul>
-                          <li><i class="fa fa-envelope"></i></li>
-                          <li><i class="fa fa-facebook"></i></li>
-                          <li><i class="fab fa-facebook-messenger"></i></li>
-                          <li><i class="fa fa-linkedin"></i></li>
-                          <li><i class="fa fa-instagram"></i></li>
-                      </ul>
-                  </div>
+          <p>
+            Want to get to know me better? Check out my
+            <em
+              ><b><a href="about.html">About page</a></b></em
+            >
+            for more details. And after you do so (or before), text me! I will
+            be delighted to talk! Also, if that's easier, you can send me a
+            direct email via the
+            <em
+              ><b><a href="contact.html">Contact page</a></b></em
+            >.
+          </p>
 
-              </div>
-          </article>
-          
-          <article id="images-home">
-            <canvas class="webgl"></canvas>
-          </article>
-      </main>
+          <div id="social-links">
+            <ul>
+              <li>
+                <a href="contact.html" target="_blank"
+                  ><i class="fa fa-envelope"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/luki.flork" target="_blank"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/luki.flork" target="_blank"
+                  ><i class="fab fa-facebook-messenger"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/%C5%82ukasz-florek-37784b279"
+                  target="_blank"
+                  ><i class="fa fa-linkedin"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/luki.flork?igshid=ZGUzMzM3NWJiOQ=="
+                  target="_blank"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
 
+      <article id="images-home">
+        <canvas class="webgl"></canvas>
+      </article>
+    </main>
 
-
-      <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-      <script>
-          var typed = new Typed('.type-auto', {
-              strings: ['Frontend Developer.', 'Technology Student.', 'Hard Worker.','Sports Enthusiast!'],
-              typeSpeed: 100,
-              backSpeed: 70,
-              loop:true
-          });
-      </script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed(".type-auto", {
+        strings: [
+          "Frontend Developer.",
+          "Technology Student.",
+          "Hard Worker.",
+          "Sports Enthusiast!",
+        ],
+        typeSpeed: 100,
+        backSpeed: 70,
+        loop: true,
+      });
+    </script>
   </body>
 </html>

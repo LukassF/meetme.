@@ -23,6 +23,7 @@ $aboutColor : rgb(13, 211, 168);
     // background-color: red;
     display: grid;
     grid-template-columns: 2fr 3fr;
+    overflow-x: hidden;
 
     @media screen and (max-width:1120px){
         grid-template-columns: 1fr;

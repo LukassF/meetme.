@@ -283,6 +283,11 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   margin-top: 50px;
   width: 100%;
 }
+@media screen and (max-width: 400px) {
+  #main-home #text-home #text-box #social-links {
+    transform: scale(0.9) translateX(-20px);
+  }
+}
 #main-home #text-home #text-box #social-links ul {
   list-style: none;
   padding-left: 0;
@@ -300,17 +305,29 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   place-content: center;
   border-radius: 50%;
   cursor: pointer;
-  transition: color 0.5s, border-color 0.5s, box-shadow 0.5s;
+  position: relative;
+  transition: border-color 0.5s, box-shadow 0.5s;
 }
 @media screen and (max-width: 650px) {
   #main-home #text-home #text-box #social-links ul li {
     transform: scale(0.8);
   }
 }
+#main-home #text-home #text-box #social-links ul li a {
+  display: grid;
+  place-content: center;
+  width: 60px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  color: white;
+  transition: color 0.5s;
+}
 #main-home #text-home #text-box #social-links ul li:hover {
   border-color: rgb(13, 211, 168);
-  color: rgb(13, 211, 168);
   box-shadow: 0px 0px 10px rgb(13, 211, 168);
+}
+#main-home #text-home #text-box #social-links ul li:hover a {
+  color: rgb(13, 211, 168);
 }
 #main-home #images-home {
   overflow: hidden;
@@ -403,11 +420,13 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
     background-color: rgba(255, 255, 255, 0.15);
   }
 }
-#skills-main section#skills-container .skill-card:hover {
-  transform: scale(1.05);
-}
-#skills-main section#skills-container .skill-card:hover .skill-card-content img {
-  filter: grayscale(0%);
+@media all and (hover: hover) {
+  #skills-main section#skills-container .skill-card:hover {
+    transform: scale(1.05);
+  }
+  #skills-main section#skills-container .skill-card:hover .skill-card-content img {
+    filter: grayscale(0%);
+  }
 }
 @media screen and (max-width: 700px) {
   #skills-main section#skills-container .skill-card {
@@ -421,7 +440,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   }
 }
 #skills-main section#skills-container .skill-card .skill-card-content {
-  border-radius: inherit;
+  border-radius: 15px;
   width: 100%;
   height: 100%;
   inset: 5px;
@@ -503,6 +522,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   top: 80px;
   display: grid;
   grid-template-columns: 2fr 3fr;
+  overflow-x: hidden;
 }
 @media screen and (max-width: 1120px) {
   #about-main {
@@ -693,14 +713,25 @@ main#contact-main {
   opacity: 0;
   transition: opacity 0.5s;
   transition-delay: 0.5s;
+  overflow-y: hidden;
 }
 @media screen and (max-width: 1120px) {
   main#contact-main {
     grid-template-columns: 1fr;
   }
 }
+@media screen and (max-width: 830px) {
+  main#contact-main {
+    overflow-y: auto;
+  }
+}
 main#contact-main.animate {
   opacity: 1;
+}
+@media screen and (max-width: 830px) {
+  main#contact-main {
+    padding-bottom: 150px;
+  }
 }
 main#contact-main section {
   height: 90%;
@@ -815,6 +846,14 @@ main#contact-main #contact-form form div button:hover {
   background-color: white;
   color: rgb(13, 211, 168);
 }
+main#contact-main #contact-form form div button:disabled {
+  background-color: rgba(13, 211, 168, 0.4);
+  color: rgb(158, 154, 154);
+  cursor: default;
+}
+main#contact-main #contact-form form div button:disabled:hover {
+  color: rgb(158, 154, 154);
+}
 main#contact-main #contact-form form div span {
   background-color: rgba(0, 0, 0, 0.2);
   display: flex;
@@ -845,6 +884,11 @@ main#contact-main #contact-form form div span {
 @media screen and (max-width: 830px) {
   main#contact-main #contact-form form div span {
     font-size: 1em;
+  }
+}
+@media screen and (max-width: 630px) {
+  main#contact-main #contact-form form div span {
+    font-size: 0.7em;
   }
 }
 main#contact-main #contact-form form div span a {
@@ -912,7 +956,7 @@ main#contact-main #contact-form form #first {
 }
 @media screen and (max-width: 830px) {
   main#contact-main #contact-form form #second input, main#contact-main #contact-form form #second div textarea, main#contact-main #contact-form form div #second textarea {
-    margin-top: -35px;
+    margin-top: -40px;
   }
 }
 main#contact-main #contact-model {
@@ -935,20 +979,71 @@ main#contact-main #contact-model {
   height: calc(100vh - 120px);
   padding: 20px 0px;
   padding-top: 100px;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+@media screen and (max-width: 700px) {
+  #projects-main {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+}
+#projects-main.animate {
+  opacity: 1;
 }
 #projects-main #dots {
   width: 100vw;
-  position: absolute;
-  bottom: 20px;
+  position: fixed;
+  bottom: 0px;
   height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+@media screen and (max-width: 700px) {
+  #projects-main #dots {
+    display: none;
+  }
+}
+#projects-main #dots div {
+  width: 10px;
+  aspect-ratio: 1/1;
+  border: solid rgb(80, 80, 80) 2px;
+  border-radius: 50%;
+  transition: all 0.3s;
+  transition-delay: 0.4s;
+}
+#projects-main #dots div:first-child {
+  background-color: var(--dot-0);
+}
+#projects-main #dots div:nth-child(2) {
+  background-color: var(--dot-1);
+}
+#projects-main #dots div:nth-child(3) {
+  background-color: var(--dot-2);
+}
+#projects-main #dots div:last-child {
+  background-color: var(--dot-3);
 }
 #projects-main #gallery {
-  height: 630px;
+  min-height: 630px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 0px;
+}
+@media screen and (max-width: 1100px) {
+  #projects-main #gallery {
+    min-height: 1050px;
+  }
+}
+@media screen and (max-width: 700px) {
+  #projects-main #gallery {
+    transform: translateX(0%);
+  }
 }
 #projects-main #gallery .project-container {
   width: 100vw;
@@ -958,6 +1053,16 @@ main#contact-main #contact-model {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+@media screen and (max-width: 700px) {
+  #projects-main #gallery .project-container {
+    scroll-snap-align: center;
+  }
+}
+@media screen and (max-width: 700px) {
+  #projects-main #gallery .project-container:last-child {
+    display: none;
+  }
 }
 #projects-main #gallery .project-container #slide-left {
   position: absolute;
@@ -975,6 +1080,17 @@ main#contact-main #contact-model {
 #projects-main #gallery .project-container #slide-left:hover {
   color: white;
 }
+@media screen and (max-width: 1100px) {
+  #projects-main #gallery .project-container #slide-left {
+    right: 20px;
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  #projects-main #gallery .project-container #slide-left {
+    display: none;
+  }
+}
 #projects-main #gallery .project-container #slide-right {
   position: absolute;
   top: 0%;
@@ -991,6 +1107,17 @@ main#contact-main #contact-model {
 #projects-main #gallery .project-container #slide-right:hover {
   color: white;
 }
+@media screen and (max-width: 1100px) {
+  #projects-main #gallery .project-container #slide-right {
+    left: 20px;
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  #projects-main #gallery .project-container #slide-right {
+    display: none;
+  }
+}
 #projects-main #gallery .project-container .project-content {
   width: calc(95% - 100px);
   height: calc(100% - 80px);
@@ -1003,12 +1130,36 @@ main#contact-main #contact-model {
   grid-template-rows: 2fr 5fr 2fr;
   grid-template-areas: "photos desc" "photos tech" "photos buttons";
 }
+@media screen and (max-width: 1100px) {
+  #projects-main #gallery .project-container .project-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "photos" "desc" "tech" "buttons";
+  }
+}
+@media screen and (max-width: 700px) {
+  #projects-main #gallery .project-container .project-content {
+    padding: 20px 20px;
+    width: calc(92% - 40px);
+  }
+}
 #projects-main #gallery .project-container .project-content .photos {
   grid-area: photos;
   display: grid;
   grid-template-columns: 3fr 2fr;
   grid-template-rows: 1fr 5fr;
   grid-template-areas: "title title" "pc mobile";
+  max-height: 580px;
+}
+@media screen and (max-width: 1100px) {
+  #projects-main #gallery .project-container .project-content .photos {
+    max-height: 430px;
+  }
+}
+@media screen and (max-width: 500px) {
+  #projects-main #gallery .project-container .project-content .photos {
+    max-height: 330px;
+  }
 }
 #projects-main #gallery .project-container .project-content .photos h2 {
   grid-area: title;
@@ -1021,6 +1172,16 @@ main#contact-main #contact-model {
   padding-left: 40px;
   cursor: default;
 }
+@media screen and (max-width: 600px) {
+  #projects-main #gallery .project-container .project-content .photos h2 {
+    padding-left: 10px;
+  }
+}
+@media screen and (max-width: 500px) {
+  #projects-main #gallery .project-container .project-content .photos h2 {
+    font-size: 2rem;
+  }
+}
 #projects-main #gallery .project-container .project-content .photos h2 span {
   font-size: 1.4rem;
   color: rgb(160, 155, 155);
@@ -1028,6 +1189,7 @@ main#contact-main #contact-model {
 }
 #projects-main #gallery .project-container .project-content .technologies {
   grid-area: tech;
+  min-height: 260px;
 }
 #projects-main #gallery .project-container .project-content .technologies ul {
   list-style: none;
@@ -1072,6 +1234,16 @@ main#contact-main #contact-model {
   color: rgb(212, 208, 208);
   cursor: default;
 }
+@media screen and (max-width: 1400px) {
+  #projects-main #gallery .project-container .project-content .description p {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  #projects-main #gallery .project-container .project-content .description p {
+    font-size: 0.8rem;
+  }
+}
 #projects-main #gallery .project-container .project-content .buttons {
   grid-area: buttons;
   display: flex;
@@ -1079,6 +1251,11 @@ main#contact-main #contact-model {
   justify-content: center;
   align-items: center;
   gap: 30px;
+}
+@media screen and (max-width: 500px) {
+  #projects-main #gallery .project-container .project-content .buttons {
+    gap: 10px;
+  }
 }
 #projects-main #gallery .project-container .project-content .buttons a {
   text-decoration: none;
@@ -1098,6 +1275,16 @@ main#contact-main #contact-model {
   color: rgb(13, 211, 168);
   transition: all 0.3s;
 }
+@media screen and (max-width: 1400px) {
+  #projects-main #gallery .project-container .project-content .buttons a {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  #projects-main #gallery .project-container .project-content .buttons a {
+    font-size: 0.8rem;
+  }
+}
 #projects-main #gallery .project-container .project-content .buttons a:hover {
   background-color: rgb(13, 211, 168);
   color: white;
@@ -1105,11 +1292,51 @@ main#contact-main #contact-model {
 #projects-main #project-pc, #projects-main #project_mobile {
   position: relative;
 }
+@media screen and (max-width: 1400px) {
+  #projects-main #project-pc, #projects-main #project_mobile {
+    transform: scale(0.8);
+  }
+}
+@media screen and (max-width: 1200px) {
+  #projects-main #project-pc, #projects-main #project_mobile {
+    transform: scale(0.7);
+  }
+}
+@media screen and (max-width: 800px) {
+  #projects-main #project-pc, #projects-main #project_mobile {
+    transform: scale(0.6);
+  }
+}
+@media screen and (max-width: 600px) {
+  #projects-main #project-pc, #projects-main #project_mobile {
+    transform: scale(0.5);
+  }
+}
+@media screen and (max-width: 500px) {
+  #projects-main #project-pc, #projects-main #project_mobile {
+    transform: scale(0.4);
+  }
+}
+@media screen and (max-width: 400px) {
+  #projects-main #project-pc, #projects-main #project_mobile {
+    transform: scale(0.35);
+  }
+}
 #projects-main #project-pc img, #projects-main #project_mobile img {
   position: absolute;
   top: 50%;
   left: 55%;
   transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 800px) {
+  #projects-main #project-pc img, #projects-main #project_mobile img {
+    left: 50%;
+  }
+}
+@media screen and (max-width: 400px) {
+  #projects-main #project-pc img, #projects-main #project_mobile img {
+    left: 40%;
+  }
 }
 #projects-main #project-pc img:first-child, #projects-main #project_mobile img:first-child {
   z-index: 2;
@@ -1122,6 +1349,11 @@ main#contact-main #contact-model {
 }
 #projects-main #project_mobile img {
   left: 40%;
+}
+@media screen and (max-width: 800px) {
+  #projects-main #project_mobile img {
+    left: 60%;
+  }
 }
 #projects-main #project_mobile img:last-child {
   margin-top: -5px;
@@ -1142,6 +1374,10 @@ main#contact-main #contact-model {
 :root {
   --mouse-x:0;
   --mouse-y:0;
+  --dot-0: rgb(80, 80, 80);
+  --dot-1: transparent;
+  --dot-2: transparent;
+  --dot-3: transparent;
 }
 
 html {
@@ -1176,6 +1412,11 @@ body .loader {
   top: 0;
   left: 0;
   font-size: 2em;
+}
+@media screen and (max-width: 500px) {
+  body .loader {
+    transform: scale(0.8);
+  }
 }
 body .loader progress {
   background-color: transparent;

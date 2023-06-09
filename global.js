@@ -28,8 +28,13 @@ window.onload = () => {
   const containerAbout = document.getElementById("about-main")
     ? document.getElementById("about-main")
     : "";
+
+  const containerProjects = document.getElementById("projects-main")
+    ? document.getElementById("projects-main")
+    : "";
   if (containerSkills !== "") containerSkills.classList.add("animate");
   if (containerAbout !== "") containerAbout.classList.add("animate");
+  if (containerProjects !== "") containerProjects.classList.add("animate");
 };
 
 const gallery = document.getElementById("gallery");
@@ -50,6 +55,17 @@ const slideLeft = () => {
     gallery.style.transform = `translateX(-${counter * 100}vw)`;
     gallery.style.transition = "transform 0.5s";
   }, 10);
+
+  for (let i = 0; i < 4; i++) {
+    document.documentElement.style.setProperty(`--dot-${i}`, "transparent");
+  }
+  document.documentElement.style.setProperty(
+    `--dot-${counter}`,
+    "rgb(80, 80, 80)"
+  );
+  if (counter === 4) {
+    document.documentElement.style.setProperty(`--dot-0`, "rgb(80, 80, 80)");
+  }
 };
 
 const slideRight = () => {
@@ -65,14 +81,19 @@ const slideRight = () => {
     gallery.style.transform = `translateX(-${counter * 100}vw)`;
     gallery.style.transition = "transform 0.5s";
   }, 10);
+
+  for (let i = 0; i < 4; i++) {
+    document.documentElement.style.setProperty(`--dot-${i}`, "transparent");
+  }
+  document.documentElement.style.setProperty(
+    `--dot-${counter}`,
+    "rgb(80, 80, 80)"
+  );
 };
 
-// window.onmousedown = (e) => {
-//   mousedown = true;
-//   mouseStartPosition = e.clientX;
-// };
+window.onresize = () => {
+  if (gallery) gallery.style.transition = "none";
 
-// window.onmouseup = (e) => {
-//   if (e.clientX - mouseStartPosition > 200) slideRight();
-//   else if (e.clientX - mouseStartPosition < -200) slideLeft();
-// };
+  if (window.innerWidth <= 700 && gallery)
+    gallery.style.transform = "translateX(0)";
+};
