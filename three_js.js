@@ -1,7 +1,7 @@
-import * as THREE from "three";
+import * as THREE from "/build/three.module.js";
 import "./style.css";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { OrbitControls } from "/jsm/controls/OrbitControls";
+import { GLTFLoader } from "/jsm/loaders/GLTFLoader";
 
 const scene = new THREE.Scene();
 scene.background = null;
