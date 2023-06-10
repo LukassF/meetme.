@@ -27,8 +27,6 @@
 
     section#skills-container{
         width:90%;
-        // height:200px;
-        // background-color: blue;
         @include flex(row,center,center);
         gap:20px;
         flex-wrap: wrap;
@@ -73,7 +71,8 @@
                     transform: scale(1.05);
 
                 .skill-card-content img{
-                    filter: grayscale(0%);
+                    -webkit-filter: grayscale(0%);
+                            filter: grayscale(0%);
                 }
                 }
             }
@@ -103,10 +102,12 @@
 
                  img{
                     transition: all 0.5s;
-                    filter: grayscale(30%);
+                    -webkit-filter: grayscale(30%);
+                            filter: grayscale(30%);
 
                     @media all and (hover:none){
-                        filter: grayscale(0%);
+                        -webkit-filter: grayscale(0%);
+                                filter: grayscale(0%);
                     }
                  }
             }
@@ -142,7 +143,6 @@
                 height:100%;
                 width:100%;
                 z-index:-1;
-                // opacity:0;
                 transition:opacity 500ms;
             }
             &:hover::before{

@@ -500,7 +500,6 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
 #skills-main section#skills-container .skill-card:hover::after {
   opacity: 1;
 }
-
 @keyframes bop {
   0% {
     transform: rotateZ(-5deg);
@@ -697,25 +696,24 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
     width: 50%;
   }
 }
-#about-main #about-content div span progress::-moz-progress-bar {
+#about-main #about-content div span progress::-moz-progress-bar, #about-main #about-content div span progress::-webkit-progress-bar {
   background: rgb(13, 211, 168);
   border-radius: 500px;
   width: 100%;
 }
 
 main#contact-main {
-  visibility: hidden;
   width: 100vw;
   height: auto;
   position: relative;
   top: 0px;
   margin: 0;
+  opacity: 0;
+  transform: translateX(-100%);
   display: grid;
   grid-template-columns: 2fr 1fr;
-  opacity: 0;
-  transition: opacity 0.5s;
-  transition-delay: 0.5s;
-  overflow-y: hidden;
+  transition: opacity 0.8s;
+  overflow: hidden;
 }
 @media screen and (max-width: 1120px) {
   main#contact-main {
@@ -729,6 +727,11 @@ main#contact-main {
 }
 main#contact-main.animate {
   opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.5s;
+}
+main#contact-main.animate #contact-model {
+  transform: translateX(0);
 }
 @media screen and (max-width: 830px) {
   main#contact-main {
@@ -743,6 +746,7 @@ main#contact-main section {
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+  z-index: 5;
 }
 main#contact-main #contact-form {
   display: flex;
@@ -761,6 +765,7 @@ main#contact-main #contact-form form {
   background-color: rgb(19, 19, 19);
   transition: box-shadow 0.8s;
   border-radius: 15px;
+  padding: 20px 0px 10px 0px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 10% 90%;
@@ -831,11 +836,11 @@ main#contact-main #contact-form form div input:focus, main#contact-main #contact
 main#contact-main #contact-form form div textarea {
   resize: none;
   padding-top: 10px;
-  min-height: calc(100% - 90px);
+  min-height: calc(100% - 110px);
 }
 main#contact-main #contact-form form div button {
   width: 103%;
-  margin-top: 50px;
+  margin-top: 20px;
   min-height: 50px;
   border-radius: 10px;
   border: none;
@@ -860,7 +865,7 @@ main#contact-main #contact-form form div button:not(:disabled) {
   cursor: pointer;
 }
 main#contact-main #contact-form form div span {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -869,7 +874,6 @@ main#contact-main #contact-form form div span {
   min-width: calc(100% - 40px);
   padding: 20px;
   border-radius: 10px;
-  border: solid white 2px;
 }
 @media screen and (max-width: 1500px) {
   main#contact-main #contact-form form div span {
@@ -941,7 +945,7 @@ main#contact-main #contact-form form #first {
 }
 @media screen and (max-width: 1120px) {
   main#contact-main #contact-form form #first button {
-    margin-top: 0px;
+    margin-top: 30px;
   }
 }
 @media screen and (max-width: 830px) {
@@ -952,29 +956,101 @@ main#contact-main #contact-form form #first {
 @media screen and (min-width: 830px) {
   main#contact-main #contact-form form #second button {
     display: none;
+    margin-top: 20px;
   }
+}
+main#contact-main #contact-form form #second span {
+  border: none;
 }
 @media screen and (min-width: 830px) {
   main#contact-main #contact-form form #second span {
     display: none;
   }
 }
+main#contact-main #contact-form form #second span p {
+  font-size: 1.4em;
+}
+main#contact-main #contact-form form #second span a {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px 0px;
+  width: 90vw;
+  font-size: 1em;
+}
 @media screen and (max-width: 830px) {
   main#contact-main #contact-form form #second input, main#contact-main #contact-form form #second div textarea, main#contact-main #contact-form form div #second textarea {
-    margin-top: -40px;
+    margin-top: -30px;
   }
 }
 main#contact-main #contact-model {
+  z-index: -1;
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+  transition-delay: 0.3s;
   overflow: hidden;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
 }
 @media screen and (max-width: 1120px) {
   main#contact-main #contact-model {
     display: none;
   }
+}
+main#contact-main #contact-model .stripe {
+  height: 30px;
+  border-radius: 0px 5px 5px 0px;
+  background-color: rgba(166, 166, 235, 0.3);
+}
+main#contact-main #contact-model .stripe:nth-child(2n) {
+  background-color: rgba(13, 211, 168, 0.3);
+}
+main#contact-main #contact-model .stripe:nth-child(1) {
+  width: 276px;
+}
+main#contact-main #contact-model .stripe:nth-child(2) {
+  width: 210px;
+}
+main#contact-main #contact-model .stripe:nth-child(3) {
+  width: 298px;
+}
+main#contact-main #contact-model .stripe:nth-child(4) {
+  width: 278px;
+}
+main#contact-main #contact-model .stripe:nth-child(5) {
+  width: 250px;
+}
+main#contact-main #contact-model .stripe:nth-child(6) {
+  width: 158px;
+}
+main#contact-main #contact-model .stripe:nth-child(7) {
+  width: 118px;
+}
+main#contact-main #contact-model .stripe:nth-child(8) {
+  width: 346px;
+}
+main#contact-main #contact-model .stripe:nth-child(9) {
+  width: 218px;
+}
+main#contact-main #contact-model .stripe:nth-child(10) {
+  width: 107px;
+}
+main#contact-main #contact-model .stripe:nth-child(11) {
+  width: 215px;
+}
+main#contact-main #contact-model .stripe:nth-child(12) {
+  width: 206px;
+}
+main#contact-main #contact-model .stripe:nth-child(13) {
+  width: 185px;
+}
+main#contact-main #contact-model .stripe:nth-child(14) {
+  width: 118px;
+}
+main#contact-main #contact-model .stripe:nth-child(15) {
+  width: 334px;
 }
 
 #projects-main {

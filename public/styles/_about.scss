@@ -1,10 +1,26 @@
 $aboutColor : rgb(13, 211, 168);
+@-webkit-keyframes bop{
+    0%{
+        transform: rotateZ(-5deg);
+    }
+    100%{
+        transform: rotateZ(10deg);
+    }
+}
 @keyframes bop{
     0%{
         transform: rotateZ(-5deg);
     }
     100%{
         transform: rotateZ(10deg);
+    }
+}
+@-webkit-keyframes type{
+    0%{
+        transform: rotateZ(-5deg);
+    }
+    100%{
+        transform: rotateZ(5deg);
     }
 }
 @keyframes type{
@@ -20,7 +36,6 @@ $aboutColor : rgb(13, 211, 168);
     height:calc(100vh - 80px);
     position: relative;
     top:80px;
-    // background-color: red;
     display: grid;
     grid-template-columns: 2fr 3fr;
     overflow-x: hidden;
@@ -45,7 +60,6 @@ $aboutColor : rgb(13, 211, 168);
     }
 
     #about-image{
-        // background-color: blue;
         @include flex(column,flex-start,center);
         padding: 30px;
         height:calc(100% - 60px);
@@ -57,7 +71,6 @@ $aboutColor : rgb(13, 211, 168);
         @media screen and (max-width:1120px) {
             width:calc(100% - 60px);
         }
-        // position: relative;
         div{
             position: relative;
             width:100%;
@@ -72,12 +85,14 @@ $aboutColor : rgb(13, 211, 168);
                 transform: translate(-50%,-50%);
 
                 #head{
-                    animation: bop 1.5s infinite linear alternate;
+                    -webkit-animation: bop 1.5s infinite linear alternate;
+                            animation: bop 1.5s infinite linear alternate;
                     transform-box: fill-box;
                     transform-origin: bottom;
                 }
                 #right-arm{
-                    animation: type 1s infinite linear alternate;
+                    -webkit-animation: type 1s infinite linear alternate;
+                            animation: type 1s infinite linear alternate;
                     transform-box: fill-box;
                     transform-origin: top;
                 }
@@ -129,7 +144,6 @@ $aboutColor : rgb(13, 211, 168);
             width:calc(100% - 60px);
          }
         h1{
-            // margin-top: 100px;
             font-size: 3em;
             font-family: LexendDeca-Bold;
 
@@ -187,7 +201,7 @@ $aboutColor : rgb(13, 211, 168);
                     }
                 }
         
-                progress::-moz-progress-bar{
+                progress::-moz-progress-bar,progress::-webkit-progress-bar{
                     background: $aboutColor;
                     border-radius: 500px;
                     width:100%;

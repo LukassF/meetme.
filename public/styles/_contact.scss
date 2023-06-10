@@ -1,18 +1,19 @@
 
 
 main#contact-main{
-    visibility: hidden;
     width:100vw;
     height:auto;
     position: relative;
     top:0px;
     margin:0;
+    opacity: 0;
+    transform: translateX(-100%);
     display: grid;
     grid-template-columns: 2fr 1fr;
-    opacity:0;
-    transition: opacity 0.5s;
-    transition-delay: 0.5s;
-    overflow-y: hidden;
+    transition: opacity 0.8s;
+    overflow: hidden;
+    
+    
     @media screen and (max-width:1120px) {
         grid-template-columns: 1fr;
      }
@@ -21,6 +22,12 @@ main#contact-main{
      }
     &.animate{
         opacity:1;
+        transform: translateX(0);
+        transition: transform 0.5s;
+
+        #contact-model{
+            transform: translateX(0);
+        }
     }
 
     @media screen and (max-width:830px) {
@@ -32,9 +39,9 @@ main#contact-main{
     section{
         height:90%;
         position: relative;
-        // background-color: yellow;
         margin-top: 70px;
         @include flex(column,center,flex-end);
+        z-index: 5;
     }
 
     #contact-form{
@@ -47,9 +54,8 @@ main#contact-main{
             height:85%;
             background-color: rgb(19, 19, 19);
             transition: box-shadow 0.8s;
-            // border: solid rgb(13, 211, 168) 4px;
-            // box-shadow: 0px 0px 10px rgb(13, 211, 168);
             border-radius: 15px;
+            padding: 20px 0px 10px 0px;
             display:grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 10% 90%;
@@ -97,7 +103,6 @@ main#contact-main{
                 min-width: calc(100% - 60px);
                 gap:20px;
                 padding: 30px;
-                // background-color: blue;
 
                 input{
                     width:100%;
@@ -120,11 +125,11 @@ main#contact-main{
                     resize: none;
                     @extend input;
                     padding-top: 10px;
-                    min-height:calc(100% - 90px);
+                    min-height:calc(100% - 110px);
                 }
                 button{
                     width:103%;
-                    margin-top: 50px;
+                    margin-top: 20px;
                     min-height:50px;
                     border-radius: 10px;
                     border: none;
@@ -152,13 +157,12 @@ main#contact-main{
                     }
                 }
                 span{
-                    background-color: rgba(0, 0, 0, 0.2);
+                    background-color: rgba(255, 255, 255, 0.1);
                     @include flex(column, center,center);
                     gap:5px;
                     min-width: calc(100% - 40px);
                     padding: 20px;
                     border-radius: 10px;
-                    border: solid white 2px;
                     @media screen and (max-width:1500px) {
                         font-size: 0.9em;
                     }
@@ -211,7 +215,7 @@ main#contact-main{
                         display: none;
                     }
                     @media screen and (max-width:1120px) {
-                        margin-top: 0px;
+                        margin-top: 30px;
                     }
                 }
                 span{
@@ -225,16 +229,28 @@ main#contact-main{
                 button{
                     @media screen and (min-width:830px) {
                         display: none;
+                        margin-top: 20px;
                     }
                 }
                 span{
                     @media screen and (min-width:830px) {
                         display: none;
                     }
+                    border:none;
+                    p{
+                        font-size: 1.4em;
+                    }
+                    a{
+                        background-color: rgba(255, 255, 255,0.1);
+                        border-radius: 10px;
+                        padding: 10px 0px;
+                        width:90vw;
+                        font-size: 1em;
+                    }
                 }
                 input{
                     @media screen and (max-width:830px) {
-                        margin-top: -40px;
+                        margin-top: -30px;
                     }
                 }
             }
@@ -242,10 +258,30 @@ main#contact-main{
     }
 
     #contact-model{
+        z-index: -1;
+        transform: translateX(-100%);
+        transition: transform 0.5s;
+        transition-delay: 0.3s ;
         overflow: hidden;
-        @include flex(row, flex-start,center);
+        @include flex(column, center,flex-start);
+        gap:10px;
         @media screen and (max-width:1120px) {
            display: none;
+        }
+
+        .stripe{
+            height:30px;
+            border-radius: 0px 5px 5px 0px;
+            background-color: rgba(166, 166, 235,0.3);
+
+            &:nth-child(2n){
+                background-color: rgba(13, 211, 168,0.3);
+            }
+        }
+        @for $i from 1 through 15{
+            .stripe:nth-child(#{$i}){
+                width: random(250)+ 100 + px;
+            }
         }
     }
 }

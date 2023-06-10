@@ -32,9 +32,14 @@ window.onload = () => {
   const containerProjects = document.getElementById("projects-main")
     ? document.getElementById("projects-main")
     : "";
+
+  const containerContact = document.getElementById("contact-main")
+    ? document.getElementById("contact-main")
+    : "";
   if (containerSkills !== "") containerSkills.classList.add("animate");
   if (containerAbout !== "") containerAbout.classList.add("animate");
   if (containerProjects !== "") containerProjects.classList.add("animate");
+  if (containerContact !== "") containerContact.classList.add("animate");
 };
 
 const gallery = document.getElementById("gallery");
@@ -93,6 +98,7 @@ const slideRight = () => {
 
 window.onresize = () => {
   if (gallery) gallery.style.transition = "none";
+  // if (containerContact) containerContact.style.transition = "none";
 
   if (window.innerWidth <= 700 && gallery)
     gallery.style.transform = "translateX(0)";
