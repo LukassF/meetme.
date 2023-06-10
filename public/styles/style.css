@@ -684,9 +684,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
     font-size: 1em;
   }
 }
-#about-main #about-content div span progress, #about-main #about-content div span ::-webkit-progress-bar {
-  -webkit-appearance: none;
-  appearance: none;
+#about-main #about-content div span progress {
   background-color: grey;
   border-radius: 500px;
   width: 70%;
@@ -694,9 +692,15 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   height: 10px;
 }
 @media screen and (max-width: 650px) {
-  #about-main #about-content div span progress, #about-main #about-content div span ::-webkit-progress-bar {
+  #about-main #about-content div span progress {
     width: 50%;
   }
+}
+#about-main #about-content div span ::-webkit-progress-bar {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: grey;
+  border-radius: 500px;
 }
 #about-main #about-content div span progress[value]::-webkit-progress-value {
   -webkit-appearance: none;
@@ -708,7 +712,6 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
 #about-main #about-content div span progress::-moz-progress-bar {
   background: rgb(13, 211, 168);
   border-radius: 500px;
-  width: 100%;
 }
 
 main#contact-main {
@@ -1018,49 +1021,49 @@ main#contact-main #contact-model .stripe:nth-child(2n) {
   background-color: rgba(13, 211, 168, 0.3);
 }
 main#contact-main #contact-model .stripe:nth-child(1) {
-  width: 132px;
+  width: 301px;
 }
 main#contact-main #contact-model .stripe:nth-child(2) {
-  width: 251px;
+  width: 146px;
 }
 main#contact-main #contact-model .stripe:nth-child(3) {
-  width: 118px;
+  width: 290px;
 }
 main#contact-main #contact-model .stripe:nth-child(4) {
-  width: 177px;
+  width: 270px;
 }
 main#contact-main #contact-model .stripe:nth-child(5) {
-  width: 277px;
+  width: 206px;
 }
 main#contact-main #contact-model .stripe:nth-child(6) {
-  width: 313px;
-}
-main#contact-main #contact-model .stripe:nth-child(7) {
-  width: 283px;
-}
-main#contact-main #contact-model .stripe:nth-child(8) {
-  width: 308px;
-}
-main#contact-main #contact-model .stripe:nth-child(9) {
-  width: 230px;
-}
-main#contact-main #contact-model .stripe:nth-child(10) {
-  width: 337px;
-}
-main#contact-main #contact-model .stripe:nth-child(11) {
   width: 110px;
 }
+main#contact-main #contact-model .stripe:nth-child(7) {
+  width: 106px;
+}
+main#contact-main #contact-model .stripe:nth-child(8) {
+  width: 277px;
+}
+main#contact-main #contact-model .stripe:nth-child(9) {
+  width: 266px;
+}
+main#contact-main #contact-model .stripe:nth-child(10) {
+  width: 169px;
+}
+main#contact-main #contact-model .stripe:nth-child(11) {
+  width: 273px;
+}
 main#contact-main #contact-model .stripe:nth-child(12) {
-  width: 229px;
+  width: 233px;
 }
 main#contact-main #contact-model .stripe:nth-child(13) {
-  width: 331px;
+  width: 281px;
 }
 main#contact-main #contact-model .stripe:nth-child(14) {
-  width: 132px;
+  width: 278px;
 }
 main#contact-main #contact-model .stripe:nth-child(15) {
-  width: 172px;
+  width: 162px;
 }
 
 #projects-main {

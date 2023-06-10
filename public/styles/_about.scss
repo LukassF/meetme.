@@ -189,9 +189,8 @@ $aboutColor : rgb(13, 211, 168);
                     font-size: 1em;
                  }
 
-                progress,::-webkit-progress-bar{
-                    -webkit-appearance: none;
-                    appearance: none;
+                progress{
+                   
                     background-color: grey;
                     border-radius: 500px;
                     width:70%;
@@ -201,6 +200,12 @@ $aboutColor : rgb(13, 211, 168);
                     @media screen and (max-width: 650px) {
                         width: 50%;
                     }
+                }
+                ::-webkit-progress-bar{
+                    -webkit-appearance: none;
+                    appearance: none;
+                    background-color: grey;
+                    border-radius: 500px;
                 }
         
                 progress[value]::-webkit-progress-value{
@@ -213,7 +218,7 @@ $aboutColor : rgb(13, 211, 168);
                 progress::-moz-progress-bar{
                     background: $aboutColor;
                     border-radius: 500px;
-                    width:100%;
+                    // width:100%;
                 }
             }
         }
