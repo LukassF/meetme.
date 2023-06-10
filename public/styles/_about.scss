@@ -189,7 +189,9 @@ $aboutColor : rgb(13, 211, 168);
                     font-size: 1em;
                  }
 
-                progress{
+                progress,::-webkit-progress-bar{
+                    -webkit-appearance: none;
+                    appearance: none;
                     background-color: grey;
                     border-radius: 500px;
                     width:70%;
@@ -201,7 +203,14 @@ $aboutColor : rgb(13, 211, 168);
                     }
                 }
         
-                progress::-moz-progress-bar,progress::-webkit-progress-bar{
+                progress[value]::-webkit-progress-value{
+                    -webkit-appearance: none;
+                    appearance: none;
+                    background: $aboutColor;
+                    border-radius: 500px;
+                    width:100%;
+                }
+                progress::-moz-progress-bar{
                     background: $aboutColor;
                     border-radius: 500px;
                     width:100%;

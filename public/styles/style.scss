@@ -66,14 +66,25 @@ body{
         @media screen and (max-width:500px) {
             transform: scale(0.8);
         }
-
-        progress{
+        progress[value]{
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        progress,progress[value]::-webkit-progress-bar{
+           
             background-color: transparent;
             border: none;
             height:10px;
         }
 
-        progress::-moz-progress-bar, progress::-webkit-progress-bar{
+        progress[value]::-webkit-progress-value{
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgb(13, 211, 168);
+            border-radius: 500px;
+            width:100%;
+        }
+        progress::-moz-progress-bar{
             background: rgb(13, 211, 168);
             border-radius: 500px;
             width:100%;

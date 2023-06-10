@@ -684,7 +684,9 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
     font-size: 1em;
   }
 }
-#about-main #about-content div span progress {
+#about-main #about-content div span progress, #about-main #about-content div span ::-webkit-progress-bar {
+  -webkit-appearance: none;
+  appearance: none;
   background-color: grey;
   border-radius: 500px;
   width: 70%;
@@ -692,11 +694,18 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   height: 10px;
 }
 @media screen and (max-width: 650px) {
-  #about-main #about-content div span progress {
+  #about-main #about-content div span progress, #about-main #about-content div span ::-webkit-progress-bar {
     width: 50%;
   }
 }
-#about-main #about-content div span progress::-moz-progress-bar, #about-main #about-content div span progress::-webkit-progress-bar {
+#about-main #about-content div span progress[value]::-webkit-progress-value {
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgb(13, 211, 168);
+  border-radius: 500px;
+  width: 100%;
+}
+#about-main #about-content div span progress::-moz-progress-bar {
   background: rgb(13, 211, 168);
   border-radius: 500px;
   width: 100%;
@@ -961,6 +970,7 @@ main#contact-main #contact-form form #first {
 }
 main#contact-main #contact-form form #second span {
   border: none;
+  background: transparent;
 }
 @media screen and (min-width: 830px) {
   main#contact-main #contact-form form #second span {
@@ -1008,49 +1018,49 @@ main#contact-main #contact-model .stripe:nth-child(2n) {
   background-color: rgba(13, 211, 168, 0.3);
 }
 main#contact-main #contact-model .stripe:nth-child(1) {
-  width: 276px;
+  width: 132px;
 }
 main#contact-main #contact-model .stripe:nth-child(2) {
-  width: 210px;
+  width: 251px;
 }
 main#contact-main #contact-model .stripe:nth-child(3) {
-  width: 298px;
+  width: 118px;
 }
 main#contact-main #contact-model .stripe:nth-child(4) {
-  width: 278px;
+  width: 177px;
 }
 main#contact-main #contact-model .stripe:nth-child(5) {
-  width: 250px;
+  width: 277px;
 }
 main#contact-main #contact-model .stripe:nth-child(6) {
-  width: 158px;
+  width: 313px;
 }
 main#contact-main #contact-model .stripe:nth-child(7) {
-  width: 118px;
+  width: 283px;
 }
 main#contact-main #contact-model .stripe:nth-child(8) {
-  width: 346px;
+  width: 308px;
 }
 main#contact-main #contact-model .stripe:nth-child(9) {
-  width: 218px;
+  width: 230px;
 }
 main#contact-main #contact-model .stripe:nth-child(10) {
-  width: 107px;
+  width: 337px;
 }
 main#contact-main #contact-model .stripe:nth-child(11) {
-  width: 215px;
+  width: 110px;
 }
 main#contact-main #contact-model .stripe:nth-child(12) {
-  width: 206px;
+  width: 229px;
 }
 main#contact-main #contact-model .stripe:nth-child(13) {
-  width: 185px;
+  width: 331px;
 }
 main#contact-main #contact-model .stripe:nth-child(14) {
-  width: 118px;
+  width: 132px;
 }
 main#contact-main #contact-model .stripe:nth-child(15) {
-  width: 334px;
+  width: 172px;
 }
 
 #projects-main {
@@ -1499,12 +1509,24 @@ body .loader {
     transform: scale(0.8);
   }
 }
-body .loader progress {
+body .loader progress[value] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+body .loader progress, body .loader progress[value]::-webkit-progress-bar {
   background-color: transparent;
   border: none;
   height: 10px;
 }
-body .loader progress::-moz-progress-bar, body .loader progress::-webkit-progress-bar {
+body .loader progress[value]::-webkit-progress-value {
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgb(13, 211, 168);
+  border-radius: 500px;
+  width: 100%;
+}
+body .loader progress::-moz-progress-bar {
   background: rgb(13, 211, 168);
   border-radius: 500px;
   width: 100%;
