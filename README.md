@@ -1,4 +1,4 @@
-# Splendid
+# Meetme. (https://meetme-app.vercel.app/)
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
