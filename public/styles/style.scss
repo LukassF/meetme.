@@ -73,10 +73,11 @@ body{
             height:10px;
         }
 
-        progress::-moz-progress-bar{
+        progress::-moz-progress-bar, progress::-webkit-progress-bar{
             background: rgb(13, 211, 168);
             border-radius: 500px;
             width:100%;
         }
+        
     }
 }

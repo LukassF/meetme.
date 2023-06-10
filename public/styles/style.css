@@ -1428,7 +1428,7 @@ body .loader progress {
   border: none;
   height: 10px;
 }
-body .loader progress::-moz-progress-bar {
+body .loader progress::-moz-progress-bar, body .loader progress::-webkit-progress-bar {
   background: rgb(13, 211, 168);
   border-radius: 500px;
   width: 100%;
