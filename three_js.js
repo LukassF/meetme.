@@ -1,5 +1,4 @@
 import * as THREE from "three";
-// import "./styles/style.css";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
@@ -63,18 +62,6 @@ loader.load("./assets/earth.glb", (gltf) => {
   scene.add(gltf.scene);
 });
 
-window.addEventListener("resize", () => {
-  if (window.innerHeight < 600) return;
-  sizes.width =
-    window.innerWidth > 1120 ? window.innerWidth / 2 : window.innerWidth;
-  sizes.height =
-    window.innerWidth > 1120
-      ? window.innerHeight - 80
-      : window.innerHeight - 270;
-  camera.updateProjectionMatrix();
-  camera.aspect = sizes.width / sizes.height;
-  renderer.setSize(sizes.width, sizes.height);
-});
 setInterval(() => {
   if (window.innerHeight < 600) return;
   sizes.width =
@@ -82,7 +69,7 @@ setInterval(() => {
   sizes.height =
     window.innerWidth > 1120
       ? window.innerHeight - 80
-      : window.innerHeight - 270;
+      : window.innerHeight / 1.7;
   camera.updateProjectionMatrix();
   camera.aspect = sizes.width / sizes.height;
   renderer.setSize(sizes.width, sizes.height);
