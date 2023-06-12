@@ -44,8 +44,6 @@ window.onload = () => {
 
 const gallery = document.getElementById("gallery");
 let counter = 0;
-// let mousedown = false;
-// let mouseStartPosition = 0;
 
 const slideLeft = () => {
   if (counter > 3) {
@@ -98,8 +96,21 @@ const slideRight = () => {
 
 window.onresize = () => {
   if (gallery) gallery.style.transition = "none";
-  // if (containerContact) containerContact.style.transition = "none";
 
   if (window.innerWidth <= 700 && gallery)
     gallery.style.transform = "translateX(0)";
+};
+
+// console.log(containerAbout);
+const showResume = () => {
+  const resumeList = document.getElementById("resume-list");
+  resumeList.style.visibility = "visible";
+  resumeList.style.opacity = "1";
+};
+const hideResume = () => {
+  const resumeList = document.getElementById("resume-list");
+  resumeList.style.opacity = "0";
+  setTimeout(() => {
+    resumeList.style.visibility = "hidden";
+  }, 400);
 };

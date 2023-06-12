@@ -61,7 +61,7 @@ $aboutColor : rgb(13, 211, 168);
 
     #about-image{
         @include flex(column,flex-start,center);
-        padding: 30px;
+        padding: 20px 30px;
         height:calc(100% - 60px);
         width:calc(100% - 100px);
         opacity:0;
@@ -71,7 +71,7 @@ $aboutColor : rgb(13, 211, 168);
         @media screen and (max-width:1120px) {
             width:calc(100% - 60px);
         }
-        div{
+        #svg{
             position: relative;
             width:100%;
             min-height:500px;
@@ -103,18 +103,29 @@ $aboutColor : rgb(13, 211, 168);
                 }
             }
         }
+
+        article{
+            width:70%;
+            @include flex(column,center,center);
+
+            @media screen and (max-width: 650px) {
+                width: 90%;
+            }
+        }
         
-        a{
-           width:70%;
+        button{
+           width:100%;
            background-color: $aboutColor;
            border-radius: 15px;
            height: 40px;
            line-height: 40px;
-           text-align: center;
+           border: none;
+           @include flex(column,center,center);
            font-size: 1.2em;
            text-decoration: none;
            color:white;
            transition: all 0.3s;
+           cursor: pointer;
 
            &:hover{
                 box-shadow: 0px 0px 15px $aboutColor;
@@ -122,9 +133,36 @@ $aboutColor : rgb(13, 211, 168);
                 color:$aboutColor;
            }
 
-           @media screen and (max-width: 650px) {
-            width: 90%;
+           
         }
+        #resume-list{
+            visibility:hidden;
+            opacity: 0;
+            width: calc(100% - 20px);
+            border-radius: 15px;
+            background-color: rgba(100, 99, 99,0.6);
+            padding: 10px;
+            @include flex(column,center,center);
+            gap:5px;
+            transition: opacity 0.4s;
+
+            a{
+                width:calc(100% - 40px);
+                padding: 10px 20px;
+                background-color: rgb(0, 0, 0);
+                text-decoration: none;
+                border-radius: 5px;
+                color:white;
+                transition: background-color 0.3s, color 0.3s;
+
+                &:hover{
+                    @media all and (hover:hover) {
+                        background-color: rgb(255, 255, 255);
+                        color:black;
+                    }
+                    
+                }
+            }
         }
     }
 

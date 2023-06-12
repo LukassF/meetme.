@@ -36,7 +36,7 @@
 
     <main id="about-main">
       <section id="about-image">
-        <div>
+        <div id="svg">
           <svg
             width="450"
             viewBox="0 0 851 741"
@@ -456,7 +456,15 @@
             </defs>
           </svg>
         </div>
-        <a href="#" download>Download my resume!</a>
+        <article>
+          <button onfocus="showResume()" onblur="hideResume()">
+            Download my resume!
+          </button>
+          <div id="resume-list">
+            <a href="./assets/ŁukaszFlorek.pdf" download>Polish</a>
+            <a href="./assets/ŁukaszFlorek_english.pdf" download>English</a>
+          </div>
+        </article>
       </section>
       <section id="about-content">
         <h1>Something <span>about</span> me.</h1>

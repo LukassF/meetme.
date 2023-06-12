@@ -578,7 +578,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 30px;
+  padding: 20px 30px;
   height: calc(100% - 60px);
   width: calc(100% - 100px);
   opacity: 0;
@@ -591,57 +591,98 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
     width: calc(100% - 60px);
   }
 }
-#about-main #about-image div {
+#about-main #about-image #svg {
   position: relative;
   width: 100%;
   min-height: 500px;
 }
 @media screen and (max-width: 1120px) {
-  #about-main #about-image div {
+  #about-main #about-image #svg {
     display: none;
   }
 }
-#about-main #about-image div svg {
+#about-main #about-image #svg svg {
   position: absolute;
   top: 50%;
   left: 55%;
   transform: translate(-50%, -50%);
 }
-#about-main #about-image div svg #head {
+#about-main #about-image #svg svg #head {
   animation: bop 1.5s infinite linear alternate;
   transform-box: fill-box;
   transform-origin: bottom;
 }
-#about-main #about-image div svg #right-arm {
+#about-main #about-image #svg svg #right-arm {
   animation: type 1s infinite linear alternate;
   transform-box: fill-box;
   transform-origin: top;
 }
-#about-main #about-image div svg #left-arm {
+#about-main #about-image #svg svg #left-arm {
   animation: type 1s infinite ease-in alternate-reverse;
   transform-box: fill-box;
   transform-origin: top;
 }
-#about-main #about-image a {
+#about-main #about-image article {
   width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 650px) {
+  #about-main #about-image article {
+    width: 90%;
+  }
+}
+#about-main #about-image button {
+  width: 100%;
   background-color: rgb(13, 211, 168);
   border-radius: 15px;
   height: 40px;
   line-height: 40px;
-  text-align: center;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: 1.2em;
   text-decoration: none;
   color: white;
   transition: all 0.3s;
+  cursor: pointer;
 }
-#about-main #about-image a:hover {
+#about-main #about-image button:hover {
   box-shadow: 0px 0px 15px rgb(13, 211, 168);
   background-color: white;
   color: rgb(13, 211, 168);
 }
-@media screen and (max-width: 650px) {
-  #about-main #about-image a {
-    width: 90%;
+#about-main #about-image #resume-list {
+  visibility: hidden;
+  opacity: 0;
+  width: calc(100% - 20px);
+  border-radius: 15px;
+  background-color: rgba(100, 99, 99, 0.6);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  transition: opacity 0.4s;
+}
+#about-main #about-image #resume-list a {
+  width: calc(100% - 40px);
+  padding: 10px 20px;
+  background-color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+@media all and (hover: hover) {
+  #about-main #about-image #resume-list a:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
   }
 }
 #about-main #about-content {
@@ -1060,49 +1101,49 @@ main#contact-main #contact-model .stripe:nth-child(2n) {
   background-color: rgba(13, 211, 168, 0.3);
 }
 main#contact-main #contact-model .stripe:nth-child(1) {
-  width: 242px;
+  width: 298px;
 }
 main#contact-main #contact-model .stripe:nth-child(2) {
-  width: 181px;
+  width: 306px;
 }
 main#contact-main #contact-model .stripe:nth-child(3) {
-  width: 225px;
+  width: 177px;
 }
 main#contact-main #contact-model .stripe:nth-child(4) {
-  width: 239px;
+  width: 295px;
 }
 main#contact-main #contact-model .stripe:nth-child(5) {
-  width: 105px;
+  width: 252px;
 }
 main#contact-main #contact-model .stripe:nth-child(6) {
-  width: 219px;
+  width: 226px;
 }
 main#contact-main #contact-model .stripe:nth-child(7) {
-  width: 322px;
+  width: 161px;
 }
 main#contact-main #contact-model .stripe:nth-child(8) {
-  width: 208px;
+  width: 138px;
 }
 main#contact-main #contact-model .stripe:nth-child(9) {
-  width: 162px;
+  width: 268px;
 }
 main#contact-main #contact-model .stripe:nth-child(10) {
-  width: 343px;
+  width: 255px;
 }
 main#contact-main #contact-model .stripe:nth-child(11) {
-  width: 305px;
+  width: 206px;
 }
 main#contact-main #contact-model .stripe:nth-child(12) {
-  width: 341px;
+  width: 331px;
 }
 main#contact-main #contact-model .stripe:nth-child(13) {
-  width: 343px;
+  width: 174px;
 }
 main#contact-main #contact-model .stripe:nth-child(14) {
-  width: 175px;
+  width: 214px;
 }
 main#contact-main #contact-model .stripe:nth-child(15) {
-  width: 196px;
+  width: 321px;
 }
 
 #projects-main {
