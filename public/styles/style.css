@@ -1101,49 +1101,49 @@ main#contact-main #contact-model .stripe:nth-child(2n) {
   background-color: rgba(13, 211, 168, 0.3);
 }
 main#contact-main #contact-model .stripe:nth-child(1) {
-  width: 229px;
-}
-main#contact-main #contact-model .stripe:nth-child(2) {
   width: 298px;
 }
+main#contact-main #contact-model .stripe:nth-child(2) {
+  width: 190px;
+}
 main#contact-main #contact-model .stripe:nth-child(3) {
-  width: 333px;
+  width: 204px;
 }
 main#contact-main #contact-model .stripe:nth-child(4) {
-  width: 240px;
+  width: 263px;
 }
 main#contact-main #contact-model .stripe:nth-child(5) {
-  width: 272px;
+  width: 152px;
 }
 main#contact-main #contact-model .stripe:nth-child(6) {
-  width: 284px;
+  width: 322px;
 }
 main#contact-main #contact-model .stripe:nth-child(7) {
-  width: 338px;
+  width: 195px;
 }
 main#contact-main #contact-model .stripe:nth-child(8) {
-  width: 256px;
+  width: 298px;
 }
 main#contact-main #contact-model .stripe:nth-child(9) {
-  width: 305px;
+  width: 266px;
 }
 main#contact-main #contact-model .stripe:nth-child(10) {
-  width: 297px;
+  width: 321px;
 }
 main#contact-main #contact-model .stripe:nth-child(11) {
-  width: 342px;
+  width: 182px;
 }
 main#contact-main #contact-model .stripe:nth-child(12) {
-  width: 189px;
+  width: 310px;
 }
 main#contact-main #contact-model .stripe:nth-child(13) {
-  width: 320px;
+  width: 240px;
 }
 main#contact-main #contact-model .stripe:nth-child(14) {
-  width: 166px;
+  width: 207px;
 }
 main#contact-main #contact-model .stripe:nth-child(15) {
-  width: 213px;
+  width: 217px;
 }
 
 #projects-main {
