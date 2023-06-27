@@ -1,5 +1,5 @@
 nav#nav-home {
-  width: calc(100% - 120px);
+  width: calc(100vw - 120px);
   position: fixed;
   top: 0;
   left: 0;
@@ -190,13 +190,13 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   }
 }
 #main-home {
-  width: 100vw;
   min-height: 100vh;
   position: relative;
   top: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: transparent;
+  overflow-x: hidden;
 }
 @media screen and (max-width: 1120px) {
   #main-home {
@@ -407,7 +407,6 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
 
 #skills-main {
   cursor: default;
-  width: 100vw;
   position: relative;
   padding-top: 100px;
   padding-bottom: 20px;
@@ -472,7 +471,8 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
     transform: translateX(0);
   }
 }
-#skills-main section#skills-container:not(:hover) *.skill-card::after, #skills-main section#skills-container .skill-card::before {
+#skills-main section#skills-container:not(:hover) *.skill-card::after,
+#skills-main section#skills-container .skill-card::before {
   opacity: 0;
 }
 #skills-main section#skills-container .skill-card {
@@ -591,7 +591,6 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   }
 }
 #about-main {
-  width: 100vw;
   min-height: 100vh;
   position: relative;
   top: 0px;
@@ -880,7 +879,6 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
 }
 
 main#contact-main {
-  width: 100vw;
   min-height: 100vh;
   position: relative;
   top: 0px;
@@ -1198,49 +1196,49 @@ main#contact-main #contact-model .stripe:nth-child(2n) {
   background-color: rgba(13, 211, 168, 0.3);
 }
 main#contact-main #contact-model .stripe:nth-child(1) {
-  width: 326px;
+  width: 113px;
 }
 main#contact-main #contact-model .stripe:nth-child(2) {
-  width: 102px;
+  width: 193px;
 }
 main#contact-main #contact-model .stripe:nth-child(3) {
-  width: 261px;
+  width: 208px;
 }
 main#contact-main #contact-model .stripe:nth-child(4) {
-  width: 279px;
+  width: 348px;
 }
 main#contact-main #contact-model .stripe:nth-child(5) {
-  width: 145px;
+  width: 226px;
 }
 main#contact-main #contact-model .stripe:nth-child(6) {
-  width: 224px;
+  width: 168px;
 }
 main#contact-main #contact-model .stripe:nth-child(7) {
-  width: 201px;
+  width: 252px;
 }
 main#contact-main #contact-model .stripe:nth-child(8) {
-  width: 323px;
+  width: 121px;
 }
 main#contact-main #contact-model .stripe:nth-child(9) {
-  width: 275px;
+  width: 320px;
 }
 main#contact-main #contact-model .stripe:nth-child(10) {
-  width: 200px;
+  width: 158px;
 }
 main#contact-main #contact-model .stripe:nth-child(11) {
-  width: 300px;
-}
-main#contact-main #contact-model .stripe:nth-child(12) {
   width: 152px;
 }
+main#contact-main #contact-model .stripe:nth-child(12) {
+  width: 231px;
+}
 main#contact-main #contact-model .stripe:nth-child(13) {
-  width: 184px;
+  width: 290px;
 }
 main#contact-main #contact-model .stripe:nth-child(14) {
-  width: 157px;
+  width: 153px;
 }
 main#contact-main #contact-model .stripe:nth-child(15) {
-  width: 326px;
+  width: 117px;
 }
 
 #projects-main {
@@ -1248,10 +1246,10 @@ main#contact-main #contact-model .stripe:nth-child(15) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
   height: 100vh;
   padding: 20px 0px;
   padding-top: 200px;
+  margin: 0;
   opacity: 0;
   transition: opacity 0.8s;
 }
@@ -1342,10 +1340,10 @@ main#contact-main #contact-model .stripe:nth-child(15) {
     border-radius: 0;
   }
   #projects-main section#projects-section .phone-container:nth-child(2n) {
-    transform: translateX(100%) translateY(0);
+    transform: none;
   }
   #projects-main section#projects-section .phone-container:nth-child(2n+1) {
-    transform: translateX(-100%) translateY(0);
+    transform: none;
   }
 }
 #projects-main section#projects-section .phone-container div {
@@ -1364,12 +1362,12 @@ main#contact-main #contact-model .stripe:nth-child(15) {
   transform: translate(-50%, -50%);
 }
 #projects-main section#projects-section .phone-container div img:first-child {
-  border-radius: 25px;
+  border-radius: 20px;
   box-shadow: 0px 0px 20px white;
 }
 #projects-main section#projects-section .phone-container div article {
   height: 86%;
-  width: 190px;
+  aspect-ratio: 1/2.1;
   border-radius: 20px;
   position: absolute;
   top: 50%;
@@ -1495,8 +1493,8 @@ main#contact-main #contact-model .stripe:nth-child(15) {
   src: url("./fonts/static/LexendDeca-Regular.ttf");
 }
 :root {
-  --mouse-x:0;
-  --mouse-y:0;
+  --mouse-x: 0;
+  --mouse-y: 0;
   --dot-0: rgb(80, 80, 80);
   --dot-1: transparent;
   --dot-2: transparent;
@@ -1509,7 +1507,6 @@ html {
 
 body {
   font-family: LexendDeca;
-  overflow-x: hidden;
   min-width: 100%;
   min-height: 100vh;
   height: auto;
@@ -1551,7 +1548,8 @@ body .loader progress[value] {
   -moz-appearance: none;
        appearance: none;
 }
-body .loader progress, body .loader progress[value]::-webkit-progress-bar {
+body .loader progress,
+body .loader progress[value]::-webkit-progress-bar {
   background-color: transparent;
   border: none;
   height: 10px;

@@ -1,116 +1,115 @@
-@import './nav-home';
-@import './home';
-@import './skills';
-@import './about';
-@import './contact';
-@import './projects';
+@import "./nav-home";
+@import "./home";
+@import "./skills";
+@import "./about";
+@import "./contact";
+@import "./projects";
 
-@mixin flex($direction, $justify, $align){
-    display:flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
 }
 
-@keyframes slide{
-    from{
-        background-position: left;
+@keyframes slide {
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
+}
+@keyframes slidevertical {
+  from {
+    background-position: top;
+  }
+  to {
+    background-position: bottom;
+  }
+}
+
+@font-face {
+  font-family: LexendDeca-Bold;
+  src: url("./fonts/static/LexendDeca-Bold.ttf");
+}
+@font-face {
+  font-family: LexendDeca-thin;
+  src: url("./fonts/static/LexendDeca-Thin.ttf");
+}
+@font-face {
+  font-family: LexendDeca;
+  src: url("./fonts/static/LexendDeca-Regular.ttf");
+}
+
+:root {
+  --mouse-x: 0;
+  --mouse-y: 0;
+
+  --dot-0: rgb(80, 80, 80);
+  --dot-1: transparent;
+  --dot-2: transparent;
+  --dot-3: transparent;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: LexendDeca;
+  //   overflow-x: hidden;
+  min-width: 100%;
+  min-height: 100vh;
+  height: auto;
+  width: auto;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  // background:linear-gradient(45deg,#000000,#000000, #000000,rgb(27, 2, 24),black,#000000,#000000,rgb(3, 34, 34),#000000,#000000, #000000);
+  background-size: 600%;
+  animation: slide 20s linear infinite;
+  color: white;
+
+  @media screen and (max-width: 650px) {
+    animation: slide 20s linear infinite alternate;
+  }
+
+  .loader {
+    @include flex(column, center, center);
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 2em;
+    @media screen and (max-width: 500px) {
+      transform: scale(0.8);
     }
-    to{
-        background-position: right;
+    progress[value] {
+      -webkit-appearance: none;
+      appearance: none;
     }
-}
-@keyframes slidevertical{
-    from{
-        background-position: top;
-    }
-    to{
-        background-position: bottom;
-    }
-}
-
-@font-face{
-    font-family: LexendDeca-Bold;
-    src:url('./fonts/static/LexendDeca-Bold.ttf')
-}
-@font-face{
-    font-family: LexendDeca-thin;
-    src:url('./fonts/static/LexendDeca-Thin.ttf')
-}
-@font-face{
-    font-family: LexendDeca;
-    src:url('./fonts/static/LexendDeca-Regular.ttf')
-}
-
-:root{
-    --mouse-x:0;
-    --mouse-y:0;
-
-    --dot-0: rgb(80, 80, 80);
-    --dot-1: transparent;
-    --dot-2: transparent;
-    --dot-3: transparent;
-}
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family: LexendDeca;
-    overflow-x: hidden;
-    min-width:100%;
-    min-height:100vh;
-    height:auto;
-    width: auto;
-    left:0;
-    top:0;
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    // background:linear-gradient(45deg,#000000,#000000, #000000,rgb(27, 2, 24),black,#000000,#000000,rgb(3, 34, 34),#000000,#000000, #000000);
-    background-size: 600%;
-    animation: slide 20s linear infinite;
-    color:white;
-
-    @media screen and (max-width:650px) {
-        animation: slide 20s linear infinite alternate;
+    progress,
+    progress[value]::-webkit-progress-bar {
+      background-color: transparent;
+      border: none;
+      height: 10px;
     }
 
-    .loader{
-        @include flex(column, center,center);
-        gap:10px;
-        width:100%;
-        height:100%;
-        position: absolute;
-        top:0;
-        left:0;
-        font-size: 2em;
-        @media screen and (max-width:500px) {
-            transform: scale(0.8);
-        }
-        progress[value]{
-            -webkit-appearance: none;
-            appearance: none;
-        }
-        progress,progress[value]::-webkit-progress-bar{
-           
-            background-color: transparent;
-            border: none;
-            height:10px;
-        }
-
-        progress[value]::-webkit-progress-value{
-            -webkit-appearance: none;
-            appearance: none;
-            background: rgb(13, 211, 168);
-            border-radius: 500px;
-            width:100%;
-        }
-        progress::-moz-progress-bar{
-            background: rgb(13, 211, 168);
-            border-radius: 500px;
-            width:100%;
-        }
-        
+    progress[value]::-webkit-progress-value {
+      -webkit-appearance: none;
+      appearance: none;
+      background: rgb(13, 211, 168);
+      border-radius: 500px;
+      width: 100%;
     }
+    progress::-moz-progress-bar {
+      background: rgb(13, 211, 168);
+      border-radius: 500px;
+      width: 100%;
+    }
+  }
 }
