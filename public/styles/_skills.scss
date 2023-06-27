@@ -2,11 +2,13 @@
     cursor: default;
     width: 100vw;
     position: relative;
-    padding: 20px 0px;
+    padding-top: 100px;
+    padding-bottom: 20px;
     left:0;
-    top:80px;
+    top:0px;
     @include flex(column,flex-start,center);
     gap:20px;
+
 
     h1{
         font-family: LexendDeca-Bold;
@@ -44,6 +46,17 @@
             @media screen and (max-width:1135px) {
                 transform: translateX(0%);
             }
+            .skill-card{
+                .skill-card-content{
+                    img{
+                        transform: translateY(0);
+
+                        @media screen and (max-width:1135px) {
+                            transform: translateX(0);
+                        }
+                    }
+                }
+            }
 
         }
 
@@ -59,7 +72,7 @@
             background-color: rgba(255, 255, 255,0);
 
             @media all and (hover:none) {
-                background-color: rgba(255, 255, 255,0.15);
+                background-color: rgba(39, 39, 39, 0.15);
             }
             border-radius: 20px;
             padding: 5px;
@@ -101,13 +114,17 @@
                  }
 
                  img{
-                    transition: all 0.5s;
+                    transition: all 0.8s;
+                    transform: translateY(-100%);
                     -webkit-filter: grayscale(30%);
                             filter: grayscale(30%);
 
                     @media all and (hover:none){
                         -webkit-filter: grayscale(0%);
                                 filter: grayscale(0%);
+                    }
+                    @media screen and (max-width:1135px) {
+                        transform: translateY(0) translateX(-100%);
                     }
                  }
             }

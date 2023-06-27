@@ -33,12 +33,15 @@ $aboutColor : rgb(13, 211, 168);
 }
 #about-main{
     width:100vw;
-    height:calc(100vh - 80px);
+    min-height: 100vh;
     position: relative;
-    top:80px;
+    top:0px;
+    // padding-top: 80px;
+    
     display: grid;
     grid-template-columns: 2fr 3fr;
-    overflow-x: hidden;
+    place-content: center;
+    overflow: hidden;
 
     @media screen and (max-width:1120px){
         grid-template-columns: 1fr;
@@ -46,6 +49,7 @@ $aboutColor : rgb(13, 211, 168);
         'top'
         'bottom'
         ;
+        padding: 50px 0px 100px 0px;
     }
 
     &.animate{
@@ -56,6 +60,19 @@ $aboutColor : rgb(13, 211, 168);
         #about-content{
             transform: translateX(0%);
             opacity: 1;
+
+            h1{
+                transform: translateX(0);
+                transition-delay: 0.2s;
+            }
+            p{
+                transform: translateX(0);
+                transition-delay: 0.3s;
+            }
+            div{
+                transform: translateX(0);
+                transition-delay: 0.4s;
+            }
         }
     }
 
@@ -104,19 +121,19 @@ $aboutColor : rgb(13, 211, 168);
             }
         }
 
-        article{
+        #button-resume{
+            position: relative;
             width:70%;
-            @include flex(column,center,center);
+            @include flex(row,flex-start,center);
 
             @media screen and (max-width: 650px) {
                 width: 90%;
             }
-        }
         
         button{
            width:100%;
            background-color: $aboutColor;
-           border-radius: 15px;
+           border-radius: 5px;
            height: 40px;
            line-height: 40px;
            border: none;
@@ -138,32 +155,46 @@ $aboutColor : rgb(13, 211, 168);
         #resume-list{
             visibility:hidden;
             opacity: 0;
-            width: calc(100% - 20px);
-            border-radius: 15px;
-            background-color: rgba(100, 99, 99,0.6);
-            padding: 10px;
-            @include flex(column,center,center);
-            gap:5px;
+            position: absolute;
+            height:150px;
+            top:-50px;
+            right:-60px;
+            border-radius: 5px;
+            @include flex(column,space-between,center);
+            @media screen and (max-width:1120px) {
+                flex-direction:row;
+                height:auto;
+                top:calc(10% + 50px);
+                width:calc(100% + 120px);
+            }
+            @media screen and (max-width:650px) {
+               right: 0;
+                width:100%;
+            }
+            // gap:40px;
             transition: opacity 0.4s;
 
             a{
-                width:calc(100% - 40px);
-                padding: 10px 20px;
-                background-color: rgb(0, 0, 0);
+                padding:10px;
+                aspect-ratio: 1/1;
+                @include flex(row,center,center);
                 text-decoration: none;
-                border-radius: 5px;
-                color:white;
+                background-color: rgb(15, 15, 15);
+                border-radius: 500px;
                 transition: background-color 0.3s, color 0.3s;
 
                 &:hover{
                     @media all and (hover:hover) {
-                        background-color: rgb(255, 255, 255);
-                        color:black;
+                        background-color: rgb(59, 59, 59);
                     }
                     
                 }
+                @media screen and (max-width:650px) {
+                    padding: 10px 40px;
+                 }
             }
         }
+    }
     }
 
     #about-content{
@@ -182,12 +213,17 @@ $aboutColor : rgb(13, 211, 168);
             width:calc(100% - 60px);
          }
         h1{
+            transform: translateX(130%);
+            transition: transform 0.8s;
             font-size: 3em;
             font-family: LexendDeca-Bold;
 
-            @media screen and (max-width: 800px) {
-                font-size: 2.5em;
-            }
+            @media screen and (max-width: 600px) {
+                font-size: 2em;
+             }
+             @media screen and (max-width: 400px) {
+                 font-size: 1.7em;
+              }
 
             span{
                 color:$aboutColor;
@@ -196,6 +232,8 @@ $aboutColor : rgb(13, 211, 168);
 
         p{
             font-size: 1.1em;
+            transform: translateX(130%);
+            transition: transform 0.8s;
 
 
             @media screen and (max-width: 800px) {
@@ -212,7 +250,8 @@ $aboutColor : rgb(13, 211, 168);
                margin-top: 40px;
             }
             width:calc(100% - 60px);
-
+            transform: translateX(130%);
+            transition: transform 0.8s;
             border-radius: 15px;
             background-color: rgba(255,255,255,0.1);
             @include flex(column,center,center);
@@ -223,21 +262,29 @@ $aboutColor : rgb(13, 211, 168);
                 width: 100%;
                 @include flex(row, space-between, center);
                 font-size: 1.3em;
-                @media screen and (max-width: 500px) {
+
+   
+                @media screen and (max-width: 600px) {
+                    flex-direction: column;
+                    align-items: flex-start;
                     font-size: 1em;
+                    gap:5px;
                  }
 
                 progress{
                    
-                    background-color: grey;
+                    background-color: rgb(75, 72, 72);
                     border-radius: 500px;
                     width:70%;
                     border: none;
                     height:10px;
 
-                    @media screen and (max-width: 650px) {
-                        width: 50%;
-                    }
+                    @media screen and (max-width: 600px) {
+                        width:100%;
+                     }
+                    // @media screen and (max-width: 650px) {
+                    //     width: 50%;
+                    // }
                 }
                 ::-webkit-progress-bar{
                     -webkit-appearance: none;

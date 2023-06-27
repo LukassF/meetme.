@@ -10,6 +10,10 @@ const sizes = {
   height: window.innerHeight - 80,
 };
 
+const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.2);
+hemiLight.position.set(2000, 200, 0);
+scene.add(hemiLight);
+
 const light = new THREE.PointLight(0xffffff, 1, 100);
 light.position.set(10, 10, 10);
 scene.add(light);
