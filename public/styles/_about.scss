@@ -123,6 +123,7 @@ $aboutColor: rgb(13, 211, 168);
       position: relative;
       width: 70%;
       @include flex(column, flex-start, center);
+      gap: 10px;
 
       @media screen and (max-width: 650px) {
         width: 90%;
@@ -143,7 +144,6 @@ $aboutColor: rgb(13, 211, 168);
         cursor: pointer;
 
         &:hover {
-          box-shadow: 0px 0px 15px $aboutColor;
           background-color: white;
           color: $aboutColor;
         }
@@ -155,7 +155,8 @@ $aboutColor: rgb(13, 211, 168);
         // position: absolute;
         width: 100%;
         border-radius: 5px;
-        @include flex(row, space-between, center);
+        @include flex(row, center, center);
+        gap: 5px;
         transition: opacity 0.4s;
 
         a {
