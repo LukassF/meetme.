@@ -101,7 +101,6 @@ window.onresize = () => {
     gallery.style.transform = "translateX(0)";
 };
 
-// console.log(containerAbout);
 const showResume = () => {
   const resumeList = document.getElementById("resume-list");
   resumeList.style.visibility = "visible";
@@ -114,3 +113,21 @@ const hideResume = () => {
     resumeList.style.visibility = "hidden";
   }, 400);
 };
+
+const projects = document.querySelectorAll(".phone-container");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (window.innerWidth < 750) console.log(entry);
+      entry.target.classList.toggle("show", entry.isIntersecting);
+    });
+  },
+  {
+    threshold: 0.3,
+  }
+);
+
+projects.forEach((project) => {
+  observer.observe(project);
+});

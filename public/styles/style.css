@@ -679,7 +679,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   position: relative;
   width: 70%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
@@ -713,41 +713,24 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
 #about-main #about-image #button-resume #resume-list {
   visibility: hidden;
   opacity: 0;
-  position: absolute;
-  height: 150px;
-  top: -50px;
-  right: -60px;
+  width: 100%;
   border-radius: 5px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   transition: opacity 0.4s;
 }
-@media screen and (max-width: 1120px) {
-  #about-main #about-image #button-resume #resume-list {
-    flex-direction: row;
-    height: auto;
-    top: calc(10% + 50px);
-    width: calc(100% + 120px);
-  }
-}
-@media screen and (max-width: 650px) {
-  #about-main #about-image #button-resume #resume-list {
-    right: 0;
-    width: 100%;
-  }
-}
 #about-main #about-image #button-resume #resume-list a {
-  padding: 10px;
-  aspect-ratio: 1/1;
+  height: 40px;
+  flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   background-color: rgb(15, 15, 15);
-  border-radius: 500px;
+  border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
 }
 @media all and (hover: hover) {
@@ -792,7 +775,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
 }
 @media screen and (max-width: 400px) {
   #about-main #about-content h1 {
-    font-size: 1.7em;
+    font-size: 1.5em;
   }
 }
 #about-main #about-content h1 span {
@@ -858,6 +841,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
 @media screen and (max-width: 600px) {
   #about-main #about-content div span progress {
     width: 100%;
+    height: 5px;
   }
 }
 #about-main #about-content div span ::-webkit-progress-bar {
@@ -1196,49 +1180,49 @@ main#contact-main #contact-model .stripe:nth-child(2n) {
   background-color: rgba(13, 211, 168, 0.3);
 }
 main#contact-main #contact-model .stripe:nth-child(1) {
-  width: 113px;
+  width: 234px;
 }
 main#contact-main #contact-model .stripe:nth-child(2) {
-  width: 193px;
+  width: 279px;
 }
 main#contact-main #contact-model .stripe:nth-child(3) {
-  width: 208px;
+  width: 190px;
 }
 main#contact-main #contact-model .stripe:nth-child(4) {
-  width: 348px;
+  width: 154px;
 }
 main#contact-main #contact-model .stripe:nth-child(5) {
-  width: 226px;
+  width: 295px;
 }
 main#contact-main #contact-model .stripe:nth-child(6) {
-  width: 168px;
+  width: 220px;
 }
 main#contact-main #contact-model .stripe:nth-child(7) {
-  width: 252px;
+  width: 347px;
 }
 main#contact-main #contact-model .stripe:nth-child(8) {
-  width: 121px;
-}
-main#contact-main #contact-model .stripe:nth-child(9) {
-  width: 320px;
-}
-main#contact-main #contact-model .stripe:nth-child(10) {
   width: 158px;
 }
+main#contact-main #contact-model .stripe:nth-child(9) {
+  width: 241px;
+}
+main#contact-main #contact-model .stripe:nth-child(10) {
+  width: 350px;
+}
 main#contact-main #contact-model .stripe:nth-child(11) {
-  width: 152px;
+  width: 201px;
 }
 main#contact-main #contact-model .stripe:nth-child(12) {
-  width: 231px;
+  width: 165px;
 }
 main#contact-main #contact-model .stripe:nth-child(13) {
-  width: 290px;
+  width: 287px;
 }
 main#contact-main #contact-model .stripe:nth-child(14) {
-  width: 153px;
+  width: 159px;
 }
 main#contact-main #contact-model .stripe:nth-child(15) {
-  width: 117px;
+  width: 165px;
 }
 
 #projects-main {
@@ -1256,31 +1240,17 @@ main#contact-main #contact-model .stripe:nth-child(15) {
 #projects-main.animate {
   opacity: 1;
 }
-#projects-main.animate section#projects-section .phone-container {
-  opacity: 1;
-}
-#projects-main.animate section#projects-section .phone-container:nth-child(2n) {
-  transform: translateY(0);
-}
-#projects-main.animate section#projects-section .phone-container:nth-child(2n+1) {
-  transform: translateY(0);
-}
-#projects-main.animate section#projects-section .phone-container div {
-  transform: translateX(0);
-  opacity: 1;
-}
-@media screen and (max-width: 750px) {
-  #projects-main.animate section#projects-section .phone-container:nth-child(2n) {
-    transform: translateX(0) translateY(0);
-  }
-  #projects-main.animate section#projects-section .phone-container:nth-child(2n+1) {
-    transform: translateX(0) translateY(0);
+@media screen and (min-width: 750px) {
+  #projects-main.animate section#projects-section .phone-container {
+    opacity: 1;
+    transform: translate(0);
   }
 }
 #projects-main h1 {
   font-family: LexendDeca-Bold;
   font-size: 3em;
   z-index: 2;
+  margin-bottom: 50px;
 }
 @media screen and (max-width: 600px) {
   #projects-main h1 {
@@ -1296,8 +1266,8 @@ main#contact-main #contact-model .stripe:nth-child(15) {
   color: rgb(13, 211, 168);
 }
 #projects-main section#projects-section {
-  width: 100%;
   min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.01);
   padding-bottom: 50px;
   display: grid;
   gap: 10px;
@@ -1327,33 +1297,22 @@ main#contact-main #contact-model .stripe:nth-child(15) {
   border-radius: 10px;
   opacity: 0;
   transition: opacity 0.8s, transform 0.5s;
-  transition-delay: 0.2s;
-}
-#projects-main section#projects-section .phone-container:nth-child(2n) {
   transform: translateY(100%);
-}
-#projects-main section#projects-section .phone-container:nth-child(2n+1) {
-  transform: translateY(-100%);
 }
 @media screen and (max-width: 750px) {
   #projects-main section#projects-section .phone-container {
     border-radius: 0;
+    transform: translateY(0) translateX(-30%);
   }
-  #projects-main section#projects-section .phone-container:nth-child(2n) {
-    transform: none;
-  }
-  #projects-main section#projects-section .phone-container:nth-child(2n+1) {
-    transform: none;
-  }
+}
+#projects-main section#projects-section .phone-container.show {
+  opacity: 1;
+  transform: translate(0);
 }
 #projects-main section#projects-section .phone-container div {
   position: relative;
   min-height: 70%;
   width: 100%;
-  transform: translateX(-100%);
-  transition: transform 0.5s, opacity 1s;
-  transition-delay: 0.7s;
-  opacity: 0;
 }
 #projects-main section#projects-section .phone-container div img {
   position: absolute;
@@ -1362,8 +1321,8 @@ main#contact-main #contact-model .stripe:nth-child(15) {
   transform: translate(-50%, -50%);
 }
 #projects-main section#projects-section .phone-container div img:first-child {
-  border-radius: 20px;
-  box-shadow: 0px 0px 20px white;
+  border-radius: 24px;
+  box-shadow: 0px 0px 25px rgb(110, 109, 109);
 }
 #projects-main section#projects-section .phone-container div article {
   height: 86%;
