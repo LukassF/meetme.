@@ -73,6 +73,7 @@
     }
 
     .phone-container {
+      cursor: default;
       @include flex(column, center, center);
       gap: 0;
       overflow: hidden;
@@ -112,10 +113,10 @@
         height: 100%;
         position: absolute;
         background-position: center;
-        background-size: cover;
+        background-size: 105%;
         z-index: -1;
         background-image: url("../assets/projects/Dropship.gif");
-        filter: brightness(10%);
+        filter: brightness(20%);
       }
 
       &.show {

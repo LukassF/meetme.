@@ -203,6 +203,7 @@ $aboutColor: rgb(13, 211, 168);
       transition: transform 0.8s;
       font-size: 3em;
       font-family: LexendDeca-Bold;
+      cursor: default;
 
       @media screen and (max-width: 600px) {
         font-size: 2em;
@@ -220,6 +221,7 @@ $aboutColor: rgb(13, 211, 168);
       font-size: 1.1em;
       transform: translateX(130%);
       transition: transform 0.8s;
+      cursor: default;
 
       @media screen and (max-width: 800px) {
         font-size: 0.9em;

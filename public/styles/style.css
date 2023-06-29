@@ -389,6 +389,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   left: 50%;
   transform: translateX(-50%);
   color: rgb(139, 139, 139);
+  cursor: default;
 }
 #main-home #images-home h2 i {
   animation: sway 1.2s infinite ease-in alternate;
@@ -768,6 +769,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   transition: transform 0.8s;
   font-size: 3em;
   font-family: LexendDeca-Bold;
+  cursor: default;
 }
 @media screen and (max-width: 600px) {
   #about-main #about-content h1 {
@@ -786,6 +788,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   font-size: 1.1em;
   transform: translateX(130%);
   transition: transform 0.8s;
+  cursor: default;
 }
 @media screen and (max-width: 800px) {
   #about-main #about-content p {
@@ -1181,49 +1184,49 @@ main#contact-main #contact-model .stripe:nth-child(2n) {
   background-color: rgba(13, 211, 168, 0.3);
 }
 main#contact-main #contact-model .stripe:nth-child(1) {
-  width: 301px;
+  width: 101px;
 }
 main#contact-main #contact-model .stripe:nth-child(2) {
-  width: 318px;
+  width: 136px;
 }
 main#contact-main #contact-model .stripe:nth-child(3) {
-  width: 261px;
+  width: 181px;
 }
 main#contact-main #contact-model .stripe:nth-child(4) {
-  width: 145px;
+  width: 144px;
 }
 main#contact-main #contact-model .stripe:nth-child(5) {
-  width: 280px;
+  width: 308px;
 }
 main#contact-main #contact-model .stripe:nth-child(6) {
-  width: 205px;
+  width: 201px;
 }
 main#contact-main #contact-model .stripe:nth-child(7) {
-  width: 131px;
+  width: 171px;
 }
 main#contact-main #contact-model .stripe:nth-child(8) {
-  width: 207px;
+  width: 206px;
 }
 main#contact-main #contact-model .stripe:nth-child(9) {
-  width: 154px;
+  width: 339px;
 }
 main#contact-main #contact-model .stripe:nth-child(10) {
-  width: 266px;
+  width: 282px;
 }
 main#contact-main #contact-model .stripe:nth-child(11) {
-  width: 166px;
+  width: 309px;
 }
 main#contact-main #contact-model .stripe:nth-child(12) {
-  width: 167px;
+  width: 181px;
 }
 main#contact-main #contact-model .stripe:nth-child(13) {
-  width: 107px;
+  width: 311px;
 }
 main#contact-main #contact-model .stripe:nth-child(14) {
-  width: 262px;
+  width: 213px;
 }
 main#contact-main #contact-model .stripe:nth-child(15) {
-  width: 216px;
+  width: 161px;
 }
 
 #projects-main {
@@ -1302,6 +1305,7 @@ main#contact-main #contact-model .stripe:nth-child(15) {
   }
 }
 #projects-main section#projects-section .phone-container {
+  cursor: default;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1340,10 +1344,10 @@ main#contact-main #contact-model .stripe:nth-child(15) {
   height: 100%;
   position: absolute;
   background-position: center;
-  background-size: cover;
+  background-size: 105%;
   z-index: -1;
   background-image: url("../assets/projects/Dropship.gif");
-  filter: brightness(10%);
+  filter: brightness(20%);
 }
 #projects-main section#projects-section .phone-container.show {
   opacity: 1;
@@ -1496,8 +1500,8 @@ body {
   top: 0;
   margin: 0;
   padding: 0;
-  background-color: black;
-  background-size: 600%;
+  background-color: #0a0a0a;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23090809' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
   animation: slide 20s linear infinite;
   color: white;
 }
