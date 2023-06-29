@@ -94,6 +94,9 @@
       }
 
       &:hover {
+        div {
+          filter: brightness(10%);
+        }
         article {
           transform: translateX(0) scale(1);
           flex: 3;
@@ -101,6 +104,9 @@
         }
       }
       &:focus {
+        div {
+          filter: brightness(10%);
+        }
         article {
           transform: translateX(0) scale(1);
           flex: 3;
@@ -116,7 +122,8 @@
         background-size: 105%;
         z-index: -1;
         background-image: url("../assets/projects/Dropship.gif");
-        filter: brightness(20%);
+        filter: brightness(30%);
+        transition: filter 0.5s;
       }
 
       &.show {

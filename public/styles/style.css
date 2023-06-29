@@ -1184,49 +1184,49 @@ main#contact-main #contact-model .stripe:nth-child(2n) {
   background-color: rgba(13, 211, 168, 0.3);
 }
 main#contact-main #contact-model .stripe:nth-child(1) {
-  width: 101px;
+  width: 167px;
 }
 main#contact-main #contact-model .stripe:nth-child(2) {
-  width: 136px;
+  width: 156px;
 }
 main#contact-main #contact-model .stripe:nth-child(3) {
-  width: 181px;
+  width: 318px;
 }
 main#contact-main #contact-model .stripe:nth-child(4) {
-  width: 144px;
+  width: 219px;
 }
 main#contact-main #contact-model .stripe:nth-child(5) {
-  width: 308px;
+  width: 281px;
 }
 main#contact-main #contact-model .stripe:nth-child(6) {
-  width: 201px;
+  width: 320px;
 }
 main#contact-main #contact-model .stripe:nth-child(7) {
-  width: 171px;
+  width: 149px;
 }
 main#contact-main #contact-model .stripe:nth-child(8) {
-  width: 206px;
+  width: 154px;
 }
 main#contact-main #contact-model .stripe:nth-child(9) {
-  width: 339px;
-}
-main#contact-main #contact-model .stripe:nth-child(10) {
   width: 282px;
 }
+main#contact-main #contact-model .stripe:nth-child(10) {
+  width: 170px;
+}
 main#contact-main #contact-model .stripe:nth-child(11) {
-  width: 309px;
+  width: 109px;
 }
 main#contact-main #contact-model .stripe:nth-child(12) {
-  width: 181px;
+  width: 302px;
 }
 main#contact-main #contact-model .stripe:nth-child(13) {
-  width: 311px;
+  width: 141px;
 }
 main#contact-main #contact-model .stripe:nth-child(14) {
-  width: 213px;
+  width: 290px;
 }
 main#contact-main #contact-model .stripe:nth-child(15) {
-  width: 161px;
+  width: 187px;
 }
 
 #projects-main {
@@ -1329,10 +1329,16 @@ main#contact-main #contact-model .stripe:nth-child(15) {
     border-radius: 0;
   }
 }
+#projects-main section#projects-section .phone-container:hover div {
+  filter: brightness(10%);
+}
 #projects-main section#projects-section .phone-container:hover article {
   transform: translateX(0) scale(1);
   flex: 3;
   opacity: 1;
+}
+#projects-main section#projects-section .phone-container:focus div {
+  filter: brightness(10%);
 }
 #projects-main section#projects-section .phone-container:focus article {
   transform: translateX(0) scale(1);
@@ -1347,7 +1353,8 @@ main#contact-main #contact-model .stripe:nth-child(15) {
   background-size: 105%;
   z-index: -1;
   background-image: url("../assets/projects/Dropship.gif");
-  filter: brightness(20%);
+  filter: brightness(30%);
+  transition: filter 0.5s;
 }
 #projects-main section#projects-section .phone-container.show {
   opacity: 1;
