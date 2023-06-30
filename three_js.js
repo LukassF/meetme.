@@ -34,6 +34,7 @@ renderer.setPixelRatio(2);
 renderer.render(scene, camera);
 
 const controls = new OrbitControls(camera, canvas);
+// controls.target.set(4, 4, 0);
 controls.enableDamping = true;
 controls.enablePan = false;
 controls.enableZoom = false;
@@ -62,7 +63,8 @@ loadingManager.onLoad = () => {
 };
 
 let loader = new GLTFLoader(loadingManager);
-loader.load("./assets/earth.glb", (gltf) => {
+loader.load("./assets/twisted_sphere.glb", (gltf) => {
+  gltf.scene.scale.setScalar(5);
   scene.add(gltf.scene);
 });
 

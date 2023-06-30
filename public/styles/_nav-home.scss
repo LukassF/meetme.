@@ -6,7 +6,7 @@
 }
 
 nav#nav-home {
-  width: calc(100vw - 120px);
+  min-width: calc(100vw - 120px);
   position: fixed;
   top: 0;
   left: 0;
@@ -16,6 +16,8 @@ nav#nav-home {
   @include flex(row, space-between, center);
   @media screen and (max-width: 700px) {
     background-color: rgba(0, 0, 0, 0.8);
+    padding: 6px 30px;
+    min-width: calc(100vw - 60px);
   }
 
   div {
