@@ -29,16 +29,12 @@ window.onload = () => {
     ? document.getElementById("about-main")
     : "";
 
-  const containerProjects = document.getElementById("projects-main")
-    ? document.getElementById("projects-main")
-    : "";
-
   const containerContact = document.getElementById("contact-main")
     ? document.getElementById("contact-main")
     : "";
   if (containerSkills !== "") containerSkills.classList.add("animate");
   if (containerAbout !== "") containerAbout.classList.add("animate");
-  if (containerProjects !== "") containerProjects.classList.add("animate");
+
   if (containerContact !== "") containerContact.classList.add("animate");
 };
 
@@ -130,4 +126,29 @@ const observer = new IntersectionObserver(
 
 projects.forEach((project) => {
   observer.observe(project);
+});
+
+//checking if the gifs are loaded
+const projectImages = document.querySelectorAll(".project-image");
+
+let intervalID;
+intervalID = setInterval(() => {
+  let images = [];
+  projectImages.forEach((image) => {
+    images.push(image.complete);
+  });
+
+  if (images.filter((image) => image === false).length === 0) {
+    console.log("loaded all");
+    clearInterval(intervalID);
+
+    const containerProjects = document.getElementById("projects-main")
+      ? document.getElementById("projects-main")
+      : "";
+    const projectsLoader = document.getElementById("projects-loader")
+      ? document.getElementById("projects-loader")
+      : "";
+    if (containerProjects !== "") containerProjects.classList.add("animate");
+    if (projectsLoader !== "") projectsLoader.classList.add("fadeOut");
+  }
 });
