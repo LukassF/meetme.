@@ -1,17 +1,32 @@
 #skills-main {
+  perspective: 1000px;
+  // background-color: red;
   cursor: default;
   position: relative;
-  padding-top: 100px;
-  padding-bottom: 20px;
+  min-height: 100vh;
   left: 0;
   top: 0px;
-  @include flex(column, flex-start, center);
+  @include flex(column, center, stretch);
   gap: 20px;
 
   h1 {
+    // padding: 0px 50px;
     font-family: LexendDeca-Bold;
     font-size: 3em;
     z-index: 2;
+    @include flex(row, center, center);
+    // gap: 40px;
+
+    div {
+      margin: 0px 40px;
+      height: 3px;
+      background-color: rgb(13, 211, 168);
+      border-radius: 500px;
+      flex: 1;
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+    }
 
     @media screen and (max-width: 600px) {
       font-size: 2em;
@@ -22,40 +37,41 @@
 
     span {
       color: rgb(13, 211, 168);
+      margin: 0px 15px;
     }
   }
 
   section#skills-container {
-    width: 90%;
+    // width: 90%;
     @include flex(row, center, center);
     gap: 20px;
     flex-wrap: wrap;
-    transform: translateY(-50%);
-    opacity: 0;
+    // transform: translateY(-50%);
+    // opacity: 0;
     transition: transform 0.5s, opacity 0.8s;
     z-index: 0;
     @media screen and (max-width: 1135px) {
-      transform: translateX(-50%);
+      // transform: translateX(-50%);
     }
 
-    &.animate {
-      transform: translateY(-0%);
-      opacity: 1;
-      @media screen and (max-width: 1135px) {
-        transform: translateX(0%);
-      }
-      .skill-card {
-        .skill-card-content {
-          img {
-            transform: translateY(0);
+    // &.animate {
+    //   transform: translateY(-0%);
+    //   opacity: 1;
+    //   @media screen and (max-width: 1135px) {
+    //     transform: translateX(0%);
+    //   }
+    //   .skill-card {
+    //     .skill-card-content {
+    //       img {
+    //         transform: translateY(0);
 
-            @media screen and (max-width: 1135px) {
-              transform: translateX(0);
-            }
-          }
-        }
-      }
-    }
+    //         @media screen and (max-width: 1135px) {
+    //           transform: translateX(0);
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
 
     &:not(:hover) *.skill-card::after,
     .skill-card::before {
@@ -65,7 +81,7 @@
     .skill-card {
       position: relative;
       flex-shrink: 0;
-      width: 230px;
+      width: 200px;
       aspect-ratio: 1/1;
       background-color: rgba(255, 255, 255, 0);
 
@@ -77,13 +93,11 @@
       transition: transform 0.5s;
 
       &:hover {
-        @media all and (hover: hover) {
-          transform: scale(1.05);
+        transform: scale(1.05);
 
-          .skill-card-content img {
-            -webkit-filter: grayscale(0%);
-            filter: grayscale(0%);
-          }
+        .skill-card-content img {
+          -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
         }
       }
 
@@ -110,8 +124,9 @@
         }
 
         img {
-          transition: all 0.8s;
-          transform: translateY(-100%);
+          transform-style: preserve-3d;
+          transition: filter 0.8s;
+          // transform: translateY(-100%);
           -webkit-filter: grayscale(30%);
           filter: grayscale(30%);
 
@@ -120,7 +135,7 @@
             filter: grayscale(0%);
           }
           @media screen and (max-width: 1135px) {
-            transform: translateY(0) translateX(-100%);
+            // transform: translateY(0) translateX(-100%);
           }
         }
       }

@@ -1,131 +1,117 @@
+gsap.registerPlugin(scrollTo);
+
 function showMenu() {
   document.getElementById("nav-list").classList.toggle("view");
 }
 
+let navLinks = [...document.getElementById("nav-list").children];
+
 function activePage(e) {
-  let children = document.getElementById("nav-list").children;
-  for (let i = 0; i < children.length; i++) {
-    children[i].classList.remove("active");
-  }
+  navLinks.forEach((link) => {
+    link.children[0].classList.remove("active");
+  });
   e.target.classList.add("active");
+  console.log(e.target.dataset);
+
+  switch (e.target.dataset.value) {
+    case "home":
+      gsap.to(window, { duration: 0.3, scrollTo: "#main-home" });
+      console.log("home");
+      break;
+    case "about":
+      gsap.to(window, { duration: 0.3, scrollTo: "#about-main" });
+      console.log("about");
+      break;
+    case "skills":
+      gsap.to(window, { duration: 0.3, scrollTo: "#skills-main" });
+      console.log("skills");
+      break;
+    case "projects":
+      gsap.to(window, { duration: 0.3, scrollTo: "#projects-main" });
+      break;
+    case "contact":
+      gsap.to(window, { duration: 0.3, scrollTo: "#contact-main" });
+      break;
+    default:
+      break;
+  }
 }
 
 const hoverEffect = (e) => {
   for (const card of document.querySelectorAll(".skill-card")) {
+    const child = e.target.children[0].children[0];
+
+    card.children[0].children[0].style.transform = "none";
+    // console.log(child.classList.length);
     const rect = card.getBoundingClientRect(),
       x = e.clientX - rect.left,
       y = e.clientY - rect.top;
 
+    const currentRect = e.target.getBoundingClientRect();
+
     card.style.setProperty("--mouse-x", `${x}px`);
     card.style.setProperty("--mouse-y", `${y}px`);
+
+    console.log(
+      ((e.clientX - currentRect.left - card.clientWidth / 2) /
+        card.clientWidth) *
+        200
+    );
+
+    // if (child.classList.length === 0)
+    //   child.style.transform = `translate(${
+    //     -(
+    //       (e.clientX - currentRect.left - card.clientWidth / 2) /
+    //       card.clientWidth
+    //     ) * 10
+    //   }%, ${
+    //     -(
+    //       (e.clientY - currentRect.top - card.clientHeight / 2) /
+    //       card.clientHeight
+    //     ) * 10
+    //   }%)`;
   }
 };
 
-window.onload = () => {
-  const containerSkills = document.getElementById("skills-container")
-    ? document.getElementById("skills-container")
-    : "";
-  const containerAbout = document.getElementById("about-main")
-    ? document.getElementById("about-main")
-    : "";
-
-  const containerContact = document.getElementById("contact-main")
-    ? document.getElementById("contact-main")
-    : "";
-  if (containerSkills !== "") containerSkills.classList.add("animate");
-  if (containerAbout !== "") containerAbout.classList.add("animate");
-
-  if (containerContact !== "") containerContact.classList.add("animate");
+const traits = (e, value) => {
+  e.target.parentElement.children[0].classList.toggle("show", value);
+  e.target.parentElement.children[2].classList.toggle("show", value);
 };
 
-const gallery = document.getElementById("gallery");
-let counter = 0;
+// const showResume = () => {
+//   const resumeList = document.getElementById("resume-list");
+//   resumeList.style.visibility = "visible";
+//   resumeList.style.opacity = "1";
+// };
+// const hideResume = () => {
+//   const resumeList = document.getElementById("resume-list");
+//   resumeList.style.opacity = "0";
+//   setTimeout(() => {
+//     resumeList.style.visibility = "hidden";
+//   }, 400);
+// };
 
-const slideLeft = () => {
-  if (counter > 3) {
-    gallery.style.transition = "none";
-    gallery.style.transform = "translateX(0%)";
-
-    counter = 0;
-  }
-  counter++;
-
-  setTimeout(() => {
-    gallery.style.transform = `translateX(-${counter * 100}vw)`;
-    gallery.style.transition = "transform 0.5s";
-  }, 10);
-
-  for (let i = 0; i < 4; i++) {
-    document.documentElement.style.setProperty(`--dot-${i}`, "transparent");
-  }
-  document.documentElement.style.setProperty(
-    `--dot-${counter}`,
-    "rgb(80, 80, 80)"
-  );
-  if (counter === 4) {
-    document.documentElement.style.setProperty(`--dot-0`, "rgb(80, 80, 80)");
-  }
-};
-
-const slideRight = () => {
-  if (counter <= 0) {
-    gallery.style.transition = "none";
-    gallery.style.transform = "translateX(-400vw)";
-
-    counter = 4;
-  }
-  counter--;
-
-  setTimeout(() => {
-    gallery.style.transform = `translateX(-${counter * 100}vw)`;
-    gallery.style.transition = "transform 0.5s";
-  }, 10);
-
-  for (let i = 0; i < 4; i++) {
-    document.documentElement.style.setProperty(`--dot-${i}`, "transparent");
-  }
-  document.documentElement.style.setProperty(
-    `--dot-${counter}`,
-    "rgb(80, 80, 80)"
-  );
-};
-
-window.onresize = () => {
-  if (gallery) gallery.style.transition = "none";
-
-  if (window.innerWidth <= 700 && gallery)
-    gallery.style.transform = "translateX(0)";
-};
-
-const showResume = () => {
-  const resumeList = document.getElementById("resume-list");
-  resumeList.style.visibility = "visible";
-  resumeList.style.opacity = "1";
-};
-const hideResume = () => {
-  const resumeList = document.getElementById("resume-list");
-  resumeList.style.opacity = "0";
-  setTimeout(() => {
-    resumeList.style.visibility = "hidden";
-  }, 400);
-};
-
-const projects = document.querySelectorAll(".phone-container");
+const containers = [...document.getElementsByTagName("main")];
 
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      if (window.innerWidth < 750) console.log(entry);
-      entry.target.classList.toggle("show", entry.isIntersecting);
+      console.log(entry.target.dataset.navlink);
+      navLinks.forEach((link) => {
+        if (link.innerText === entry.target.dataset.navlink)
+          link.children[0].classList.add("active");
+        else link.children[0].classList.remove("active");
+      });
+      // entry.target.classList.toggle("show", entry.isIntersecting);
     });
   },
   {
-    threshold: 0.2,
+    threshold: 0.6,
   }
 );
 
-projects.forEach((project) => {
-  observer.observe(project);
+containers.forEach((container) => {
+  observer.observe(container);
 });
 
 //checking if the gifs are loaded

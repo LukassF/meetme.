@@ -32,6 +32,7 @@ $aboutColor: rgb(13, 211, 168);
   }
 }
 #about-main {
+  // background-color: green;
   min-height: 100vh;
   position: relative;
   top: 0px;
@@ -39,64 +40,66 @@ $aboutColor: rgb(13, 211, 168);
 
   display: grid;
   grid-template-columns: 2fr 3fr;
+  gap: 40px;
   place-content: center;
   overflow: hidden;
 
-  @media screen and (max-width: 1120px) {
+  @media screen and (max-width: 1200px) {
     grid-template-columns: 1fr;
     grid-template-areas:
       "top"
       "bottom";
-    padding: 50px 0px 100px 0px;
-  }
-
-  &.animate {
-    #about-image {
-      transform: translateX(0%);
-      opacity: 1;
-    }
-    #about-content {
-      transform: translateX(0%);
-      opacity: 1;
-
-      h1 {
-        transform: translateX(0);
-        transition-delay: 0.2s;
-      }
-      p {
-        transform: translateX(0);
-        transition-delay: 0.3s;
-      }
-      div {
-        transform: translateX(0);
-        transition-delay: 0.4s;
-      }
-    }
   }
 
   #about-image {
-    @include flex(column, flex-start, center);
+    @include flex(column, center, center);
     padding: 20px 30px;
-    height: calc(100% - 60px);
-    width: calc(100% - 100px);
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: transform 0.5s, opacity 0.8s;
-    transition-delay: 0.2s;
     @media screen and (max-width: 1120px) {
       width: calc(100% - 60px);
     }
     #svg {
       position: relative;
-      width: 100%;
-      min-height: 500px;
-      @media screen and (max-width: 1120px) {
+      width: 90%;
+      aspect-ratio: 1/1;
+      // min-height: 500px;
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      @media screen and (max-width: 1200px) {
         display: none;
       }
+      @media screen and (max-width: 700px) {
+        display: block;
+        width: 100%;
+        margin-top: -50px;
+      }
+      div {
+        @media screen and (max-width: 600px) {
+          opacity: 0;
+        }
+        z-index: -1;
+        width: 100%;
+        left: -5%;
+        bottom: -5%;
+        aspect-ratio: 1/1;
+        border: solid $aboutColor 2px;
+        border-radius: inherit;
+        box-shadow: 0px 0px 5px 2px $aboutColor;
+        position: absolute;
+      }
+      // @media screen and (max-width: 1000px) {
+      //   min-height: 350px;
+      //   transform: scale(0.7);
+      // }
+      // @media screen and (max-width: 800px) {
+      //   min-height: 300px;
+      //   transform: scale(0.6);
+      // }
       svg {
+        width: 80%;
+        height: 80%;
         position: absolute;
         top: 50%;
-        left: 55%;
+        left: 50%;
         transform: translate(-50%, -50%);
 
         #head {
@@ -118,90 +121,29 @@ $aboutColor: rgb(13, 211, 168);
         }
       }
     }
-
-    #button-resume {
-      position: relative;
-      width: 70%;
-      @include flex(column, flex-start, center);
-      gap: 10px;
-
-      @media screen and (max-width: 650px) {
-        width: 90%;
-      }
-
-      button {
-        width: 100%;
-        background-color: $aboutColor;
-        border-radius: 5px;
-        height: 40px;
-        line-height: 40px;
-        border: none;
-        @include flex(column, center, center);
-        font-size: 1.2em;
-        text-decoration: none;
-        color: white;
-        transition: all 0.3s;
-        cursor: pointer;
-
-        &:hover {
-          background-color: white;
-          color: $aboutColor;
-        }
-      }
-      #resume-list {
-        visibility: hidden;
-        // background-color: red;
-        opacity: 0;
-        // position: absolute;
-        width: 100%;
-        border-radius: 5px;
-        @include flex(row, center, center);
-        gap: 5px;
-        transition: opacity 0.4s;
-
-        a {
-          //   padding: 10px;
-          height: 40px;
-          //   aspect-ratio: 1/1;
-          flex: 1;
-          @include flex(row, center, center);
-          text-decoration: none;
-          background-color: rgb(15, 15, 15);
-          border-radius: 5px;
-          transition: background-color 0.3s, color 0.3s;
-
-          &:hover {
-            @media all and (hover: hover) {
-              background-color: rgb(59, 59, 59);
-            }
-          }
-          @media screen and (max-width: 650px) {
-            padding: 10px 40px;
-          }
-        }
-      }
-    }
   }
 
   #about-content {
+    // background-color: red;
     width: calc(100% - 100px);
-    height: calc(100% - 100px);
-    padding: 50px;
-    opacity: 0;
-    transform: translateX(100%);
+    height: calc(100% - 0px);
+    @include flex(column, center, stretch);
+    gap: 20px;
+    padding: 0px 50px;
     transition: transform 0.5s, opacity 0.8s;
 
-    @media screen and (max-width: 1120px) {
+    @media screen and (max-width: 1200px) {
       grid-area: top;
     }
     @media screen and (max-width: 700px) {
-      padding: 50px 30px;
+      padding: 0px 30px;
       width: calc(100% - 60px);
     }
     h1 {
-      transform: translateX(130%);
+      // transform: translateX(130%);
       transition: transform 0.8s;
       font-size: 3em;
+      margin: 0;
       font-family: LexendDeca-Bold;
       cursor: default;
 
@@ -218,80 +160,159 @@ $aboutColor: rgb(13, 211, 168);
     }
 
     p {
-      font-size: 1.1em;
-      transform: translateX(130%);
+      font-size: 1em;
+
+      // transform: translateX(130%);
+      position: relative;
+      margin: 0;
       transition: transform 0.8s;
       cursor: default;
+      border-radius: 10px;
+      padding: 20px;
+      padding-left: 0px;
+      background-color: rgb(0, 0, 0);
 
-      @media screen and (max-width: 800px) {
-        font-size: 0.9em;
+      @media screen and (max-width: 1400px) {
+        font-size: 0.8em;
       }
       @media screen and (max-width: 600px) {
-        font-size: 0.8em;
+        font-size: 0.7em;
+      }
+
+      &::after {
+        content: "";
+        z-index: -1;
+        width: 100%;
+        left: 2%;
+        bottom: -12%;
+        height: 100%;
+        border: solid white 2px;
+        border-radius: inherit;
+        box-shadow: 0px 0px 5px 2px whitesmoke;
+        @media screen and (max-width: 600px) {
+          opacity: 0;
+          padding: 0px;
+        }
+
+        position: absolute;
       }
     }
 
-    div {
-      margin-top: 70px;
-      @media screen and (max-width: 1500px) {
-        margin-top: 40px;
-      }
-      width: calc(100% - 60px);
-      transform: translateX(130%);
-      transition: transform 0.8s;
-      border-radius: 15px;
-      background-color: rgba(255, 255, 255, 0.1);
-      @include flex(column, center, center);
-      gap: 25px;
-      padding: 30px;
+    article {
+      // justify-self: center;
+      margin-top: 50px;
+      // background-color: yellow;
+      height: 170px;
+      @include flex(row, center, center);
+      gap: 30px;
 
-      span {
-        width: 100%;
-        @include flex(row, space-between, center);
-        font-size: 1.3em;
-
-        @media screen and (max-width: 600px) {
-          flex-direction: column;
-          align-items: flex-start;
-          font-size: 1em;
-          gap: 5px;
-        }
-
-        progress {
-          background-color: rgb(75, 72, 72);
-          border-radius: 500px;
-          width: 70%;
-          border: none;
-          height: 10px;
-
-          @media screen and (max-width: 600px) {
-            width: 100%;
-            height: 5px;
+      div {
+        &:first-child {
+          @include flex(column, center, flex-end);
+          gap: 25px;
+          &.show {
+            span {
+              opacity: 1;
+              &:first-child {
+                transform: rotate(10deg) translate(0);
+              }
+              &:last-child {
+                transition-delay: 0.2s;
+                transform: rotate(-10deg) translate(0);
+              }
+              &:nth-child(2) {
+                transition-delay: 0.1s;
+                transform: none;
+              }
+            }
           }
-          // @media screen and (max-width: 650px) {
-          //     width: 50%;
-          // }
-        }
-        ::-webkit-progress-bar {
-          -webkit-appearance: none;
-          appearance: none;
-          background-color: grey;
-          border-radius: 500px;
-        }
 
-        progress[value]::-webkit-progress-value {
-          -webkit-appearance: none;
-          appearance: none;
-          background: $aboutColor;
-          border-radius: 500px;
-          width: 100%;
+          span {
+            font-size: 1.1em;
+            transition: all 0.3s;
+            opacity: 0;
+
+            @media screen and (max-width: 900px) {
+              font-size: 0.9em;
+            }
+            @media screen and (max-width: 700px) {
+              font-size: 0.6em;
+            }
+            &:first-child {
+              transform: rotate(10deg) translate(120%, 5px);
+            }
+            &:last-child {
+              transform: rotate(-10deg) translate(120%, 5px);
+            }
+            &:nth-child(2) {
+              transform: translateX(120%);
+            }
+          }
         }
-        progress::-moz-progress-bar {
-          background: $aboutColor;
-          border-radius: 500px;
-          // width:100%;
+        &:last-child {
+          @include flex(column, center, flex-start);
+          gap: 25px;
+          &.show {
+            span {
+              opacity: 1;
+              &:first-child {
+                transition-delay: 0.5s;
+                transform: rotate(-10deg) translate(0);
+              }
+              &:last-child {
+                transition-delay: 0.3s;
+                transform: rotate(10deg) translate(0);
+              }
+              &:nth-child(2) {
+                transition-delay: 0.4s;
+                transform: none;
+              }
+            }
+          }
+
+          span {
+            font-size: 1.1em;
+            transition: all 0.3s;
+            opacity: 0;
+            @media screen and (max-width: 900px) {
+              font-size: 0.9em;
+            }
+            @media screen and (max-width: 700px) {
+              font-size: 0.6em;
+            }
+            &:first-child {
+              transform: rotate(-10deg) translate(-120%, 5px);
+            }
+            &:last-child {
+              transform: rotate(10deg) translate(-120%, 5px);
+            }
+            &:nth-child(2) {
+              transform: translateX(-120%);
+            }
+          }
+        }
+        &:nth-child(2) {
+          cursor: pointer;
+          height: 70%;
+
+          @media screen and (max-width: 700px) {
+            height: 50%;
+            border-width: 8px;
+            font-size: 1.2em;
+          }
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          background-color: black;
+          z-index: 10;
+          border: solid $aboutColor 12px;
+          box-shadow: 0px 0px 22px 5px rgba(13, 211, 168, 0.4);
+          display: grid;
+          place-content: center;
+          font-size: 2em;
+          color: $aboutColor;
         }
       }
+      // background-color: yellow;
     }
   }
 }

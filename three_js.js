@@ -64,7 +64,8 @@ loadingManager.onLoad = () => {
 
 let loader = new GLTFLoader(loadingManager);
 loader.load("./assets/twisted_sphere.glb", (gltf) => {
-  gltf.scene.scale.setScalar(5);
+  gltf.scene.scale.setScalar(4);
+  gltf.scene.position.set(0, 1, 0);
   scene.add(gltf.scene);
 });
 
@@ -75,7 +76,7 @@ setInterval(() => {
   sizes.height =
     window.innerWidth > 1120
       ? window.innerHeight - 80
-      : window.innerHeight / 1.7;
+      : window.innerHeight / 1.3;
   camera.updateProjectionMatrix();
   camera.aspect = sizes.width / sizes.height;
   renderer.setSize(sizes.width, sizes.height);

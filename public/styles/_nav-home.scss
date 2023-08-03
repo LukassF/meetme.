@@ -12,7 +12,7 @@ nav#nav-home {
   left: 0;
   padding: 10px 60px;
   height: 60px;
-  z-index: 5;
+  z-index: 50;
   @include flex(row, space-between, center);
   @media screen and (max-width: 700px) {
     background-color: rgba(0, 0, 0, 0.8);
