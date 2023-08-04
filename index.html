@@ -40,7 +40,7 @@
   <nav id="nav-home">
     <div>meetme.</div>
 
-    <span class="hamburger-menu" onclick="showMenu()">
+    <span class="hamburger-menu" onclick="showMenu(event)">
       <span class="hamburger-icon"></span>
     </span>
 
@@ -66,12 +66,13 @@
 
   <!-- HOME -->
   <main id="main-home" data-navLink="Home">
+    <img src="https://cdn.pixabay.com/photo/2015/10/11/12/49/wood-grain-982264_960_720.jpg" alt="background" class="home-background">
     <article id="text-home">
       <div id="text-box">
-        <h1>Hello to you!</h1>
-        <h2>I'm Łukasz, a <span class="type-auto"></span></h2>
+        <h1 class="home-el">Hello to you!</h1>
+        <h2 class="home-el">I'm Łukasz, a <span class="type-auto"></span></h2>
 
-        <p>
+        <p class="home-el">
           Want to get to know me better? Check out my
           <a onclick="activePage(event)"><span  data-value="about">About page</span></a>
           for more details. And after you do so (or before), text me! I will
@@ -82,21 +83,21 @@
 
         <div id="social-links">
           <ul>
-            <li>
+            <li class="social-link">
               <a href="https://github.com/LukassF" target="_blank"><i class="fa fa-github"></i></a>
             </li>
-            <li>
+            <li class="social-link">
               <a href="https://www.facebook.com/luki.flork" target="_blank"><i class="fa fa-facebook"></i></a>
             </li>
-            <li>
+            <li class="social-link">
               <a href="https://www.facebook.com/luki.flork" target="_blank"><i
                   class="fab fa-facebook-messenger"></i></a>
             </li>
-            <li>
+            <li class="social-link">
               <a href="https://www.linkedin.com/in/%C5%82ukasz-florek-37784b279" target="_blank"><i
                   class="fa fa-linkedin"></i></a>
             </li>
-            <li>
+            <li class="social-link">
               <a href="https://instagram.com/luki.flork?igshid=ZGUzMzM3NWJiOQ==" target="_blank"><i
                   class="fa fa-instagram"></i></a>
             </li>
@@ -118,7 +119,12 @@
   <main id="about-main" data-navLink="About">
     <section id="about-image">
       <div id="svg">
-        <div></div>
+        <div class="frame-about">
+          <div class="frame-about-top"></div>
+          <div class="frame-about-left"></div>
+          <div class="frame-about-bottom"></div>
+          <div class="frame-about-right"></div>
+        </div>
         <svg width="450" viewBox="0 0 851 741" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="undraw_developer_activity_re_39tg 1" clip-path="url(#clip0_1_2)">
             <g id="background">
@@ -374,8 +380,9 @@
   
     </section>
     <section id="about-content">
-      <h1>Something <span>about</span> me.</h1>
-      <p>
+      <h1 class="about-el">Something <span>about</span> me.</h1>
+      <p >
+
         Hi, my name is Łukasz, as you've probably already found out on the
         home page, but anyway.. how nice to meet you! Allow me to let you in
         on a thing or two about myself. I am from Poland, Kraków and I am
@@ -386,14 +393,16 @@
         naturally. Out of the office I really enjoy watching and participating
         in various sports, such as football or Formula 1 (only as a viewer
         obviously).
+        <!-- <div class="frame"></div> -->
       </p>
-      <article>
+
+      <article class="about-el">
         <div>
           <span>Creativity</span>
           <span>Open Mindedness</span>
           <span>Commitment</span>
         </div>
-        <div onmouseenter="traits(event,true)" onmouseleave="traits(event,false)">ME</div>
+        <a href="./public/assets/ŁukaszFlorek_english.pdf" download onmouseenter="traits(event,true)" onmouseleave="traits(event,false)">ME</a>
         <div>
           <span>Teamwork</span>
           <span>Rapid Learning</span>
@@ -408,71 +417,73 @@
   <!-- SKILLS -->
 
   <main id="skills-main" data-navLink="Skills">
-    <h1><div></div>I <span>know</span> how to use...<div></div></h1>
+    <!-- <img src="https://cdn.pixabay.com/photo/2016/09/11/17/11/digital-1661823_960_720.jpg" alt="background-skills" class="skills-background"> -->
+    <img src="https://cdn.pixabay.com/photo/2015/10/11/12/49/wood-grain-982264_960_720.jpg" alt="background-skills" class="skills-background">
+    <h1><div class="h-line"></div>I <span>know</span> how to use...<div class="h-line"></div></h1>
     <section id="skills-container" onmousemove="hoverEffect(event)">
       <div class="skill-card">
         <div class="skill-card-content">
-          <img src="./assets/icons/icons8-html-480.png" alt="html-logo" width="50%" />
+          <img src="./assets/icons/icons8-html-480.png" alt="html-logo" width="50%" class="skill-card-img"/>
           HTML 5
         </div>
       </div>
       <div class="skill-card">
         <div class="skill-card-content">
-          <img src="./assets/icons/icons8-css-480.png" alt="css-logo" width="50%" />
+          <img src="./assets/icons/icons8-css-480.png" alt="css-logo" width="50%" class="skill-card-img"/>
           CSS 3
         </div>
       </div>
       <div class="skill-card">
         <div class="skill-card-content">
-          <img src="./assets/icons/icons8-javascript-480.png" alt="js-logo" width="50%" />
+          <img src="./assets/icons/icons8-javascript-480.png" alt="js-logo" width="50%" class="skill-card-img"/>
           JavaScript
         </div>
       </div>
       <div class="skill-card">
         <div class="skill-card-content">
-          <img src="./assets/icons/icons8-typescript-480.png" alt="ts-logo" width="50%" />
+          <img src="./assets/icons/icons8-typescript-480.png" alt="ts-logo" width="50%" class="skill-card-img"/>
           TypeScript
         </div>
       </div>
       <div class="skill-card">
         <div class="skill-card-content">
-          <img src="./assets/icons/icons8-react-native-480.png" alt="react-logo" width="50%" />
+          <img src="./assets/icons/icons8-react-native-480.png" alt="react-logo" width="50%" class="skill-card-img"/>
           React JS
         </div>
       </div>
       <div class="skill-card">
         <div class="skill-card-content">
-          <img src="./assets/icons/icons8-redux-480.png" alt="redux-logo" width="50%" />
+          <img src="./assets/icons/icons8-redux-480.png" alt="redux-logo" width="50%" class="skill-card-img"/>
           Redux
         </div>
       </div>
       <div class="skill-card">
         <div class="skill-card-content">
-          <img src="./assets/icons/icons8-bootstrap-480.png" alt="bootstrap-logo" width="50%" />
+          <img src="./assets/icons/icons8-bootstrap-480.png" alt="bootstrap-logo" width="50%" class="skill-card-img"/>
           Bootstrap
         </div>
       </div>
       <div class="skill-card">
         <div class="skill-card-content">
-          <img src="./assets/icons/icons8-sass-480.png" alt="sass-logo" width="50%" />
+          <img src="./assets/icons/icons8-sass-480.png" alt="sass-logo" width="50%" class="skill-card-img"/>
           SCSS/ SASS
         </div>
       </div>
       <div class="skill-card">
         <div class="skill-card-content">
-          <img src="./assets/icons/icons8-github-480.png" alt="github-logo" width="50%" />
+          <img src="./assets/icons/icons8-github-480.png" alt="github-logo" width="50%" class="skill-card-img"/>
           Git/ GitHub
         </div>
       </div>
       <div class="skill-card">
         <div class="skill-card-content">
-          <img src="./assets/icons/Next.js.png" alt="next-logo" width="60%" />
+          <img src="./assets/icons/Next.js.png" alt="next-logo" width="60%" class="skill-card-img"/>
           Next.js
         </div>
       </div>
       <div class="skill-card">
         <div class="skill-card-content">
-          <img src="https://avatars.githubusercontent.com/u/67109815?s=280&v=4" alt="next-logo" width="60%" />
+          <img src="https://avatars.githubusercontent.com/u/67109815?s=280&v=4" alt="next-logo" width="60%" class="skill-card-img"/>
           Tailwind CSS
         </div>
       </div>
@@ -480,7 +491,7 @@
         <div class="skill-card-content">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png"
-            alt="next-logo" width="40%" />
+            alt="next-logo" width="40%" class="skill-card-img"/>
           VUE.js
         </div>
       </div>
@@ -491,9 +502,9 @@
   <!-- PROJECTS -->
 
   <main id="projects-main" data-navLink="Projects">
-    <h1>Check out my <span>work</span>!</h1>
+    <h1 class="projects-h1">Check out my <span>work</span>!</h1>
     <section id="projects-section">
-      <div class="phone-container" tabindex="0" href="https://drop-ship.vercel.app/">
+      <div class="phone-container" tabindex="0" onclick="navigateTo('https://drop-ship.vercel.app/',event)">
         <div>
           <img src="./assets/projects/Dropship.gif" alt="dropship" class="project-image" />
         </div>
@@ -522,7 +533,7 @@
           <a href="https://github.com/LukassF/drop-ship" target="_blank"><i class="fa fa-github"></i></a>
         </footer>
       </div>
-      <div class="phone-container" tabindex="0">
+      <div class="phone-container" tabindex="0" onclick="navigateTo('https://in-for-climate.vercel.app/',event)">
         <div><img src="./assets/projects/InForClimate.gif" alt="inforclimate" class="project-image" /></div>
 
         <h2>InForClimate</h2>
@@ -551,7 +562,7 @@
           <a href="https://github.com/LukassF/in-for-climate" target="_blank"><i class="fa fa-github"></i></a>
         </footer>
       </div>
-      <div class="phone-container" tabindex="0">
+      <div class="phone-container" tabindex="0" onclick="navigateTo('https://music-clone-lukas.vercel.app/',event)">
         <div><img src="./assets/projects/Music-App.gif" alt="taskify" class="project-image" /></div>
         <h2>Music-App</h2>
         <article>
@@ -577,7 +588,7 @@
           <a href="https://github.com/LukassF/spotify-clone" target="_blank"><i class="fa fa-github"></i></a>
         </footer>
       </div>
-      <div class="phone-container" tabindex="0">
+      <div class="phone-container" tabindex="0" onclick="navigateTo('https://peace-flame-omega.vercel.app/',event)">
         <div>
           <img src="./assets/projects/Peace.gif" alt="peaceio" class="project-image" />
         </div>

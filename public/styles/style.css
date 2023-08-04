@@ -13,7 +13,7 @@ nav#nav-home {
 }
 @media screen and (max-width: 700px) {
   nav#nav-home {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(0, 0, 0);
     padding: 6px 30px;
     min-width: calc(100vw - 60px);
   }
@@ -50,7 +50,7 @@ nav#nav-home ul {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    top: 60px;
+    top: 55px;
     right: 0;
     width: 100%;
     transition: all 0.3s;
@@ -105,6 +105,7 @@ nav#nav-home ul a li::after {
 }
 @media screen and (max-width: 700px) {
   nav#nav-home ul a li {
+    height: 100%;
     color: rgb(214, 208, 208);
     width: calc(100% - 60px);
     display: flex;
@@ -113,8 +114,7 @@ nav#nav-home ul a li::after {
     align-items: flex-end;
     padding: 12px 0px;
     padding-right: 60px;
-    background-color: rgba(0, 0, 0, 0.8);
-    height: auto;
+    background-color: rgb(0, 0, 0);
   }
   nav#nav-home ul a li:hover {
     background-color: rgb(5, 61, 49);
@@ -154,6 +154,15 @@ nav#nav-home .hamburger-menu:hover .hamburger-icon::after {
 }
 nav#nav-home .hamburger-menu:hover .hamburger-icon::before {
   background-color: white;
+}
+nav#nav-home .hamburger-menu.shown .hamburger-icon {
+  transform: rotate(45deg);
+}
+nav#nav-home .hamburger-menu.shown .hamburger-icon::before {
+  transform: rotate(-90deg) translate(-9px, 0px);
+}
+nav#nav-home .hamburger-menu.shown .hamburger-icon::after {
+  opacity: 0;
 }
 nav#nav-home .hamburger-menu .hamburger-icon {
   position: relative;
@@ -199,6 +208,27 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   place-content: center;
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
+}
+#main-home .home-background {
+  height: 140%;
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#main-home::after {
+  content: "";
+  background-color: rgb(0, 0, 0);
+  width: 110%;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  bottom: -20%;
+  transform: rotate(-3deg);
+}
+@media screen and (max-width: 1120px) {
+  #main-home::after {
+    bottom: -10%;
+  }
 }
 @media screen and (max-width: 1120px) {
   #main-home {
@@ -279,27 +309,8 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   }
 }
 #main-home #text-home #text-box p {
-  background-color: black;
   position: relative;
-  padding: 10px;
   transition: all 0.8s;
-}
-#main-home #text-home #text-box p::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  border: solid white 1px;
-  box-shadow: 0px 0px 4px 2px whitesmoke;
-  position: absolute;
-  z-index: -1;
-  left: -5%;
-  top: 30%;
-  border-radius: 10px;
-}
-@media screen and (max-width: 600px) {
-  #main-home #text-home #text-box p::before {
-    opacity: 0;
-  }
 }
 @media screen and (max-width: 600px) {
   #main-home #text-home #text-box p {
@@ -376,6 +387,12 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
     margin-top: -50px;
   }
 }
+@media screen and (max-width: 650px) {
+  #main-home #images-home canvas {
+    transform: scale(0.8);
+    margin-top: -100px;
+  }
+}
 #main-home #images-home h2 {
   display: flex;
   flex-direction: row;
@@ -406,6 +423,9 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
 
 #skills-main {
   perspective: 1000px;
+  padding-top: 50px;
+  padding-bottom: 200px;
+  overflow: hidden;
   cursor: default;
   position: relative;
   min-height: 100vh;
@@ -417,6 +437,40 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   align-items: stretch;
   gap: 20px;
 }
+@media screen and (max-width: 800px) {
+  #skills-main {
+    padding-top: 100px;
+  }
+}
+#skills-main .skills-background {
+  height: 140%;
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  left: 0;
+  top: 0;
+}
+#skills-main::before {
+  content: "";
+  background-color: rgb(0, 0, 0);
+  width: 110%;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  top: -11%;
+  transform: rotate(3deg);
+  z-index: 4;
+}
+#skills-main::after {
+  content: "";
+  background-color: rgb(0, 0, 0);
+  width: 110%;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  bottom: -5%;
+  transform: rotate(-3deg);
+}
 #skills-main h1 {
   font-family: LexendDeca-Bold;
   font-size: 3em;
@@ -426,7 +480,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   justify-content: center;
   align-items: center;
 }
-#skills-main h1 div {
+#skills-main h1 .h-line {
   margin: 0px 40px;
   height: 3px;
   background-color: rgb(13, 211, 168);
@@ -434,11 +488,19 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   flex: 1;
 }
 @media screen and (max-width: 600px) {
-  #skills-main h1 div {
+  #skills-main h1 .h-line {
     display: none;
   }
 }
-@media screen and (max-width: 600px) {
+#skills-main h1 .h-line:first-child {
+  transform-origin: left;
+  transform: scaleX(0);
+}
+#skills-main h1 .h-line:last-child {
+  transform-origin: right;
+  transform: scaleX(0);
+}
+@media screen and (max-width: 665px) {
   #skills-main h1 {
     font-size: 2em;
   }
@@ -474,7 +536,6 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   background-color: rgba(255, 255, 255, 0);
   border-radius: 20px;
   padding: 5px;
-  transition: transform 0.5s;
 }
 @media all and (hover: none) {
   #skills-main section#skills-container .skill-card {
@@ -575,14 +636,21 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   }
 }
 #about-main {
-  min-height: 100vh;
   position: relative;
   top: 0px;
+  padding-top: 150px;
+  padding-bottom: 150px;
   display: grid;
   grid-template-columns: 2fr 3fr;
   gap: 40px;
   place-content: center;
   overflow: hidden;
+}
+@media screen and (max-width: 1200px) {
+  #about-main {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
 }
 @media screen and (max-width: 1200px) {
   #about-main {
@@ -614,28 +682,58 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
     display: none;
   }
 }
-@media screen and (max-width: 700px) {
-  #about-main #about-image #svg {
-    display: block;
-    width: 100%;
-    margin-top: -50px;
-  }
-}
-#about-main #about-image #svg div {
+#about-main #about-image #svg .frame-about {
   z-index: -1;
   width: 100%;
   left: -5%;
   bottom: -5%;
   aspect-ratio: 1/1;
-  border: solid rgb(13, 211, 168) 2px;
-  border-radius: inherit;
-  box-shadow: 0px 0px 5px 2px rgb(13, 211, 168);
   position: absolute;
 }
 @media screen and (max-width: 600px) {
-  #about-main #about-image #svg div {
+  #about-main #about-image #svg .frame-about {
     opacity: 0;
   }
+}
+#about-main #about-image #svg .frame-about .frame-about-top {
+  transform: scaleX(0);
+  transform-origin: right;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(13, 211, 168);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#about-main #about-image #svg .frame-about .frame-about-bottom {
+  transform: scaleX(0);
+  transform-origin: left;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(13, 211, 168);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+#about-main #about-image #svg .frame-about .frame-about-left {
+  transform: scaleY(0);
+  transform-origin: top;
+  height: 100%;
+  width: 2px;
+  background-color: rgb(13, 211, 168);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#about-main #about-image #svg .frame-about .frame-about-right {
+  transform: scaleY(0);
+  transform-origin: bottom;
+  height: 100%;
+  width: 2px;
+  background-color: rgb(13, 211, 168);
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 #about-main #about-image #svg svg {
   width: 80%;
@@ -683,7 +781,6 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   }
 }
 #about-main #about-content h1 {
-  transition: transform 0.8s;
   font-size: 3em;
   margin: 0;
   font-family: LexendDeca-Bold;
@@ -731,8 +828,6 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   bottom: -12%;
   height: 100%;
   border: solid white 2px;
-  border-radius: inherit;
-  box-shadow: 0px 0px 5px 2px whitesmoke;
   position: absolute;
 }
 @media screen and (max-width: 600px) {
@@ -841,7 +936,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
 #about-main #about-content article div:last-child span:nth-child(2) {
   transform: translateX(-120%);
 }
-#about-main #about-content article div:nth-child(2) {
+#about-main #about-content article a {
   cursor: pointer;
   height: 70%;
   aspect-ratio: 1/1;
@@ -854,9 +949,10 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   place-content: center;
   font-size: 2em;
   color: rgb(13, 211, 168);
+  text-decoration: none;
 }
 @media screen and (max-width: 700px) {
-  #about-main #about-content article div:nth-child(2) {
+  #about-main #about-content article a {
     height: 50%;
     border-width: 8px;
     font-size: 1.2em;
@@ -1109,8 +1205,11 @@ main#contact-main section .map iframe {
   top: 5%;
   z-index: -1;
   border: solid rgb(13, 211, 168) 2px;
-  box-shadow: 0px 0px 2px 2px rgb(13, 211, 168);
-  border-radius: 10px;
+}
+@media screen and (max-width: 1450px) {
+  #projects-main section#projects-section::after {
+    opacity: 0;
+  }
 }
 @media screen and (max-width: 600px) {
   #projects-main section#projects-section::after {
@@ -1137,7 +1236,7 @@ main#contact-main section .map iframe {
   }
 }
 #projects-main section#projects-section .phone-container {
-  cursor: default;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1148,7 +1247,16 @@ main#contact-main section .map iframe {
   max-width: 350px;
   aspect-ratio: 1/1.3;
   border-radius: 20px;
-  transition: opacity 0.8s, transform 0.5s;
+}
+@media screen and (max-width: 850px) {
+  #projects-main section#projects-section .phone-container {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  #projects-main section#projects-section .phone-container.show {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 @media screen and (max-width: 350px) {
   #projects-main section#projects-section .phone-container {
@@ -1654,7 +1762,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  gap: 30px;
   font-family: LexendDeca;
   min-width: 100%;
   min-height: 100vh;
@@ -1667,11 +1774,6 @@ body {
   background-color: #000000;
   animation: slide 20s linear infinite;
   color: white;
-}
-@media screen and (max-width: 1100px) {
-  body {
-    gap: 100px;
-  }
 }
 @media screen and (max-width: 650px) {
   body {

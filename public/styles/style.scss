@@ -73,11 +73,6 @@ html {
 body {
   position: relative;
   @include flex(column, center, stretch);
-  gap: 30px;
-
-  @media screen and (max-width: 1100px) {
-    gap: 100px;
-  }
   font-family: LexendDeca;
   min-width: 100%;
   min-height: 100vh;

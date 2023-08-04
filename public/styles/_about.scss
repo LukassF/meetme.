@@ -33,10 +33,15 @@ $aboutColor: rgb(13, 211, 168);
 }
 #about-main {
   // background-color: green;
-  min-height: 100vh;
+  // min-height: 100vh;
   position: relative;
   top: 0px;
-  // padding-top: 80px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  @media screen and (max-width: 1200px) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
 
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -67,12 +72,8 @@ $aboutColor: rgb(13, 211, 168);
       @media screen and (max-width: 1200px) {
         display: none;
       }
-      @media screen and (max-width: 700px) {
-        display: block;
-        width: 100%;
-        margin-top: -50px;
-      }
-      div {
+
+      .frame-about {
         @media screen and (max-width: 600px) {
           opacity: 0;
         }
@@ -81,10 +82,55 @@ $aboutColor: rgb(13, 211, 168);
         left: -5%;
         bottom: -5%;
         aspect-ratio: 1/1;
-        border: solid $aboutColor 2px;
-        border-radius: inherit;
-        box-shadow: 0px 0px 5px 2px $aboutColor;
+        // border: solid $aboutColor 2px;
+        // border-radius: inherit;
+        // box-shadow: 0px 0px 5px 2px $aboutColor;
         position: absolute;
+
+        .frame-about-top {
+          transform: scaleX(0);
+          transform-origin: right;
+          width: 100%;
+          height: 2px;
+          background-color: $aboutColor;
+          // box-shadow: 0px 0px 5px 2px $aboutColor;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .frame-about-bottom {
+          transform: scaleX(0);
+          transform-origin: left;
+          width: 100%;
+          height: 2px;
+          background-color: $aboutColor;
+          // box-shadow: 0px 0px 5px 2px $aboutColor;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+        .frame-about-left {
+          transform: scaleY(0);
+          transform-origin: top;
+          height: 100%;
+          width: 2px;
+          background-color: $aboutColor;
+          // box-shadow: 0px 0px 5px 2px $aboutColor;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .frame-about-right {
+          transform: scaleY(0);
+          transform-origin: bottom;
+          height: 100%;
+          width: 2px;
+          background-color: $aboutColor;
+          // box-shadow: 0px 0px 5px 2px $aboutColor;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
       }
       // @media screen and (max-width: 1000px) {
       //   min-height: 350px;
@@ -140,8 +186,8 @@ $aboutColor: rgb(13, 211, 168);
       width: calc(100% - 60px);
     }
     h1 {
+      // background-color: red;
       // transform: translateX(130%);
-      transition: transform 0.8s;
       font-size: 3em;
       margin: 0;
       font-family: LexendDeca-Bold;
@@ -187,8 +233,7 @@ $aboutColor: rgb(13, 211, 168);
         bottom: -12%;
         height: 100%;
         border: solid white 2px;
-        border-radius: inherit;
-        box-shadow: 0px 0px 5px 2px whitesmoke;
+        // box-shadow: 0px 0px 5px 2px whitesmoke;
         @media screen and (max-width: 600px) {
           opacity: 0;
           padding: 0px;
@@ -291,26 +336,27 @@ $aboutColor: rgb(13, 211, 168);
             }
           }
         }
-        &:nth-child(2) {
-          cursor: pointer;
-          height: 70%;
+      }
+      a {
+        cursor: pointer;
+        height: 70%;
 
-          @media screen and (max-width: 700px) {
-            height: 50%;
-            border-width: 8px;
-            font-size: 1.2em;
-          }
-          aspect-ratio: 1/1;
-          border-radius: 50%;
-          background-color: black;
-          z-index: 10;
-          border: solid $aboutColor 12px;
-          box-shadow: 0px 0px 22px 5px rgba(13, 211, 168, 0.4);
-          display: grid;
-          place-content: center;
-          font-size: 2em;
-          color: $aboutColor;
+        @media screen and (max-width: 700px) {
+          height: 50%;
+          border-width: 8px;
+          font-size: 1.2em;
         }
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: black;
+        z-index: 10;
+        border: solid $aboutColor 12px;
+        box-shadow: 0px 0px 22px 5px rgba(13, 211, 168, 0.4);
+        display: grid;
+        place-content: center;
+        font-size: 2em;
+        color: $aboutColor;
+        text-decoration: none;
       }
       // background-color: yellow;
     }
