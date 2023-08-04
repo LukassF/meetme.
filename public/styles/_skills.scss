@@ -1,16 +1,11 @@
 #skills-main {
-  perspective: 1000px;
-  padding-top: 50px;
+  padding-top: 150px;
 
-  @media screen and (max-width: 800px) {
-    padding-top: 100px;
-  }
-  padding-bottom: 200px;
-  // background-color: red;
+  padding-bottom: 250px;
+
   overflow: hidden;
   cursor: default;
   position: relative;
-  min-height: 100vh;
   left: 0;
   top: 0px;
   @include flex(column, center, stretch);

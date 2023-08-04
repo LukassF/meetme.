@@ -201,7 +201,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   }
 }
 #main-home {
-  min-height: 100vh;
+  padding-top: 0px;
   position: relative;
   top: 0px;
   display: grid;
@@ -423,13 +423,11 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
 }
 
 #skills-main {
-  perspective: 1000px;
-  padding-top: 50px;
-  padding-bottom: 200px;
+  padding-top: 150px;
+  padding-bottom: 250px;
   overflow: hidden;
   cursor: default;
   position: relative;
-  min-height: 100vh;
   left: 0;
   top: 0px;
   display: flex;
@@ -437,11 +435,6 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   justify-content: center;
   align-items: stretch;
   gap: 20px;
-}
-@media screen and (max-width: 800px) {
-  #skills-main {
-    padding-top: 100px;
-  }
 }
 #skills-main .skills-background {
   height: 140%;
@@ -1159,12 +1152,51 @@ main#contact-main section .map iframe {
   filter: invert(90%);
 }
 
+#projects-loader {
+  top: 0;
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#projects-loader.fadeOut {
+  display: none;
+}
+#projects-loader .lds-dual-ring {
+  transform: scale(1.5);
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+#projects-loader .lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid rgb(13, 211, 168);
+  border-color: rgb(13, 211, 168) transparent rgb(13, 211, 168) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 #projects-main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   margin: 0;
   transition: opacity 0.8s;
 }
@@ -1783,7 +1815,7 @@ body {
   }
 }
 body main {
-  padding: 0px 50px;
+  padding: 50px;
 }
 @media screen and (max-width: 900px) {
   body main {
