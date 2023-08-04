@@ -202,6 +202,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
 }
 #main-home {
   padding-top: 0px;
+  padding-bottom: 100px;
   position: relative;
   top: 0px;
   display: grid;
@@ -285,6 +286,10 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
 #main-home #text-home #text-box h2 {
   font-size: 1.8em;
   transition: all 0.8s;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
 }
 #main-home #text-home #text-box h2 span {
   color: rgb(13, 211, 168);
