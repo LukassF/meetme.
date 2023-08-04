@@ -211,6 +211,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
 }
 #main-home .home-background {
   height: 140%;
+  width: 100%;
   position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
@@ -444,6 +445,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
 }
 #skills-main .skills-background {
   height: 140%;
+  width: 100%;
   position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
