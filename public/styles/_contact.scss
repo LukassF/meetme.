@@ -1,8 +1,6 @@
 main#contact-main {
-  // min-height: 100vh;
-  // background-color: yellow;
   padding: 0;
-  // padding-top: 100px;
+
   position: relative;
   top: 0px;
   margin: 0;
@@ -86,6 +84,34 @@ main#contact-main {
       font-weight: 500;
       font-size: 1.1em;
       min-height: 40px;
+
+      &::-webkit-input-placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: rgb(201, 201, 201);
+        font-weight: 300;
+        opacity: 1; /* Firefox */
+      }
+
+      &::-moz-placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: rgb(201, 201, 201);
+        font-weight: 300;
+        opacity: 1; /* Firefox */
+      }
+
+      &:-ms-input-placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: rgb(201, 201, 201);
+        font-weight: 300;
+        opacity: 1; /* Firefox */
+      }
+
+      &::-ms-input-placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: rgb(201, 201, 201);
+        font-weight: 300;
+        opacity: 1; /* Firefox */
+      }
 
       &::placeholder {
         /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -195,247 +221,9 @@ main#contact-main {
       iframe {
         width: 100%;
         height: 100%;
+        -webkit-filter: invert(90%);
         filter: invert(90%);
       }
     }
   }
-  // form {
-  //   height: 80%;
-  //   transition: box-shadow 0.8s;
-  //   border-radius: 15px;
-  //   padding: 20px 0px 10px 0px;
-  //   display: grid;
-  //   grid-template-columns: 1fr 1fr;
-  //   grid-template-rows: 10% 90%;
-  //   grid-template-areas:
-  //     "header header"
-  //     "content1 content2";
-  //   @media screen and (max-width: 830px) {
-  //     grid-template-columns: 1fr;
-  //     grid-template-rows: 10% 40% 50%;
-  //     grid-template-areas:
-  //       "header"
-  //       "content1"
-  //       "content2";
-
-  //     background-color: transparent;
-  //   }
-  //   @media screen and (max-width: 730px) {
-  //     width: 95%;
-  //   }
-
-  //   h1 {
-  //     @include flex(row, center, center);
-  //     grid-area: header;
-  //     min-width: 100%;
-  //     font-size: 2.5em;
-  //     font-family: LexendDeca-Bold;
-  //     margin-top: 35px;
-
-  //     span {
-  //       color: rgb(13, 211, 168);
-  //     }
-  //     @media screen and (max-width: 830px) {
-  //       font-size: 2em;
-  //     }
-  //     @media screen and (max-width: 500px) {
-  //       font-size: 1.7em;
-  //     }
-  //   }
-
-  //   div {
-  //     @include flex(column, flex-start, center);
-  //     min-height: calc(100% - 60px);
-  //     min-width: calc(100% - 60px);
-  //     gap: 20px;
-  //     padding: 30px;
-
-  //     input {
-  //       width: 100%;
-  //       min-height: 50px;
-  //       border-radius: 10px;
-  //       border: none;
-  //       padding-left: 10px;
-  //       font-size: 1.1em;
-  //       color: rgb(255, 255, 255);
-  //       outline: none;
-  //       background-color: rgb(0, 0, 0);
-
-  //       &:focus {
-  //         border-color: white;
-  //         transition: all 0.3s;
-  //       }
-
-  //       @media screen and (max-width: 830px) {
-  //         background-color: rgb(15, 15, 15);
-
-  //         &:focus {
-  //           box-shadow: none;
-  //         }
-  //       }
-  //     }
-  //     textarea {
-  //       resize: none;
-  //       @extend input;
-  //       padding-top: 10px;
-  //       min-height: calc(100% - 106px);
-  //     }
-  //     button {
-  //       width: 103%;
-  //       margin-top: 20px;
-  //       min-height: 50px;
-  //       border-radius: 10px;
-  //       border: none;
-  //       background-color: rgb(13, 211, 168);
-  //       font-size: 1.2em;
-  //       color: white;
-  //       transition: all 0.3s;
-
-  //       &:hover {
-  //         background-color: white;
-  //         color: rgb(13, 211, 168);
-  //       }
-
-  //       &:disabled {
-  //         background-color: rgba(13, 211, 168, 0.4);
-  //         color: rgb(158, 154, 154);
-  //         cursor: default;
-
-  //         &:hover {
-  //           color: rgb(158, 154, 154);
-  //         }
-  //       }
-  //       &:not(:disabled) {
-  //         cursor: pointer;
-  //       }
-  //     }
-  //     span {
-  //       background-color: rgba(255, 255, 255, 0.04);
-  //       color: rgb(168, 168, 168);
-  //       @include flex(column, center, center);
-  //       gap: 5px;
-  //       min-width: calc(100% - 40px);
-  //       padding: 20px;
-  //       border-radius: 10px;
-  //       @media screen and (max-width: 1500px) {
-  //         font-size: 0.9em;
-  //       }
-  //       @media screen and (max-width: 1300px) {
-  //         font-size: 0.75em;
-  //       }
-  //       @media screen and (max-width: 1120px) {
-  //         font-size: 0.9em;
-  //       }
-  //       @media screen and (max-width: 830px) {
-  //         font-size: 1em;
-  //       }
-  //       @media screen and (max-width: 630px) {
-  //         font-size: 0.7em;
-  //       }
-
-  //       a {
-  //         width: 70%;
-  //         @include flex(row, space-between, center);
-  //         color: rgb(107, 105, 105);
-
-  //         @media screen and (max-width: 1370px) {
-  //           width: 100%;
-  //         }
-  //         @media screen and (max-width: 1120px) {
-  //           width: 80%;
-  //         }
-  //         @media screen and (max-width: 830px) {
-  //           justify-content: center;
-  //           gap: 50px;
-  //         }
-
-  //         .reverse {
-  //           padding: 0;
-  //           margin: 0;
-  //           unicode-bidi: bidi-override;
-  //           direction: rtl;
-  //           @media screen and (max-width: 850px) {
-  //             font-size: 0.8em;
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-
-  //   #first {
-  //     padding-bottom: 60px;
-  //     button {
-  //       @media screen and (max-width: 830px) {
-  //         display: none;
-  //       }
-  //       @media screen and (max-width: 1120px) {
-  //         margin-top: 30px;
-  //       }
-  //     }
-  //     span {
-  //       @media screen and (max-width: 830px) {
-  //         display: none;
-  //       }
-  //     }
-  //   }
-
-  //   #second {
-  //     button {
-  //       @media screen and (min-width: 830px) {
-  //         display: none;
-  //         margin-top: 20px;
-  //       }
-  //     }
-  //     span {
-  //       @media screen and (min-width: 830px) {
-  //         display: none;
-  //       }
-  //       border: none;
-  //       background: transparent;
-  //       p {
-  //         font-size: 1.4em;
-  //       }
-  //       a {
-  //         background-color: rgba(255, 255, 255, 0.1);
-  //         border-radius: 10px;
-  //         padding: 10px 0px;
-  //         width: 90vw;
-  //         font-size: 1em;
-  //       }
-  //     }
-  //     input {
-  //       @media screen and (max-width: 830px) {
-  //         margin-top: -60px;
-  //       }
-  //     }
-  //   }
-  // }
-
-  // #contact-model {
-  //   z-index: -1;
-  //   // transform: translateX(-100%);
-  //   transition: transform 0.5s;
-  //   transition-delay: 0.3s;
-  //   overflow: hidden;
-  //   @include flex(column, center, flex-start);
-  //   gap: 10px;
-  //   @media screen and (max-width: 1120px) {
-  //     display: none;
-  //   }
-
-  //   .stripe {
-  //     height: 30px;
-  //     border-radius: 0px 5px 5px 0px;
-  //     background-color: rgba(166, 166, 235, 0.3);
-
-  //     &:nth-child(2n) {
-  //       background-color: rgba(13, 211, 168, 0.3);
-  //     }
-  //   }
-  //   @for $i from 1 through 15 {
-  //     .stripe:nth-child(#{$i}) {
-  //       width: random(250) + 100 + px;
-  //     }
-  //   }
-  // }
 }

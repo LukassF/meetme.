@@ -5,6 +5,7 @@
   z-index: 3;
   width: 100%;
   height: 100%;
+  background-color: black;
   @include flex(column, center, center);
 
   &.fadeOut {
@@ -26,7 +27,16 @@
     border-radius: 50%;
     border: 6px solid rgb(13, 211, 168);
     border-color: rgb(13, 211, 168) transparent rgb(13, 211, 168) transparent;
+    -webkit-animation: lds-dual-ring 1.2s linear infinite;
     animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @-webkit-keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
   @keyframes lds-dual-ring {
     0% {
@@ -39,29 +49,11 @@
 }
 
 #projects-main {
-  // background-color: blue;
   @include flex(column, center, center);
-  //   width: 100vw;
-  // min-height: 100vh;
-  // @media screen and (min-width: 750px) {
-  //   padding: 0px 20px;
-  // }
 
-  // padding-top: 200px;
   margin: 0;
-  // opacity: 0;
-  transition: opacity 0.8s;
 
-  // &.animate {
-  //   opacity: 1;
-  //   @media screen and (min-width: 750px) {
-  //     section#projects-section {
-  //       .phone-container {
-  //         opacity: 1;
-  //       }
-  //     }
-  //   }
-  // }
+  transition: opacity 0.8s;
 
   h1 {
     font-family: LexendDeca-Bold;
@@ -98,9 +90,6 @@
       top: 5%;
       z-index: -1;
       border: solid rgb(13, 211, 168) 2px;
-      // box-shadow: 0px 0px 2px 2px rgb(13, 211, 168);
-      // border-radius: 10px;
-
       @media screen and (max-width: 600px) {
         opacity: 0;
       }
@@ -153,6 +142,7 @@
 
       &:hover {
         div {
+          -webkit-filter: brightness(10%);
           filter: brightness(10%);
         }
         article {
@@ -163,6 +153,7 @@
       }
       &:focus {
         div {
+          -webkit-filter: brightness(10%);
           filter: brightness(10%);
         }
         article {
@@ -177,25 +168,24 @@
         height: 100%;
         position: absolute;
         z-index: 0;
+        -webkit-filter: brightness(20%);
         filter: brightness(20%);
+        transition: -webkit-filter 0.5s;
         transition: filter 0.5s;
+        transition: filter 0.5s, -webkit-filter 0.5s;
 
         img {
           width: 100%;
           height: 100%;
+          -o-object-fit: cover;
           object-fit: cover;
         }
       }
 
-      // &.show {
-      //   opacity: 1;
-      //   transform: translate(0);
-      // }
-
       h2 {
         width: 100%;
         z-index: 2;
-        // height: 100%;
+
         flex: 1;
         @include flex(row, center, center);
         margin: 0;
@@ -232,8 +222,6 @@
           }
         }
         p {
-          // height: 80%;
-          // background-color: blue;
           color: rgb(190, 189, 189);
           @include flex(column, center, center);
           font-size: 0.6em;
@@ -245,14 +233,11 @@
         }
         hr {
           width: 90%;
-          // height: 1px;
-          // background-color: white;
         }
       }
 
       footer {
         width: 100%;
-        // padding: 20px 10px;
         @include flex(row, center, center);
         gap: 30px;
         flex: 1;
@@ -265,13 +250,17 @@
           gap: 10px;
           border: none;
           background-color: rgb(15, 161, 130);
+          -webkit-filter: brightness(60%);
           filter: brightness(60%);
           color: rgb(255, 248, 248);
           border-radius: 10px;
           cursor: pointer;
+          transition: transform 0.6s, -webkit-filter 0.3s;
           transition: filter 0.3s, transform 0.6s;
+          transition: filter 0.3s, transform 0.6s, -webkit-filter 0.3s;
 
           &:hover {
+            -webkit-filter: brightness(90%);
             filter: brightness(90%);
           }
         }

@@ -24,19 +24,13 @@
       emailjs.init("qWcpIJq0ZIk5s3goi");
     })();
   </script>
-
-  <script type="module" src="three_js.js"></script>
   <title>Meet me!</title>
 </head>
 
 <body>
-  <div class="loader">
-    <label for="progress-bar">Loading assets..</label>
-    <progress id="progress-bar" value="0" max="100"></progress>
-  </div>
-  <!-- <div id="projects-loader">
+  <div id="projects-loader">
       <div class="lds-dual-ring"></div>
-    </div> -->
+    </div>
   <nav id="nav-home">
     <div>meetme.</div>
 
@@ -107,8 +101,20 @@
     </article>
 
     <article id="images-home">
-      <canvas class="webgl"></canvas>
-      <h2><i class="fa-solid fa-hand-pointer"></i> Give it a spin!</h2>
+      <div class="vertical"></div>
+      <div class="stripe" onmouseover="wobbleStripe(this)" onmouseleave="stopWobbleStripe(this)"></div>
+      <div class="stripe" onmouseover="wobbleStripe(this)" onmouseleave="stopWobbleStripe(this)"></div>
+      <div class="stripe" onmouseover="wobbleStripe(this)" onmouseleave="stopWobbleStripe(this)"></div>
+      <div class="stripe" onmouseover="wobbleStripe(this)" onmouseleave="stopWobbleStripe(this)"></div>
+      <div class="stripe" onmouseover="wobbleStripe(this)" onmouseleave="stopWobbleStripe(this)"></div>
+      <div class="stripe" onmouseover="wobbleStripe(this)" onmouseleave="stopWobbleStripe(this)"></div>
+      <div class="stripe" onmouseover="wobbleStripe(this)" onmouseleave="stopWobbleStripe(this)"></div>
+      <div class="stripe" onmouseover="wobbleStripe(this)" onmouseleave="stopWobbleStripe(this)"></div>
+      <div class="stripe" onmouseover="wobbleStripe(this)" onmouseleave="stopWobbleStripe(this)"></div>
+      <div class="stripe" onmouseover="wobbleStripe(this)" onmouseleave="stopWobbleStripe(this)"></div>
+      <div class="stripe" onmouseover="wobbleStripe(this)" onmouseleave="stopWobbleStripe(this)"></div>
+      <div class="stripe" onmouseover="wobbleStripe(this)" onmouseleave="stopWobbleStripe(this)"></div>
+      <div class="stripe" onmouseover="wobbleStripe(this)" onmouseleave="stopWobbleStripe(this)"></div>
     </article>
   </main>
 
@@ -393,7 +399,6 @@
         naturally. Out of the office I really enjoy watching and participating
         in various sports, such as football or Formula 1 (only as a viewer
         obviously).
-        <!-- <div class="frame"></div> -->
       </p>
 
       <article class="about-el">
@@ -402,7 +407,7 @@
           <span>Open Mindedness</span>
           <span>Commitment</span>
         </div>
-        <a href="./public/assets/ŁukaszFlorek_english.pdf" download onmouseenter="traits(event,true)" onmouseleave="traits(event,false)">ME</a>
+        <a href="./public/assets/ŁukaszFlorek_english.pdf" download="resume.pdf" onmouseenter="traits(event,true)" onmouseleave="traits(event,false)"><span>ME</span><span>RESUME</span></a>
         <div>
           <span>Teamwork</span>
           <span>Rapid Learning</span>
@@ -417,8 +422,8 @@
   <!-- SKILLS -->
 
   <main id="skills-main" data-navLink="Skills">
-    <!-- <img src="https://cdn.pixabay.com/photo/2016/09/11/17/11/digital-1661823_960_720.jpg" alt="background-skills" class="skills-background"> -->
-    <img src="https://cdn.pixabay.com/photo/2015/10/11/12/49/wood-grain-982264_960_720.jpg" alt="background-skills" class="skills-background">
+    <img src="https://cdn.pixabay.com/photo/2016/09/11/17/11/digital-1661823_960_720.jpg" alt="background-skills" class="skills-background">
+    <!-- <img src="https://cdn.pixabay.com/photo/2015/10/11/12/49/wood-grain-982264_960_720.jpg" alt="background-skills" class="skills-background"> -->
     <h1><div class="h-line"></div>I <span>know</span> how to use...<div class="h-line"></div></h1>
     <section id="skills-container" onmousemove="hoverEffect(event)">
       <div class="skill-card">

@@ -46,6 +46,18 @@ function activePage(e) {
   }
 }
 
+const wobbleStripe = (el) => {
+  el.style.backgroundColor = "#0dd3a8";
+  el.style.animationPlayState = "running";
+};
+
+const stopWobbleStripe = (el) => {
+  setTimeout(() => {
+    el.style.backgroundColor = "grey";
+    el.style.animationPlayState = "paused";
+  }, 800);
+};
+
 const hoverEffect = (e) => {
   for (const card of document.querySelectorAll(".skill-card")) {
     const rect = card.getBoundingClientRect(),
@@ -160,8 +172,8 @@ gsap.from(".home-el", {
   delay: 0.2,
   x: -300,
   opacity: 0,
-  duration: 0.3,
-  ease: "elastic",
+  duration: 1.2,
+  ease: "back",
 });
 
 gsap.from(".social-link", {
@@ -185,9 +197,8 @@ gsap.from("#images-home", {
     start: "20% 80%",
     end: "80% 20%",
   },
-  delay: 0.2,
-  opacity: 0.4,
-  duration: 0.3,
+  scale: 0.3,
+  duration: 0.5,
 });
 
 const frameTl = gsap.timeline({
