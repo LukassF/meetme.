@@ -1,9 +1,12 @@
 gsap.registerPlugin(scrollTo);
 gsap.registerPlugin(ScrollTrigger);
 
+let showmenu = false;
+
 function showMenu(e) {
-  e.target.classList.toggle("shown");
-  document.getElementById("nav-list").classList.toggle("view");
+  showmenu = !showmenu;
+  e.target.classList.toggle("shown", showmenu);
+  document.getElementById("nav-list").classList.toggle("view", showmenu);
 }
 
 function navigateTo(href, e) {
@@ -135,7 +138,7 @@ gsap.to(".home-background", {
     scrub: 1,
   },
   yPercent: -30,
-  opacity: 0.2,
+  opacity: 0.01,
 });
 
 gsap.to(".skills-background", {
@@ -144,7 +147,7 @@ gsap.to(".skills-background", {
     scrub: 1,
   },
   yPercent: -30,
-  opacity: 0.1,
+  opacity: 0.01,
 });
 
 gsap.from(".home-el", {
@@ -154,7 +157,7 @@ gsap.from(".home-el", {
     start: "20% 80%",
     end: "80% 20%",
   },
-  delay: 0.5,
+  delay: 0.2,
   x: -300,
   opacity: 0,
   duration: 0.3,
@@ -168,7 +171,7 @@ gsap.from(".social-link", {
     start: "20% 80%",
     end: "80% 20%",
   },
-  delay: 0.8,
+  delay: 0.4,
   yPercent: 30,
   opacity: 0,
   stagger: 0.1,
@@ -183,7 +186,6 @@ gsap.from("#images-home", {
     end: "80% 20%",
   },
   delay: 0.2,
-  scale: 0,
   opacity: 0.4,
   duration: 0.3,
 });
@@ -263,6 +265,7 @@ gsap.from(".projects-h1", {
   duration: 0.5,
   ease: "back",
 });
+
 if (window.innerWidth > 850)
   gsap.from(".phone-container", {
     scrollTrigger: {

@@ -176,7 +176,7 @@ $aboutColor: rgb(13, 211, 168);
     @include flex(column, center, stretch);
     gap: 20px;
     padding: 0px 50px;
-    transition: transform 0.5s, opacity 0.8s;
+    // transition: transform 0.5s, opacity 0.8s;
 
     @media screen and (max-width: 1200px) {
       grid-area: top;

@@ -245,7 +245,6 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   margin-top: 50px;
 }
 #main-home #text-home {
-  transition: transform 0.5s, opacity 0.8s;
   font-family: LexendDeca-Bold;
   display: flex;
   flex-direction: column;
@@ -767,7 +766,6 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   align-items: stretch;
   gap: 20px;
   padding: 0px 50px;
-  transition: transform 0.5s, opacity 0.8s;
 }
 @media screen and (max-width: 1200px) {
   #about-main #about-content {

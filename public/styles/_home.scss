@@ -56,7 +56,7 @@
   }
   #text-home {
     // transform: translateX(-100%);
-    transition: transform 0.5s, opacity 0.8s;
+    // transition: transform 0.5s, opacity 0.8s;
     font-family: LexendDeca-Bold;
     @include flex(column, center, flex-end);
     max-width: 100vw;
