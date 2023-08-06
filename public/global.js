@@ -52,7 +52,8 @@ const wobbleStripe = (el) => {
 };
 
 const stopWobbleStripe = (el) => {
-  setTimeout(() => {
+  clearTimeout(el.dataset.timeout);
+  el.dataset.timeout = setTimeout(() => {
     el.style.backgroundColor = "grey";
     el.style.animationPlayState = "paused";
   }, 800);
