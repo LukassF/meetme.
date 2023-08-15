@@ -193,18 +193,11 @@
     @include flex(row, center, center);
     gap: 5px;
     transition: opacity 0.7s;
-    opacity: 0.4;
+    // opacity: 0.4;
 
     @media screen and (max-width: 700px) {
       transform: scale(0.7);
       gap: 7px;
-    }
-
-    &:hover {
-      opacity: 1;
-      .vertical {
-        background-color: white;
-      }
     }
 
     .vertical {
@@ -214,7 +207,7 @@
       left: 50%;
       width: 80%;
       height: 2px;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgba(151, 151, 151, 0.5);
       transform: translate(-50%, -50%);
       transition: all 0.7s;
 
@@ -226,7 +219,7 @@
     .stripe {
       border-radius: 500px;
       width: 25px;
-      background-color: grey;
+      background-color: rgb(68, 67, 67);
       -webkit-animation: wobble 1s infinite alternate linear forwards;
       animation: wobble 1s infinite alternate linear forwards;
       -webkit-animation-play-state: paused;
@@ -234,7 +227,7 @@
 
       @for $i from 1 through 15 {
         &:nth-child(#{$i}) {
-          height: random(150) + 200 + px;
+          height: random(150) + 100 + px;
         }
       }
     }

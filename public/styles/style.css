@@ -382,19 +382,12 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   align-items: center;
   gap: 5px;
   transition: opacity 0.7s;
-  opacity: 0.4;
 }
 @media screen and (max-width: 700px) {
   #main-home #images-home {
     transform: scale(0.7);
     gap: 7px;
   }
-}
-#main-home #images-home:hover {
-  opacity: 1;
-}
-#main-home #images-home:hover .vertical {
-  background-color: white;
 }
 #main-home #images-home .vertical {
   border-radius: 500px;
@@ -403,7 +396,7 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   left: 50%;
   width: 80%;
   height: 2px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(151, 151, 151, 0.5);
   transform: translate(-50%, -50%);
   transition: all 0.7s;
 }
@@ -415,54 +408,54 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
 #main-home #images-home .stripe {
   border-radius: 500px;
   width: 25px;
-  background-color: grey;
+  background-color: rgb(68, 67, 67);
   animation: wobble 1s infinite alternate linear forwards;
   animation-play-state: paused;
 }
 #main-home #images-home .stripe:nth-child(1) {
-  height: 283px;
+  height: 112px;
 }
 #main-home #images-home .stripe:nth-child(2) {
-  height: 231px;
+  height: 214px;
 }
 #main-home #images-home .stripe:nth-child(3) {
-  height: 249px;
+  height: 143px;
 }
 #main-home #images-home .stripe:nth-child(4) {
-  height: 339px;
+  height: 160px;
 }
 #main-home #images-home .stripe:nth-child(5) {
-  height: 206px;
+  height: 185px;
 }
 #main-home #images-home .stripe:nth-child(6) {
-  height: 218px;
+  height: 173px;
 }
 #main-home #images-home .stripe:nth-child(7) {
-  height: 210px;
+  height: 126px;
 }
 #main-home #images-home .stripe:nth-child(8) {
-  height: 293px;
+  height: 124px;
 }
 #main-home #images-home .stripe:nth-child(9) {
-  height: 317px;
+  height: 243px;
 }
 #main-home #images-home .stripe:nth-child(10) {
-  height: 251px;
+  height: 153px;
 }
 #main-home #images-home .stripe:nth-child(11) {
-  height: 201px;
+  height: 163px;
 }
 #main-home #images-home .stripe:nth-child(12) {
-  height: 210px;
+  height: 155px;
 }
 #main-home #images-home .stripe:nth-child(13) {
-  height: 302px;
+  height: 194px;
 }
 #main-home #images-home .stripe:nth-child(14) {
-  height: 220px;
+  height: 222px;
 }
 #main-home #images-home .stripe:nth-child(15) {
-  height: 205px;
+  height: 125px;
 }
 
 #skills-main {
