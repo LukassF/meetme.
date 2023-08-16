@@ -413,49 +413,49 @@ nav#nav-home .hamburger-menu .hamburger-icon::after {
   animation-play-state: paused;
 }
 #main-home #images-home .stripe:nth-child(1) {
-  height: 112px;
-}
-#main-home #images-home .stripe:nth-child(2) {
-  height: 214px;
-}
-#main-home #images-home .stripe:nth-child(3) {
-  height: 143px;
-}
-#main-home #images-home .stripe:nth-child(4) {
   height: 160px;
 }
-#main-home #images-home .stripe:nth-child(5) {
-  height: 185px;
-}
-#main-home #images-home .stripe:nth-child(6) {
-  height: 173px;
-}
-#main-home #images-home .stripe:nth-child(7) {
-  height: 126px;
-}
-#main-home #images-home .stripe:nth-child(8) {
-  height: 124px;
-}
-#main-home #images-home .stripe:nth-child(9) {
-  height: 243px;
-}
-#main-home #images-home .stripe:nth-child(10) {
-  height: 153px;
-}
-#main-home #images-home .stripe:nth-child(11) {
-  height: 163px;
-}
-#main-home #images-home .stripe:nth-child(12) {
+#main-home #images-home .stripe:nth-child(2) {
   height: 155px;
 }
+#main-home #images-home .stripe:nth-child(3) {
+  height: 124px;
+}
+#main-home #images-home .stripe:nth-child(4) {
+  height: 159px;
+}
+#main-home #images-home .stripe:nth-child(5) {
+  height: 191px;
+}
+#main-home #images-home .stripe:nth-child(6) {
+  height: 203px;
+}
+#main-home #images-home .stripe:nth-child(7) {
+  height: 208px;
+}
+#main-home #images-home .stripe:nth-child(8) {
+  height: 239px;
+}
+#main-home #images-home .stripe:nth-child(9) {
+  height: 234px;
+}
+#main-home #images-home .stripe:nth-child(10) {
+  height: 140px;
+}
+#main-home #images-home .stripe:nth-child(11) {
+  height: 171px;
+}
+#main-home #images-home .stripe:nth-child(12) {
+  height: 144px;
+}
 #main-home #images-home .stripe:nth-child(13) {
-  height: 194px;
+  height: 190px;
 }
 #main-home #images-home .stripe:nth-child(14) {
-  height: 222px;
+  height: 232px;
 }
 #main-home #images-home .stripe:nth-child(15) {
-  height: 125px;
+  height: 151px;
 }
 
 #skills-main {
@@ -1212,7 +1212,7 @@ main#contact-main section .map iframe {
 #projects-loader {
   top: 0;
   position: fixed;
-  z-index: 3;
+  z-index: 300;
   width: 100%;
   height: 100%;
   background-color: black;
