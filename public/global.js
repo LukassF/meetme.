@@ -46,18 +46,18 @@ function activePage(e) {
   }
 }
 
-const wobbleStripe = (el) => {
-  el.style.backgroundColor = "#0dd3a8";
-  el.style.animationPlayState = "running";
-};
+// const wobbleStripe = (el) => {
+//   el.style.backgroundColor = "#0dd3a8";
+//   el.style.animationPlayState = "running";
+// };
 
-const stopWobbleStripe = (el) => {
-  clearTimeout(el.dataset.timeout);
-  el.dataset.timeout = setTimeout(() => {
-    el.style.backgroundColor = "rgb(68, 67, 67)";
-    el.style.animationPlayState = "paused";
-  }, 800);
-};
+// const stopWobbleStripe = (el) => {
+//   clearTimeout(el.dataset.timeout);
+//   el.dataset.timeout = setTimeout(() => {
+//     el.style.backgroundColor = "rgb(68, 67, 67)";
+//     el.style.animationPlayState = "paused";
+//   }, 800);
+// };
 
 const hoverEffect = (e) => {
   for (const card of document.querySelectorAll(".skill-card")) {
@@ -170,7 +170,7 @@ gsap.from(".home-el", {
     start: "20% 80%",
     end: "80% 20%",
   },
-  delay: 0.2,
+  delay: 0.4,
   x: -300,
   opacity: 0,
   duration: 1.2,
@@ -184,22 +184,23 @@ gsap.from(".social-link", {
     start: "20% 80%",
     end: "80% 20%",
   },
-  delay: 0.4,
+  delay: 0.6,
   yPercent: 30,
   opacity: 0,
   stagger: 0.1,
   duration: 0.3,
 });
 
-gsap.from("#images-home", {
+gsap.from(".home-box", {
   scrollTrigger: {
     trigger: "#main-home",
     toggleActions: "restart reset restart pause ",
     start: "20% 80%",
     end: "80% 20%",
   },
-  scale: 0.3,
-  duration: 0.5,
+  opacity: 0,
+  duration: 0.4,
+  stagger: 0.1,
 });
 
 const frameTl = gsap.timeline({
