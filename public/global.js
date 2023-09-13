@@ -293,3 +293,19 @@ if (window.innerWidth > 850)
     stagger: 0.1,
     ease: "back",
   });
+
+if (window.innerWidth > 850)
+  gsap.from(".empty-phone-container", {
+    scrollTrigger: {
+      trigger: "#projects-main",
+      toggleActions: "restart none none reset ",
+      start: "20% 80%",
+      end: "80% 20%",
+    },
+    xPercent: -15,
+    opacity: 0,
+    duration: 0.5,
+    stagger: 0.1,
+    delay: 0.5,
+    ease: "back",
+  });
