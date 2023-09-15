@@ -11,7 +11,7 @@ function showMenu(e) {
 
 function navigateTo(href, e) {
   if (e.target.localName === "i" || e.target.localName === "a") return;
-  window.open(href, "_blank").focus();
+  window.open(href, "_blank");
 }
 
 let navLinks = [...document.getElementById("nav-list").children];
