@@ -46,19 +46,6 @@ function activePage(e) {
   }
 }
 
-// const wobbleStripe = (el) => {
-//   el.style.backgroundColor = "#0dd3a8";
-//   el.style.animationPlayState = "running";
-// };
-
-// const stopWobbleStripe = (el) => {
-//   clearTimeout(el.dataset.timeout);
-//   el.dataset.timeout = setTimeout(() => {
-//     el.style.backgroundColor = "rgb(68, 67, 67)";
-//     el.style.animationPlayState = "paused";
-//   }, 800);
-// };
-
 const hoverEffect = (e) => {
   for (const card of document.querySelectorAll(".skill-card")) {
     const rect = card.getBoundingClientRect(),
@@ -279,7 +266,8 @@ gsap.from(".projects-h1", {
   ease: "back",
 });
 
-if (window.innerWidth > 850)
+if (window.innerWidth > 850) {
+  console.log(window.innerWidth);
   gsap.from(".phone-container", {
     scrollTrigger: {
       trigger: "#projects-main",
@@ -293,8 +281,9 @@ if (window.innerWidth > 850)
     stagger: 0.1,
     ease: "back",
   });
+}
 
-if (window.innerWidth > 850)
+if (window.innerWidth > 1450)
   gsap.from(".empty-phone-container", {
     scrollTrigger: {
       trigger: "#projects-main",
